@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/trangchu"
+        android:icon="@drawable/homene"
+        android:title="Home"
+        />
+    <item
+        android:id="@+id/trangmot"
+        android:icon="@drawable/homene"
+        android:title="trangmot"
+        />
+
+    <item
+        android:id="@+id/tranghai"
+        android:title="tranghai"
+        android:icon="@drawable/homene"
+        />
+    <item
+        android:id="@+id/trangba"
+        android:title="trangba"
+        android:icon="@drawable/homene"/>
+
+    <item
+        android:icon="@drawable/homene"
+        android:id="@+id/trangbon"
+        android:title="trangbon"/>
+
+</menu>

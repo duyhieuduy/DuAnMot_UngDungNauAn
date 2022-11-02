@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login_Activity"
+    android:orientation="vertical"
+    android:background="@drawable/sreentitle"
+    android:gravity="center_horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/backbtn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/exit"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log in"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="75dp"
+
+            />
+    </LinearLayout>
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/avata"/>
+
+    <EditText
+        android:drawableLeft="@drawable/account"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/user"
+        android:paddingLeft="10dp"
+        android:inputType="textWebEmailAddress"
+        android:background="@drawable/edittextbox"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="65dp"
+        android:textAlignment="center"
+        android:backgroundTint="#2CFFFFFF"
+        />
+    <EditText
+        android:drawableLeft="@drawable/password"
+        android:paddingLeft="10dp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/pass"
+
+        android:inputType="textPassword"
+        android:background="@drawable/edittextbox"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="65dp"
+        android:backgroundTint="#2CFFFFFF"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember Me?"
+        android:id="@+id/remember"
+        android:textColor="@color/white" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:id="@+id/btnlogin"
+        android:text="Log in"
+        android:textColor="@color/white"
+        android:layout_marginTop="160dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/buttonlogin"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Need help?"
+        android:layout_marginTop="30dp"
+        android:textColor="#8A5C5A5A"/>
+</LinearLayout>
