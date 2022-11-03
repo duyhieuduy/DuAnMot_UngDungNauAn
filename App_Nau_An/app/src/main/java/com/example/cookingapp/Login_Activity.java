@@ -21,6 +21,7 @@ public class Login_Activity extends AppCompatActivity {
         ImageView backbtn = findViewById(R.id.backbtn);
 
         ///code cua bao ne
+        //BaoMap
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
