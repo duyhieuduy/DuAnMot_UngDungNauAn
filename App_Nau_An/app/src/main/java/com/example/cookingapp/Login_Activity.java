@@ -19,6 +19,8 @@ public class Login_Activity extends AppCompatActivity {
         EditText edtpass =findViewById(R.id.pass);
         Button btnlg = findViewById(R.id.btnlogin);
         ImageView backbtn = findViewById(R.id.backbtn);
+
+        ///code cua bao ne
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
