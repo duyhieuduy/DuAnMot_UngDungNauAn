@@ -21,6 +21,7 @@ public class Login_Activity extends AppCompatActivity {
         ImageView backbtn = findViewById(R.id.backbtn);
 
         ///code cua bao ne
+        // abc xyz
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
