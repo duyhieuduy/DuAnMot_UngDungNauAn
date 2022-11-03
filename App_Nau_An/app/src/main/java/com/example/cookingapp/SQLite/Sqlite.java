@@ -85,7 +85,7 @@ public class Sqlite extends SQLiteOpenHelper {
             "('1','mamon01','binh luan cua user 1 mamon01')," +
             "('2','mamon01','binh luan cua user 2 mamon01')," +
             "('3','mamon01','binh luan cua user 3 mamon01')," +
-            "('1','mamon02','binh luan cua user 1 mamon02')" +
+            "('1','mamon02','binh luan cua user 1 mamon02')," +
             "('2','mamon02','binh luan cua user 2 mamon02')," +
             "('3','mamon02','binh luan cua user 3 mamon02')," +
             "('1','mamon03','binh luan cua user 1 mamon03')," +
@@ -107,7 +107,7 @@ public class Sqlite extends SQLiteOpenHelper {
     public static final String INSERT_CONGTHUCNGUYENLIEU ="insert into CONGTHUCNGUYENLIEU VALUES" +
             "('mamon01','manguyenlieu01')," +
             "('mamon01','manguyenlieu03')," +
-            "('mamon02','manguyenlieu02')" +
+            "('mamon02','manguyenlieu02')," +
             "('mamon02','manguyenlieu03')";
     public Sqlite(@Nullable Context context) {
         super(context, DB_NAME, null, VERSION);
