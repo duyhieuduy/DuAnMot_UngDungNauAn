@@ -101,14 +101,14 @@ public class Sqlite extends SQLiteOpenHelper {
             "('3','mamon01')";
 
     public static final String INSERT_NGUYENLIEU ="insert into NGUYENLIEU VALUES" +
-            "('nguyenlieu01','trung',anhnguyenlieu01)," +
-            "('nguyenlieu02','thit',anhnguyenlieu02)," +
-            "('nguyenlieu03','rau',anhnguyenlieu03)";
+            "('nguyenlieu01','trung','anhnguyenlieu01')," +
+            "('nguyenlieu02','thit','anhnguyenlieu02')," +
+            "('nguyenlieu03','rau','anhnguyenlieu03')";
     public static final String INSERT_CONGTHUCNGUYENLIEU ="insert into CONGTHUCNGUYENLIEU VALUES" +
             "('mamon01','manguyenlieu01')," +
             "('mamon01','manguyenlieu03')," +
             "('mamon02','manguyenlieu02')" +
-            "('mamon02',manguyenlieu03)";
+            "('mamon02','manguyenlieu03')";
     public Sqlite(@Nullable Context context) {
         super(context, DB_NAME, null, VERSION);
     }
