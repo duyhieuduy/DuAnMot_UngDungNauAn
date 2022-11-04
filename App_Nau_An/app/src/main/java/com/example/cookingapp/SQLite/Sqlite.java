@@ -20,7 +20,7 @@ public class Sqlite extends SQLiteOpenHelper {
     public static final String CREATTABLE_ANHMONAN = "create table ANHMONAN" +
             "(anhmon text primary key," +
             "mamon text)";
-    public static final String CREATTABLE_USER = "create table USER" +
+    public static final String CREATTABLE_NGUOIDUNG = "create table NGUOIDUNG" +
             "(username text primary key ," +
             "password text)";
 
@@ -33,7 +33,7 @@ public class Sqlite extends SQLiteOpenHelper {
             "mamon text," +
             "noidungbl text)";
 
-    public static final String CREATTABLE_SAVE = "create table SAVE" +
+    public static final String CREATTABLE_NGUOIDUNGSAVE = "create table NGUOIDUNGSAVE" +
             "(username text ," +
             "mamon text)";
 
@@ -77,7 +77,7 @@ public class Sqlite extends SQLiteOpenHelper {
             "('anhmon18','mamon04')," +
             "('anhmon19','mamon04')," +
             "('anhmon20','mamon04')";
-    public static final String INSERT_USER ="insert into USER VALUES" +
+    public static final String INSERT_NGUOIDUNG ="insert into NGUOIDUNG VALUES" +
             "('1','1')," +
             "('2','2')," +
             "('3','3')";
@@ -95,7 +95,7 @@ public class Sqlite extends SQLiteOpenHelper {
             "('1','noidung1')," +
             "('2','noidung1')," +
             "('3','noidung1')";
-    public static final String INSERT_SAVE ="insert into SAVE VALUES" +
+    public static final String INSERT_NGUOIDUNGSAVE ="insert into NGUOIDUNGSAVE VALUES" +
             "('1','mamon01')," +
             "('2','mamon01')," +
             "('3','mamon01')";
@@ -118,20 +118,20 @@ public class Sqlite extends SQLiteOpenHelper {
         db.execSQL(CREATTABLE_LOAIMON);
         db.execSQL(CREATTABLE_MON);
         db.execSQL(CREATTABLE_ANHMONAN);
-        db.execSQL(CREATTABLE_USER);
+        db.execSQL(CREATTABLE_NGUOIDUNG);
         db.execSQL(CREATTABLE_THONGBAO);
         db.execSQL(CREATTABLE_BINHLUAN);
-        db.execSQL(CREATTABLE_SAVE);
+        db.execSQL(CREATTABLE_NGUOIDUNGSAVE);
         db.execSQL(CREATTABLE_NGUYENLIEU);
         db.execSQL(CREATTABLE_CONGTHUCNGUYENLIEU);
 
         db.execSQL(INSERT_LOAIMON);
         db.execSQL(INSERT_MON);
         db.execSQL(INSERT_ANHMONAN);
-        db.execSQL(INSERT_USER);
+        db.execSQL(INSERT_NGUOIDUNG);
         db.execSQL(INSERT_BINHLUAN);
         db.execSQL(INSERT_THONGBAO);
-        db.execSQL(INSERT_SAVE);
+        db.execSQL(INSERT_NGUOIDUNGSAVE);
         db.execSQL(INSERT_NGUYENLIEU);
         db.execSQL(INSERT_CONGTHUCNGUYENLIEU);
 
@@ -144,6 +144,8 @@ public class Sqlite extends SQLiteOpenHelper {
         db.execSQL("drop table if exists ANHMONAN");
         db.execSQL("drop table if exists THONGBAO");
         db.execSQL("drop table if exists BINHLUAN");
+        db.execSQL("drop table if exists NGUOIDUNG");
+        db.execSQL("drop table if exists NGUOIDUNGSAVE");
         db.execSQL("drop table if exists NGUYENLIEU");
         db.execSQL("drop table if exists CONGTHUCNGUYENLIEU");
     }
