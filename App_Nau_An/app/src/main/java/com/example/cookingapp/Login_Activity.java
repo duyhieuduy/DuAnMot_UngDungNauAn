@@ -20,8 +20,8 @@ public class Login_Activity extends AppCompatActivity {
         Button btnlg = findViewById(R.id.btnlogin);
         ImageView backbtn = findViewById(R.id.backbtn);
 
-        ///code cua bao ne
-        //BaoMaphhhh
+        
+
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
