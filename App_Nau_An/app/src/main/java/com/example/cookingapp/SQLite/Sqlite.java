@@ -21,8 +21,8 @@ public class Sqlite extends SQLiteOpenHelper {
             "(anhmon text primary key," +
             "mamon text)";
     public static final String CREATTABLE_NGUOIDUNG = "create table NGUOIDUNG" +
-            "(username text primary key ," +
-            "password text)";
+            "(tendangnhap text primary key ," +
+            "matkhau text)";
 
     public static final String CREATTABLE_THONGBAO = "create table THONGBAO" +
             "(username text  ," +
@@ -105,10 +105,10 @@ public class Sqlite extends SQLiteOpenHelper {
             "('nguyenlieu02','thit','anhnguyenlieu02')," +
             "('nguyenlieu03','rau','anhnguyenlieu03')";
     public static final String INSERT_CONGTHUCNGUYENLIEU ="insert into CONGTHUCNGUYENLIEU VALUES" +
-            "('mamon01','manguyenlieu01')," +
-            "('mamon01','manguyenlieu03')," +
-            "('mamon02','manguyenlieu02')," +
-            "('mamon02','manguyenlieu03')";
+            "('mamon01','manguyenlieu01','1 trai')," +
+            "('mamon01','manguyenlieu03','10gram rau muong')," +
+            "('mamon02','manguyenlieu02','10gram thit')," +
+            "('mamon02','manguyenlieu03','20gram rau muong')";
     public Sqlite(@Nullable Context context) {
         super(context, DB_NAME, null, VERSION);
     }
