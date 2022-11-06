@@ -2,11 +2,11 @@ package com.example.cookingapp.model;
 
 public class ThongBao {
     private String username;
-    private String noidung;
+    private String noidungthongbao;
 
-    public ThongBao(String username, String noidung) {
+    public ThongBao(String username, String noidungthongbao) {
         this.username = username;
-        this.noidung = noidung;
+        this.noidungthongbao = noidungthongbao;
     }
 
     public String getUsername() {
@@ -17,11 +17,11 @@ public class ThongBao {
         this.username = username;
     }
 
-    public String getNoidung() {
-        return noidung;
+    public String getNoidungthongbao() {
+        return noidungthongbao;
     }
 
-    public void setNoidung(String noidung) {
-        this.noidung = noidung;
+    public void setNoidungthongbao(String noidungthongbao) {
+        this.noidungthongbao = noidungthongbao;
     }
 }
