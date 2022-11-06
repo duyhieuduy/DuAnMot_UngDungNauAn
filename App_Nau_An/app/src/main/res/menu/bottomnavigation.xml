@@ -3,28 +3,20 @@
 
     <item
         android:id="@+id/trangchu"
-        android:icon="@drawable/homene"
-        android:title="Home"
-        />
+        android:icon="@drawable/homene" />
     <item
         android:id="@+id/trangmot"
-        android:icon="@drawable/homene"
-        android:title="trangmot"
-        />
+        android:icon="@drawable/ic_baseline_search_24" />
 
     <item
         android:id="@+id/tranghai"
-        android:title="tranghai"
-        android:icon="@drawable/homene"
-        />
+        android:icon="@drawable/ic_baseline_control_point_24" />
     <item
         android:id="@+id/trangba"
-        android:title="trangba"
-        android:icon="@drawable/homene"/>
+        android:icon="@drawable/ic_baseline_bookmark_24" />
 
     <item
-        android:icon="@drawable/homene"
         android:id="@+id/trangbon"
-        android:title="trangbon"/>
+        android:icon="@drawable/ic_baseline_person_outline_24" />
 
 </menu>
