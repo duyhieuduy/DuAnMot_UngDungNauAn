@@ -82,6 +82,13 @@
         android:layout_gravity="center_horizontal"
         android:background="@drawable/buttonlogin"
         />
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:id="@+id/btnOTP"
+        android:text="Login"
+
+        />
 
     <TextView
         android:layout_width="wrap_content"
