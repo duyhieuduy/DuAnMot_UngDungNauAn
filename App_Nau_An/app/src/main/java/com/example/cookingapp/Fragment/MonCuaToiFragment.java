@@ -17,6 +17,5 @@ public class MonCuaToiFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.moncuatoi_fragment, container, false);
         return view;
-
     }
 }
