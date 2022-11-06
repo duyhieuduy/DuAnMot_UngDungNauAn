@@ -42,7 +42,8 @@ public class Sqlite extends SQLiteOpenHelper {
             "tennguyenlieu text," +
             "anhnguyenlieu text)";
     public static final String CREATTABLE_CONGTHUCNGUYENLIEU = "create table CONGTHUCNGUYENLIEU" +
-            "(mamon text ," +
+            "(ctnlid int primary key ," +
+            "mamon text ," +
             "manguyenlieu text," +
             "khoiluong text)";
 
@@ -105,10 +106,10 @@ public class Sqlite extends SQLiteOpenHelper {
             "('nguyenlieu02','thit','anhnguyenlieu02')," +
             "('nguyenlieu03','rau','anhnguyenlieu03')";
     public static final String INSERT_CONGTHUCNGUYENLIEU ="insert into CONGTHUCNGUYENLIEU VALUES" +
-            "('mamon01','manguyenlieu01','1 trai')," +
-            "('mamon01','manguyenlieu03','10gram rau muong')," +
-            "('mamon02','manguyenlieu02','10gram thit')," +
-            "('mamon02','manguyenlieu03','20gram rau muong')";
+            "(1,'mamon01','manguyenlieu01','1 trai')," +
+            "(2,'mamon01','manguyenlieu03','10gram rau muong')," +
+            "(3,'mamon02','manguyenlieu02','10gram thit')," +
+            "(4,'mamon02','manguyenlieu03','20gram rau muong')";
     public Sqlite(@Nullable Context context) {
         super(context, DB_NAME, null, VERSION);
     }
