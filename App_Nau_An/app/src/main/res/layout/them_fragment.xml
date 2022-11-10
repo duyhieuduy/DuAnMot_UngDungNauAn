@@ -4,30 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ddd">
-    <LinearLayout
+    <Button
+        android:id="@+id/btnMonCuaToi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="#FFF">
-        <ImageView
-            android:src="@mipmap/ic_launcher_round"
-            android:layout_width="150dp"
-            android:layout_height="150dp"/>
-        <TextView
-            android:text="Lưu trữ ghi chú vào bếp của bạn"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:text="Giúp cộng đồng có thêm ý tưởng vào bếp "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/btnThemMon"
-            android:text="Thêm món mới"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+        android:text="Món của tôi" />
+    <Button
+        android:id="@+id/btnMonDaLuu"
+        android:text="Món đã lưu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

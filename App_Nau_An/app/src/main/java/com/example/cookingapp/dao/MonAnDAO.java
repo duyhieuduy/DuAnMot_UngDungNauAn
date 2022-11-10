@@ -1,5 +1,6 @@
 package com.example.cookingapp.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -24,6 +25,19 @@ public class MonAnDAO {
             }while (cursor.moveToNext());
         }
         return list;
+    }
+    public boolean themMonMoi(String tenmon, String loaimon, String congthuc){
+        SQLiteDatabase sqLiteDatabase = sqlite.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("tenmon", tenmon);
+        contentValues.put("loaimon", loaimon);
+        contentValues.put("congthuc", congthuc);
+
+        long check = sqLiteDatabase.insert("MON", null, contentValues);
+        if (check == -1){
+            return false;
+        }
+        return true;
     }
 
 

@@ -2,21 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/trangchu"
-        android:icon="@drawable/homene" />
+        android:id="@+id/trangchu1"
+        android:icon="@drawable/homene"
+        android:title="Món ăn"/>
     <item
         android:id="@+id/trangmot"
-        android:icon="@drawable/ic_baseline_search_24" />
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Tìm kiếm"/>
 
     <item
         android:id="@+id/tranghai"
+        android:title="Thêm Món mới"
         android:icon="@drawable/ic_baseline_control_point_24" />
     <item
         android:id="@+id/trangba"
+        android:title="Tương tác"
         android:icon="@drawable/ic_baseline_bookmark_24" />
 
     <item
         android:id="@+id/trangbon"
+        android:title="Tôi"
         android:icon="@drawable/ic_baseline_person_outline_24" />
 
 </menu>
