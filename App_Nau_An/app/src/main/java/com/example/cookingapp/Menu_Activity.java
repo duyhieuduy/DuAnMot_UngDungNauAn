@@ -145,7 +145,7 @@ public class Menu_Activity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 switch (position){
                     case 0:
-                        bottom.getMenu().findItem(R.id.trangchu).setChecked(true);
+                        bottom.getMenu().findItem(R.id.trangchu1).setChecked(true);
                         break;
                     case 1:
                         bottom.getMenu().findItem(R.id.trangmot).setChecked(true);
@@ -160,7 +160,8 @@ public class Menu_Activity extends AppCompatActivity {
                         bottom.getMenu().findItem(R.id.trangbon).setChecked(true);
                         break;
                     default:
-                        bottom.getMenu().findItem(R.id.trangchu).setChecked(true);
+
+                        bottom.getMenu().findItem(R.id.trangchu1).setChecked(true);
                         break;
                 }
             }

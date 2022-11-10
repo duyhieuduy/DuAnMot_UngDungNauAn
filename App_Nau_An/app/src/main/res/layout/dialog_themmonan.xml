@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên món"/>
+    <TextView
+        android:text="Loại Món ăn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Spinner
+        android:id="@+id/spnLoaiMonAn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:hint="Mô tả món ăn"
+        android:layout_width="match_parent"
+        android:gravity="start"
+        android:layout_height="120dp"/>
+    <EditText
+        android:hint="Thời gian nấu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:hint="Nguyên Liệu"
+        android:gravity="start"/>
+    <EditText
+        android:hint="Cách làm"
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"/>
+
+</LinearLayout>
