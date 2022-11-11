@@ -1,7 +1,5 @@
 package com.example.cookingapp;
 
-import  com.example.cookingapp.R.id.verifyBtn;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -20,17 +20,9 @@ public class Login_Activity extends AppCompatActivity {
         Button btnlg = findViewById(R.id.btnlogin);
         ImageView backbtn = findViewById(R.id.backbtn);
 
-<<<<<<< Updated upstream
-        
-
-=======
-
-
-
-
         ///code cua bao ne
         //BaoMaphhhh
->>>>>>> Stashed changes
+
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
