@@ -21,23 +21,7 @@ public class ThemFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.them_fragment, container, false);
-        btnMonCuaToi = view.findViewById(R.id.btnMonCuaToi);
-        btnMonDaLuu = view.findViewById(R.id.btnMonDaLuu);
 
-        btnMonCuaToi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), MonCuaToiActivity.class);
-                startActivity(intent);
-            }
-        });
-        btnMonDaLuu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), MonDaLuuActivity.class);
-                startActivity(intent);
-            }
-        });
         return view;
 
 
