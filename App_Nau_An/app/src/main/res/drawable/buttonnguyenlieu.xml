@@ -7,13 +7,7 @@
                 android:centerColor="#817BD6"
                 android:endColor="#B28BDF"
                 android:angle="180"/>
-            <!--            <padding android:left="7dp"-->
-            <!--                android:top="7dp"-->
-            <!--                android:right="7dp"-->
-            <!--                android:bottom="7dp"-->
-            <!--                />-->
             <corners android:radius="15dp" />
-
 
         </shape>
     </item>
@@ -24,14 +18,7 @@
                 android:centerColor="#D69B7B"
                 android:endColor="#DFD18B"
                 android:angle="180"/>
-            <!--            <padding android:left="7dp"-->
-            <!--                android:top="7dp"-->
-            <!--                android:right="7dp"-->
-            <!--                android:bottom="7dp"-->
-            <!--                />-->
             <corners android:radius="15dp" />
-
-
         </shape>
     </item>
 </selector>
