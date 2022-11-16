@@ -1,20 +1,10 @@
 package com.example.cookingapp.Adapter;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.cookingapp.R;
-import com.example.cookingapp.model.NguyenLieu;
-
-import java.util.ArrayList;
 
 public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.ViewHolder>{
 
