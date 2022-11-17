@@ -16,7 +16,6 @@ import com.example.cookingapp.Fragment.ThemFragment;
 public class ThemMonMoiActivity extends AppCompatActivity {
     ImageView imgAnhMon, imgAnhCachLam1, imgAnhCachLam2, imgAnhCachLam3;
     Button btnThayDoiAnh, btnLuu, btnLenSong;
-    String paths;
     Uri uri;
 
     @Override
