@@ -1,24 +1,36 @@
 package com.example.cookingapp.model;
 
 public class MonAn {
-    public String mamon;
+    public int mamon;
+    public int maloai;
     public String tenmon;
-    public String maloai;
-    public String congthuc;
+    public String congthuclam;
+    public String thoigiannau;
+    public String dokho;
 
-    public MonAn(String mamon, String tenmon, String maloai, String congthuc) {
+    public MonAn(int mamon, int maloai, String tenmon, String congthuclam, String thoigiannau, String dokho) {
         this.mamon = mamon;
-        this.tenmon = tenmon;
         this.maloai = maloai;
-        this.congthuc = congthuc;
+        this.tenmon = tenmon;
+        this.congthuclam = congthuclam;
+        this.thoigiannau = thoigiannau;
+        this.dokho = dokho;
     }
 
-    public String getMamon() {
+    public int getMamon() {
         return mamon;
     }
 
-    public void setMamon(String mamon) {
+    public void setMamon(int mamon) {
         this.mamon = mamon;
+    }
+
+    public int getMaloai() {
+        return maloai;
+    }
+
+    public void setMaloai(int maloai) {
+        this.maloai = maloai;
     }
 
     public String getTenmon() {
@@ -29,19 +41,27 @@ public class MonAn {
         this.tenmon = tenmon;
     }
 
-    public String getMaloai() {
-        return maloai;
+    public String getCongthuclam() {
+        return congthuclam;
     }
 
-    public void setMaloai(String maloai) {
-        this.maloai = maloai;
+    public void setCongthuclam(String congthuclam) {
+        this.congthuclam = congthuclam;
     }
 
-    public String getCongthuc() {
-        return congthuc;
+    public String getThoigiannau() {
+        return thoigiannau;
     }
 
-    public void setCongthuc(String congthuc) {
-        this.congthuc = congthuc;
+    public void setThoigiannau(String thoigiannau) {
+        this.thoigiannau = thoigiannau;
+    }
+
+    public String getDokho() {
+        return dokho;
+    }
+
+    public void setDokho(String dokho) {
+        this.dokho = dokho;
     }
 }

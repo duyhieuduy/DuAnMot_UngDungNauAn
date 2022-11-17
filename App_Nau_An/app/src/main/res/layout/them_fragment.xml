@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#ddd">
-    <Button
-        android:id="@+id/btnMonCuaToi"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Món của tôi" />
-    <Button
-        android:id="@+id/btnMonDaLuu"
-        android:text="Món đã lưu"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            android:src="@drawable/master_chef" />
+
+        <Button
+            android:id="@+id/btnThemMonMoi"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView2"
+            android:layout_centerHorizontal="true"
+            android:text="+ Món mới" />
+
+
+    </RelativeLayout>
+    <TextView
+        android:text="MÓN ĐÃ ĐĂNG"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMonDaDang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+
 </LinearLayout>

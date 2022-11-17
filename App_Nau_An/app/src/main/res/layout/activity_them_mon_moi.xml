@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context=".ThemMonMoiActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/layoutDangMon1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#DDD"
+                android:shadowColor="@color/white" />
+
+            <ImageButton
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_back_24" />
+
+            <Button
+                android:id="@+id/btnLenSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:text="Lên sóng" />
+
+            <Button
+                android:id="@+id/btnLuu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Lưu" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutDangMon2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutDangMon1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgAnhMon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/master_chef" />
+
+            <Button
+                android:id="@+id/btnThaydoiAnh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Thay đổi ảnh" />
+
+            <EditText
+                android:id="@+id/edtTenMon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tên món: . . . . . . . . . . ."
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtThoiGianNau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Thời gian nấu:"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtDoKho"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Độ khó: "
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutDangMon3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutDangMon2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNguyenLieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Nguyên Liệu"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtNguyenLieu1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nguyên liệu 1: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtNguyenLieu2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nguyên liệu 2: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtNguyenLieu3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nguyên liệu 3: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtNguyenLieu4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nguyên liệu 4: "
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutDangMon4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutDangMon3"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cách Làm"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtCachLam1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bước 1:..."
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgAnhCachLam1"
+                android:layout_width="110dp"
+                android:layout_height="90dp"
+                android:src="@drawable/ic_camera" />
+
+            <EditText
+                android:id="@+id/edtCachLam2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bước 2:..."
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgAnhCachLam2"
+                android:layout_width="110dp"
+                android:layout_height="90dp"
+                android:src="@drawable/ic_camera" />
+
+            <EditText
+                android:id="@+id/edtCachLam3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bước 3:..."
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgAnhCachLam3"
+                android:layout_width="110dp"
+                android:layout_height="90dp"
+                android:src="@drawable/ic_camera" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

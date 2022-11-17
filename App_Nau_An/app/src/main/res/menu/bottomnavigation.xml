@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/tranghai"
-        android:title="Thêm Món mới"
+        android:title="Bộ sưu tập"
         android:icon="@drawable/ic_baseline_control_point_24" />
     <item
         android:id="@+id/trangba"
