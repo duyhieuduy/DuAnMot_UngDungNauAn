@@ -70,7 +70,13 @@
                 android:id="@+id/edtTenMon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tên món: . . . . . . . . . . ."
+                android:hint="Tên món:"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/edtLoaiMon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Loại món:"
                 android:textStyle="bold" />
 
             <EditText
