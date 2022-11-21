@@ -1,13 +1,13 @@
 package com.example.cookingapp.model;
 
-public class Nguyenlieu {
+public class NguyenLieu {
     int manguyenlieu;
-    String tenNL;
+    String tennguyenlieu;
     String anhnguyenlieu;
 
-    public Nguyenlieu(int manguyenlieu, String tenNL, String anhnguyenlieu) {
+    public NguyenLieu(int manguyenlieu, String tennguyenlieu, String anhnguyenlieu) {
         this.manguyenlieu = manguyenlieu;
-        this.tenNL = tenNL;
+        this.tennguyenlieu = tennguyenlieu;
         this.anhnguyenlieu = anhnguyenlieu;
     }
 
@@ -19,12 +19,12 @@ public class Nguyenlieu {
         this.manguyenlieu = manguyenlieu;
     }
 
-    public String getTenNL() {
-        return tenNL;
+    public String getTennguyenlieu() {
+        return tennguyenlieu;
     }
 
-    public void setTenNL(String tenNL) {
-        this.tenNL = tenNL;
+    public void setTennguyenlieu(String tennguyenlieu) {
+        this.tennguyenlieu = tennguyenlieu;
     }
 
     public String getAnhnguyenlieu() {

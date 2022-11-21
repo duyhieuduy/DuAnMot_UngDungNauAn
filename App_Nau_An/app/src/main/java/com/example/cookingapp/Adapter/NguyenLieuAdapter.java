@@ -12,16 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.R;
-import com.example.cookingapp.model.Nguyenlieu;
+import com.example.cookingapp.model.NguyenLieu;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.ViewHolder>{
     private Context context;
-    private ArrayList<Nguyenlieu> list;
+    private ArrayList<NguyenLieu> list;
 
-    public NguyenLieuAdapter(Context context, ArrayList<Nguyenlieu> list) {
+    public NguyenLieuAdapter(Context context, ArrayList<NguyenLieu> list) {
         this.context = context;
         this.list = list;
     }
@@ -36,7 +36,7 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.Vi
     }
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.text.setText(""+list.get(position).getTenNL());
+        holder.text.setText(""+list.get(position).getTennguyenlieu());
         Picasso.with(context.getApplicationContext()).load(list.get(position).getAnhnguyenlieu()).placeholder(R.drawable.img).
                 error(R.drawable.img).
                 into(holder.img);
