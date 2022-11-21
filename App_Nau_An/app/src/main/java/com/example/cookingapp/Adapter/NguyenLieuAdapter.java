@@ -2,13 +2,9 @@ package com.example.cookingapp.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.DrawableUtils;
@@ -16,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.Nguyenlieu;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
