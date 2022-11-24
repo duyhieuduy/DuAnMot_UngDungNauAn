@@ -1,28 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".MainActivity">-->
-
-<!--    <GridView-->
-<!--        android:id="@+id/gridView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:numColumns="2"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:horizontalSpacing="6dp"-->
-<!--        android:verticalSpacing="6dp"/>-->
-
-<!--</LinearLayout>-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="150dp"
     android:layout_height="50dp"
-   android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-
-    >
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <androidx.cardview.widget.CardView
@@ -31,8 +12,7 @@
         android:layout_height="match_parent"
         app:cardUseCompatPadding="true"
         app:cardElevation="0.5dp"
-
-        android:id="@+id/cardviewnl">
+        android:backgroundTint="#DDD">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -54,6 +34,14 @@
                 android:id="@+id/text"
                 />
 
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_baseline_delete_"
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

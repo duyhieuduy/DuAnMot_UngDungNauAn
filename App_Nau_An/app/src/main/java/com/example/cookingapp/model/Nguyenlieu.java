@@ -5,6 +5,7 @@ public class NguyenLieu {
     String tennguyenlieu;
     String anhnguyenlieu;
 
+
     public NguyenLieu(int manguyenlieu, String tennguyenlieu, String anhnguyenlieu) {
         this.manguyenlieu = manguyenlieu;
         this.tennguyenlieu = tennguyenlieu;
@@ -34,4 +35,5 @@ public class NguyenLieu {
     public void setAnhnguyenlieu(String anhnguyenlieu) {
         this.anhnguyenlieu = anhnguyenlieu;
     }
+
 }
