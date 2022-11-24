@@ -137,6 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:id="@+id/edtbl"
+            android:layout_marginTop="5dp"
             android:layout_below="@+id/thoigiannau"
             android:background="@drawable/edittextbox"
             android:text="asdddd"
@@ -148,6 +149,16 @@
             android:layout_alignParentRight="true"
             android:layout_width="20dp"
             android:layout_height="25dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:id="@+id/btnxoxuong"
+            android:layout_below="@+id/edtbl"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/container"
+            android:layout_below="@+id/btnxoxuong"/>
     </RelativeLayout>
 
 
