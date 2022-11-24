@@ -11,9 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cookingapp.Adapter.LoaiMonAdapter;
 import com.example.cookingapp.R;
-import com.example.cookingapp.model.LoaiMon;
 
 import java.util.ArrayList;
 
