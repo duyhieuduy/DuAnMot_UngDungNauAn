@@ -17,10 +17,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.cookingapp.Fragment.ThemFragment;
+import com.example.cookingapp.dao.DangBaiDAO;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -38,9 +40,11 @@ import java.util.List;
 
 public class ThemMonMoiActivity extends AppCompatActivity {
     ImageView imageView1, imageView2, imageView3, imageView4;
-    private Button btn;
+    private Button btnLuu;
     private static final String IMAGE_DIRECTORY = "/demonuts";
     private int GALLERY = 1, CAMERA = 2;
+    DangBaiDAO dao;
+
 
     int clickImage;
 
@@ -49,13 +53,29 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_them_mon_moi);
 
+        EditText edtTenMon = findViewById(R.id.edtTenMon);
+        EditText edtLoaiMon = findViewById(R.id.edtLoaiMon);
+        EditText edtThoiGianNau = findViewById(R.id.edtThoiGianNau);
+        EditText edtDoKho = findViewById(R.id.edtDoKho);
+        EditText edtNguyenLieu1 = findViewById(R.id.edtNguyenLieu1);
+        EditText edtKhoiLuong1 = findViewById(R.id.edtKhoiLuong1);
+        EditText edtNguyenLieu2 = findViewById(R.id.edtNguyenLieu2);
+        EditText edtKhoiLuong2 = findViewById(R.id.edtKhoiLuong2);
+        EditText edtNguyenLieu3 = findViewById(R.id.edtNguyenLieu3);
+        EditText edtKhoiLuong3 = findViewById(R.id.edtKhoiLuong3);
+        EditText edtNguyenLieu4 = findViewById(R.id.edtNguyenLieu4);
+        EditText edtKhoiLuong4 = findViewById(R.id.edtKhoiLuong4);
+        EditText edtCachLam = findViewById(R.id.edtCachLam);
+
+        btnLuu = findViewById(R.id.btnLuu);
+
         imageView1 = findViewById(R.id.imgAnhMon);
         imageView2 = findViewById(R.id.imgAnhCachLam1);
         imageView3 = findViewById(R.id.imgAnhCachLam2);
         imageView4 = findViewById(R.id.imgAnhCachLam3);
         requestMultiplePermissions();
 
-        btn = findViewById(R.id.btnThaydoiAnh);
+
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +105,44 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                 showPictureDialog();
             }
         });
+        btnLuu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String tenMon = edtTenMon.getText().toString();
+                String loaiMon = edtLoaiMon.getText().toString();
+                String thoiGianNau = edtThoiGianNau.getText().toString();
+                String doKho = edtDoKho.getText().toString();
+                String nguyenLieu1 = edtNguyenLieu1.getText().toString();
+                String khoiLuong1 = edtKhoiLuong1.getText().toString();
+                String nguyenLieu2 = edtNguyenLieu2.getText().toString();
+                String khoiLuong2 = edtKhoiLuong2.getText().toString();
+                String nguyenLieu3 = edtNguyenLieu3.getText().toString();
+                String khoiLuong3 = edtKhoiLuong3.getText().toString();
+                String nguyenLieu4 = edtNguyenLieu4.getText().toString();
+                String khoiLuong4 = edtKhoiLuong4.getText().toString();
+                String cachLam = edtCachLam.getText().toString();
+                if (dao.themMonMoi(tenMon, loaiMon, thoiGianNau, doKho, nguyenLieu1, khoiLuong1, nguyenLieu2, khoiLuong2, nguyenLieu3, khoiLuong3, nguyenLieu4, khoiLuong4, cachLam)){
+                    edtTenMon.setText("");
+                    edtLoaiMon.setText("");
+                    edtThoiGianNau.setText("");
+                    edtDoKho.setText("");
+                    edtNguyenLieu1.setText("");
+                    edtKhoiLuong1.setText("");
+                    edtNguyenLieu2.setText("");
+                    edtKhoiLuong2.setText("");
+                    edtNguyenLieu3.setText("");
+                    edtKhoiLuong3.setText("");
+                    edtNguyenLieu4.setText("");
+                    edtKhoiLuong4.setText("");
+                    edtCachLam.setText("");
+                }else {
+                    Toast.makeText(ThemMonMoiActivity.this, "Thêm không thành công", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+
 
     }
     private void showPictureDialog() {

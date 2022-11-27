@@ -115,11 +115,7 @@ public class Menu_Activity extends AppCompatActivity {
             }
         });
 
-//        Home_Fragment trangchuFragment = new Home_Fragment();
-//        FragmentManager manager = getSupportFragmentManager();
-//        manager.beginTransaction()
-//                .replace(R.id.maincontent, trangchuFragment)
-//                .commit();
+
 
     }
 

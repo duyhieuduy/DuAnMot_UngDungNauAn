@@ -59,12 +59,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/master_chef" />
 
-            <Button
-                android:id="@+id/btnThaydoiAnh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Thay đổi ảnh" />
+
 
             <EditText
                 android:id="@+id/edtTenMon"
