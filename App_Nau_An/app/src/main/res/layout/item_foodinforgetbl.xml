@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     android:layout_height="wrap_content">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -29,7 +28,6 @@
 
         <ImageView
             android:id="@+id/img1"
-            android:src="@mipmap/ic_launcher"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_below="@+id/TenDs"
@@ -37,21 +35,25 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_toRightOf="@+id/imgfood"
             android:src="@mipmap/ic_launcher" />
+
         <ImageView
-            android:layout_margin="5dp"
-            android:layout_below="@+id/img1"
             android:id="@+id/img2"
-            android:src="@mipmap/ic_launcher"
             android:layout_width="15dp"
-            android:layout_height="15dp"/>
+            android:layout_height="15dp"
+            android:layout_below="@+id/img1"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@mipmap/ic_launcher" />
 
         <ImageView
             android:id="@+id/img3"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_margin="5dp"
+            android:layout_below="@+id/img2"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
@@ -59,12 +61,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/TenDs"
-            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/img1"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_toRightOf="@id/img1"
             android:text="Tên nguyên liệu:" />
         <TextView
             android:layout_width="wrap_content"
@@ -139,28 +140,9 @@
             android:background="@drawable/hearts"
             android:backgroundTint="@color/white"
             android:layout_alignParentRight="true"
-
-            android:layout_width="20dp"
-
-            android:layout_height="25dp"
-            android:id="@+id/btnaddbl"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:id="@+id/btnxoxuong"
-            android:layout_below="@+id/edtbl"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/containera"
-            android:layout_below="@+id/btnxoxuong"/>
+            />
 
 
-        <FrameLayout
-            android:layout_below="@+id/edtbl"
-            android:id="@+id/fragmenttBL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
 
 
