@@ -93,9 +93,7 @@ public class Home_Fragment extends Fragment {
 
     }
 
-//    public void onItemClick(View view, int position) {
-//        Toast.makeText(getContext(), "asdasd", Toast.LENGTH_SHORT).show();
-//    }
+
 
 
 
