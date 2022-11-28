@@ -104,6 +104,7 @@ public class Home_Fragment extends Fragment {
         return view;
 
     }
+    
     private void loadDataNewnl(){
         listnew.clear();
         daoz = new dao(getContext());
