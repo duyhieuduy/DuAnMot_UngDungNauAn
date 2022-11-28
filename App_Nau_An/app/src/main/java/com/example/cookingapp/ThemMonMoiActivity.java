@@ -105,41 +105,45 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                 showPictureDialog();
             }
         });
-        btnLuu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String tenMon = edtTenMon.getText().toString();
-                String loaiMon = edtLoaiMon.getText().toString();
-                String thoiGianNau = edtThoiGianNau.getText().toString();
-                String doKho = edtDoKho.getText().toString();
-                String nguyenLieu1 = edtNguyenLieu1.getText().toString();
-                String khoiLuong1 = edtKhoiLuong1.getText().toString();
-                String nguyenLieu2 = edtNguyenLieu2.getText().toString();
-                String khoiLuong2 = edtKhoiLuong2.getText().toString();
-                String nguyenLieu3 = edtNguyenLieu3.getText().toString();
-                String khoiLuong3 = edtKhoiLuong3.getText().toString();
-                String nguyenLieu4 = edtNguyenLieu4.getText().toString();
-                String khoiLuong4 = edtKhoiLuong4.getText().toString();
-                String cachLam = edtCachLam.getText().toString();
-                if (dao.themMonMoi(tenMon, loaiMon, thoiGianNau, doKho, nguyenLieu1, khoiLuong1, nguyenLieu2, khoiLuong2, nguyenLieu3, khoiLuong3, nguyenLieu4, khoiLuong4, cachLam)){
-                    edtTenMon.setText("");
-                    edtLoaiMon.setText("");
-                    edtThoiGianNau.setText("");
-                    edtDoKho.setText("");
-                    edtNguyenLieu1.setText("");
-                    edtKhoiLuong1.setText("");
-                    edtNguyenLieu2.setText("");
-                    edtKhoiLuong2.setText("");
-                    edtNguyenLieu3.setText("");
-                    edtKhoiLuong3.setText("");
-                    edtNguyenLieu4.setText("");
-                    edtKhoiLuong4.setText("");
-                    edtCachLam.setText("");
-                }else {
-                    Toast.makeText(ThemMonMoiActivity.this, "Thêm không thành công", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        btnLuu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String anhmon;
+//                String tenmon = edtTenMon.getText().toString();
+//                String loaimon = edtLoaiMon.getText().toString();
+//                String thoigiannau = edtThoiGianNau.getText().toString();
+//                String dokho = edtDoKho.getText().toString();
+//                String nguyenlieu1 = edtNguyenLieu1.getText().toString();
+//                String khoiluong1 = edtKhoiLuong1.getText().toString();
+//                String nguyenlieu2 = edtNguyenLieu2.getText().toString();
+//                String khoiluong2 = edtKhoiLuong2.getText().toString();
+//                String nguyenlieu3 = edtNguyenLieu3.getText().toString();
+//                String khoiluong3 = edtKhoiLuong3.getText().toString();
+//                String nguyenlieu4 = edtNguyenLieu4.getText().toString();
+//                String khoiluong4 = edtKhoiLuong4.getText().toString();
+//                String cachlam = edtCachLam.getText().toString();
+//                String anhcachlam1;
+//                String anhcachlam2;
+//                String anhcachlam3;
+//                if (dao.themMonMoi(anhmon, tenmon, loaimon, thoigiannau, dokho, nguyenlieu1, khoiluong1, nguyenlieu2, khoiluong2, nguyenlieu3, khoiluong3, nguyenlieu4, khoiluong4, cachlam, anhcachlam1, anhcachlam2, anhcachlam3)){
+//                    edtTenMon.setText("");
+//                    edtLoaiMon.setText("");
+//                    edtThoiGianNau.setText("");
+//                    edtDoKho.setText("");
+//                    edtNguyenLieu1.setText("");
+//                    edtKhoiLuong1.setText("");
+//                    edtNguyenLieu2.setText("");
+//                    edtKhoiLuong2.setText("");
+//                    edtNguyenLieu3.setText("");
+//                    edtKhoiLuong3.setText("");
+//                    edtNguyenLieu4.setText("");
+//                    edtKhoiLuong4.setText("");
+//                    edtCachLam.setText("");
+//                }else {
+//                    Toast.makeText(ThemMonMoiActivity.this, "Thêm không thành công", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
 
 
