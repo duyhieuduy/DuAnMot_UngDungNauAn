@@ -23,7 +23,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.Fragment.Home_Fragment;
-import com.example.cookingapp.Interface.INguyenLieu;
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.NewNguyenLieu;
 import com.example.cookingapp.model.NguyenLieu;
@@ -39,11 +38,9 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.Vi
     private ArrayList<NguyenLieu> list;
     List<CardView>cardViewList = new ArrayList<>();
     dao daoz;
-    private INguyenLieu iNguyenLieu;
+    private ItemClickListener mClickListener;
 
-    public void setiNguyenLieu(INguyenLieu iNguyenLieu) {
-        this.iNguyenLieu = iNguyenLieu;
-    }
+
     public NguyenLieuAdapter(Context context, ArrayList<NguyenLieu> list) {
         this.context = context;
         this.list = list;
@@ -66,25 +63,21 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.Vi
                 error(R.drawable.img).
                 into(holder.img);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                iNguyenLieu.onClick(list.get(position));
-            }
-        });
-
         if (!cardViewList.contains(holder.cardView)) {
             cardViewList.add(holder.cardView);
         }        for(CardView cardView : cardViewList){
             cardView.setCardBackgroundColor(context.getResources().getColor(R.color.teal_200));
         }
 
-//        holder.cardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                holder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.colorSelected));
-//            }
-//        });
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(context, "XNXX", Toast.LENGTH_SHORT).show();
+                daoz.insert(list.get(position).getManguyenlieu(),list.get(position).getTennguyenlieu(),list.get(position).getAnhnguyenlieu());
+                //The selected card is set to colorSelected
+                holder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.colorSelected));
+            }
+        });
     }
 
     @Override
@@ -97,7 +90,7 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.Vi
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         ImageView img;
         TextView text;
@@ -109,10 +102,24 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.Vi
             img = itemView.findViewById(R.id.img);
             text = itemView.findViewById(R.id.text);
             cardView = itemView.findViewById(R.id.cardviewnl);
+            itemView.setOnClickListener(this);
 
 
         }
 
+        @Override
+        public void onClick(View view) {
+            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+        }
+    }
+    // allows clicks events to be caught
+    public void setClickListener(ItemClickListener itemClickListener) {
+        this.mClickListener = itemClickListener;
+    }
+
+    // parent activity will implement this method to respond to click events
+    public interface ItemClickListener {
+        void onItemClick(View view, int position);
     }
 
 
