@@ -103,16 +103,14 @@ public class Home_Fragment extends Fragment {
         });
         return view;
 
-<<<<<<< Updated upstream
+
     }
     private void loadDataNewnl(){
         listnew.clear();
         daoz = new dao(getContext());
-=======
 
 
         dao daoz = new dao(getActivity());
->>>>>>> Stashed changes
         listnew = daoz.getall();
         LinearLayoutManager linearLayoutManagera = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerviewnewHCK.setLayoutManager(linearLayoutManagera);
