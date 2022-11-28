@@ -87,9 +87,7 @@ public class Home_Fragment extends Fragment {
         recyclerviewnewHCK.setLayoutManager(linearLayoutManagera);
         NewNguyenlieuAdapter adaptera = new NewNguyenlieuAdapter(getContext(),listnew);
         recyclerviewnewHCK.setAdapter(adaptera);
-
         return view;
-
 
     }
 
