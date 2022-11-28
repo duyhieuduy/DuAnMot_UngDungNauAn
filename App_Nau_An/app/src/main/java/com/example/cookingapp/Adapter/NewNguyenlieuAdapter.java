@@ -2,7 +2,6 @@ package com.example.cookingapp.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.NewNguyenLieu;
-import com.example.cookingapp.model.NguyenLieu;
-import com.example.cookingapp.model.dao;
+import com.example.cookingapp.dao.dao;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

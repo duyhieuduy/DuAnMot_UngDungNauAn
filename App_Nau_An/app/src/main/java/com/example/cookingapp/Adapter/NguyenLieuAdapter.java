@@ -2,32 +2,20 @@ package com.example.cookingapp.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.util.Log;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cookingapp.Fragment.Home_Fragment;
 import com.example.cookingapp.Interface.INguyenLieu;
 import com.example.cookingapp.R;
-import com.example.cookingapp.model.NewNguyenLieu;
 import com.example.cookingapp.model.NguyenLieu;
-import com.example.cookingapp.model.dao;
+import com.example.cookingapp.dao.dao;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

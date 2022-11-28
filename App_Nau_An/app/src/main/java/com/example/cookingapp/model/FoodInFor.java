@@ -1,18 +1,24 @@
 package com.example.cookingapp.model;
 
+import java.util.ArrayList;
+
 public class FoodInFor {
     int mamon;
-    String imgfood,TenDs,tennl1,tennl2,dok,thoigiannau,edtbl;
+    String tenmon,dokho,tgnau,anhmonlv0,tenloai;
+    ArrayList<Tennguyenlieu> listnl;
 
-    public FoodInFor(int mamon, String imgfood, String tenDs, String tennl1, String tennl2, String dok, String thoigiannau, String edtbl) {
+    public FoodInFor(ArrayList<Tennguyenlieu> listnl) {
+        this.listnl = listnl;
+    }
+
+    public FoodInFor(int mamon, String tenmon, String dokho, String tgnau, String anhmonlv0, String tenloai, ArrayList<Tennguyenlieu> listnl) {
         this.mamon = mamon;
-        this.imgfood = imgfood;
-        this.TenDs = tenDs;
-        this.tennl1 = tennl1;
-        this.tennl2 = tennl2;
-        this.dok = dok;
-        this.thoigiannau = thoigiannau;
-        this.edtbl = edtbl;
+        this.tenmon = tenmon;
+        this.dokho = dokho;
+        this.tgnau = tgnau;
+        this.anhmonlv0 = anhmonlv0;
+        this.tenloai = tenloai;
+        this.listnl = listnl;
     }
 
     public int getMamon() {
@@ -23,59 +29,51 @@ public class FoodInFor {
         this.mamon = mamon;
     }
 
-    public String getImgfood() {
-        return imgfood;
+    public String getTenmon() {
+        return tenmon;
     }
 
-    public void setImgfood(String imgfood) {
-        this.imgfood = imgfood;
+    public void setTenmon(String tenmon) {
+        this.tenmon = tenmon;
     }
 
-    public String getTenDs() {
-        return TenDs;
+    public String getDokho() {
+        return dokho;
     }
 
-    public void setTenDs(String tenDs) {
-        TenDs = tenDs;
+    public void setDokho(String dokho) {
+        this.dokho = dokho;
     }
 
-    public String getTennl1() {
-        return tennl1;
+    public String getTgnau() {
+        return tgnau;
     }
 
-    public void setTennl1(String tennl1) {
-        this.tennl1 = tennl1;
+    public void setTgnau(String tgnau) {
+        this.tgnau = tgnau;
     }
 
-    public String getTennl2() {
-        return tennl2;
+    public String getAnhmonlv0() {
+        return anhmonlv0;
     }
 
-    public void setTennl2(String tennl2) {
-        this.tennl2 = tennl2;
+    public void setAnhmonlv0(String anhmonlv0) {
+        this.anhmonlv0 = anhmonlv0;
     }
 
-    public String getDok() {
-        return dok;
+    public String getTenloai() {
+        return tenloai;
     }
 
-    public void setDok(String dok) {
-        this.dok = dok;
+    public void setTenloai(String tenloai) {
+        this.tenloai = tenloai;
     }
 
-    public String getThoigiannau() {
-        return thoigiannau;
+    public ArrayList<Tennguyenlieu> getListnl() {
+        return listnl;
     }
 
-    public void setThoigiannau(String thoigiannau) {
-        this.thoigiannau = thoigiannau;
-    }
-
-    public String getEdtbl() {
-        return edtbl;
-    }
-
-    public void setEdtbl(String edtbl) {
-        this.edtbl = edtbl;
+    public void setListnl(ArrayList<Tennguyenlieu> listnl) {
+        this.listnl = listnl;
     }
 }
