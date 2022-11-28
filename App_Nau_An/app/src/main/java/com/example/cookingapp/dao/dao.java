@@ -1,9 +1,12 @@
-package com.example.cookingapp.model;
+package com.example.cookingapp.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.example.cookingapp.model.NewNguyenLieu;
+import com.example.cookingapp.DB.db;
 
 import java.util.ArrayList;
 

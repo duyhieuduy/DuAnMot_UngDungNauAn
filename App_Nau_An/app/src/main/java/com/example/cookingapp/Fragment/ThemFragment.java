@@ -10,9 +10,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cookingapp.MonCuaToiActivity;
+import com.example.cookingapp.MonDaLuuActivity;
 import com.example.cookingapp.R;
 import com.example.cookingapp.ThemMonMoiActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,8 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class ThemFragment extends Fragment {
-
-
+    Button btnMonCuaToi, btnMonDaLuu;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
