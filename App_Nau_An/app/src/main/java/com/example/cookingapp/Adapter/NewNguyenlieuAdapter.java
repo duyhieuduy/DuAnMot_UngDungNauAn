@@ -51,7 +51,6 @@ public class NewNguyenlieuAdapter extends RecyclerView.Adapter<NewNguyenlieuAdap
 
 
 
-
         holder.iv_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +68,7 @@ public class NewNguyenlieuAdapter extends RecyclerView.Adapter<NewNguyenlieuAdap
                 }
             }
         });
+
 
     }
 
