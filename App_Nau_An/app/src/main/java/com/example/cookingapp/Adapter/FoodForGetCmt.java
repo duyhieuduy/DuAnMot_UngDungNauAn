@@ -5,11 +5,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< Updated upstream
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+=======
+>>>>>>> Stashed changes
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
@@ -17,6 +20,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.R;
+<<<<<<< Updated upstream
 import com.example.cookingapp.model.FoodInFor;
 import com.squareup.picasso.Picasso;
 
@@ -36,11 +40,23 @@ public class FoodForGetCmt extends RecyclerView.Adapter<FoodForGetCmt.ViewHloder
     public ViewHloder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater  = ((Activity)context).getLayoutInflater();
         View view = inflater.inflate(R.layout.item_foodinforgetbl,parent,false);
+=======
+
+public class FoodForGetCmt extends RecyclerView.Adapter<FoodForGetCmt.ViewHloder>{
+    private Context context;
+    @NonNull
+    @Override
+    public ViewHloder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = ((Activity)context).getLayoutInflater();
+        View view = inflater.inflate(R.layout.item_foodinforgetbl,parent,false);
+
+>>>>>>> Stashed changes
         return new ViewHloder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHloder holder, int position) {
+<<<<<<< Updated upstream
         Picasso.with(context.getApplicationContext()).load(list.get(position).getImgfood()).placeholder(R.drawable.img).
                 error(R.drawable.img).
                 into(holder.imgfood);
@@ -73,15 +89,23 @@ public class FoodForGetCmt extends RecyclerView.Adapter<FoodForGetCmt.ViewHloder
 
             }
         });
+=======
+>>>>>>> Stashed changes
 
     }
 
     @Override
     public int getItemCount() {
+<<<<<<< Updated upstream
         return list.size();
     }
 
 
+=======
+        return 0;
+    }
+
+>>>>>>> Stashed changes
     public class ViewHloder extends RecyclerView.ViewHolder{
 
         ImageView imgfood,btnaddbl;

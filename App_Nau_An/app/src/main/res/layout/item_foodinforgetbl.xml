@@ -160,6 +160,7 @@
             android:src="@mipmap/ic_launcher"
             android:layout_alignParentRight="true"
             android:layout_width="20dp"
+<<<<<<< Updated upstream
             android:layout_height="25dp"
             android:id="@+id/btnaddbl"/>
         <androidx.appcompat.widget.AppCompatButton
@@ -172,6 +173,16 @@
             android:layout_height="wrap_content"
             android:id="@+id/containera"
             android:layout_below="@+id/btnxoxuong"/>
+=======
+            android:layout_height="25dp"/>
+
+        <FrameLayout
+            android:layout_below="@+id/edtbl"
+            android:id="@+id/fragmenttBL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+>>>>>>> Stashed changes
     </RelativeLayout>
 
 
