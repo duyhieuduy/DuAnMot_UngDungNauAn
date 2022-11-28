@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.R;
-import com.example.cookingapp.model.DangBai;
 
 import java.util.ArrayList;
 

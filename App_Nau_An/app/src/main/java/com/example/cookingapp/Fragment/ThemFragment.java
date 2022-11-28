@@ -14,12 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.Adapter.DangMonAdapter;
-import com.example.cookingapp.MonCuaToiActivity;
-import com.example.cookingapp.MonDaLuuActivity;
 import com.example.cookingapp.R;
 import com.example.cookingapp.ThemMonMoiActivity;
-import com.example.cookingapp.dao.DangBaiDAO;
-import com.example.cookingapp.model.DangBai;
 
 import java.util.ArrayList;
 
