@@ -108,8 +108,6 @@ public class Home_Fragment extends Fragment {
     private void loadDataNewnl(){
         listnew.clear();
         daoz = new dao(getContext());
-
-
         dao daoz = new dao(getActivity());
         listnew = daoz.getall();
         LinearLayoutManager linearLayoutManagera = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);

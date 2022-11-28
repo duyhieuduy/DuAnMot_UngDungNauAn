@@ -12,17 +12,16 @@
 
         <ImageView
             android:id="@+id/imgfood"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_margin="5dp"
+            android:layout_alignParentTop="true"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"/>
         <TextView
             android:id="@+id/TenDs"
             android:textSize="20dp"
             android:text="Tên đồ ăn"
+            android:layout_below="@+id/imgfood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -30,6 +29,7 @@
 
         <ImageView
             android:id="@+id/img1"
+            android:src="@mipmap/ic_launcher"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_below="@+id/TenDs"
@@ -43,7 +43,6 @@
             android:layout_margin="5dp"
             android:layout_below="@+id/img1"
             android:id="@+id/img2"
-            android:layout_toRightOf="@+id/imgfood"
             android:src="@mipmap/ic_launcher"
             android:layout_width="15dp"
             android:layout_height="15dp"/>
@@ -52,12 +51,7 @@
             android:id="@+id/img3"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:layout_below="@+id/img2"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_toRightOf="@+id/imgfood"
+            android:layout_margin="5dp"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
@@ -135,32 +129,19 @@
             android:text="tgnau" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
             android:id="@+id/btnluu"
-            android:text="Lưu món ăn"
             android:textSize="10dp"
             android:textStyle="italic"
             android:textColor="@color/white"
-            android:background="@drawable/buttonlogin"
-            android:layout_alignParentRight="true"/>
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/edtbl"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/thoigiannau"
-            android:background="@drawable/edittextbox"
-            android:text="asdddd"
-            />
-        <ImageView
-            android:layout_marginRight="20dp"
-            android:layout_below="@id/tgn"
-            android:src="@mipmap/ic_launcher"
+            android:background="@drawable/hearts"
+            android:backgroundTint="@color/white"
             android:layout_alignParentRight="true"
+
             android:layout_width="20dp"
-<<<<<<< Updated upstream
+
             android:layout_height="25dp"
             android:id="@+id/btnaddbl"/>
         <androidx.appcompat.widget.AppCompatButton
@@ -173,8 +154,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/containera"
             android:layout_below="@+id/btnxoxuong"/>
-=======
-            android:layout_height="25dp"/>
+
 
         <FrameLayout
             android:layout_below="@+id/edtbl"
@@ -182,7 +162,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
->>>>>>> Stashed changes
+
+
+
+
     </RelativeLayout>
 
 
