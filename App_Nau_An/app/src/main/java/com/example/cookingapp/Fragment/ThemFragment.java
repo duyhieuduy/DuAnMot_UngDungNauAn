@@ -10,14 +10,13 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cookingapp.MonCuaToiActivity;
-import com.example.cookingapp.MonDaLuuActivity;
+
 import com.example.cookingapp.R;
-import com.example.cookingapp.ThemMonMoiActivity;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
 
 public class ThemFragment extends Fragment {
     Button btnMonCuaToi, btnMonDaLuu;
@@ -35,7 +34,7 @@ public class ThemFragment extends Fragment {
         buttonThemMonMoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
+//                startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
             }
         });
 
