@@ -30,13 +30,13 @@ public class ThemFragment extends Fragment {
         Button btnThemMonMoi = view.findViewById(R.id.btnThemMonMoi);
         RecyclerView recyclerMonDang = view.findViewById(R.id.recyclerMonDaDang);
 
-        DangBaiDAO dangBaiDAO = new DangBaiDAO(getContext());
-        ArrayList<DangBai> list = dangBaiDAO.getDSMon();
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        recyclerMonDang.setLayoutManager(linearLayoutManager);
-        DangMonAdapter adaper = new DangMonAdapter(getContext(), list);
-        recyclerMonDang.setAdapter(adaper);
+//        DangBaiDAO dangBaiDAO = new DangBaiDAO(getContext());
+//        ArrayList<DangBai> list = dangBaiDAO.getDSMon();
+//
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+//        recyclerMonDang.setLayoutManager(linearLayoutManager);
+//        DangMonAdapter adaper = new DangMonAdapter(getContext(), list);
+//        recyclerMonDang.setAdapter(adaper);
 
 
         btnThemMonMoi.setOnClickListener(new View.OnClickListener() {

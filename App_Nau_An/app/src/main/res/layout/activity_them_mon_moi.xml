@@ -58,6 +58,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/master_chef" />
+            <Button
+                android:id="@+id/btnLuuAnh"
+                android:text="Lưu hình ảnh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
 
 

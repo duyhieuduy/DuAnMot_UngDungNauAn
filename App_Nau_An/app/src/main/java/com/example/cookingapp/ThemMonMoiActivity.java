@@ -19,6 +19,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.cloudinary.android.MediaManager;
+import com.cloudinary.android.callback.ErrorInfo;
+import com.cloudinary.android.callback.UploadCallback;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -32,15 +35,19 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ThemMonMoiActivity extends AppCompatActivity {
+    private static final String TAG = "Upload @@@";
     ImageView imageView1, imageView2, imageView3, imageView4;
-    private Button btnLuu;
+    private Button btnLuu, btnLuuAnh;
     private static final String IMAGE_DIRECTORY = "/demonuts";
     private int GALLERY = 1, CAMERA = 2;
-    DangBaiDAO dao;
 
+    Uri contentURI1, contentURI2, contentURI3, contentURI4;
+    String path1, path2, path3, path4;
 
     int clickImage;
 
@@ -64,6 +71,7 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         EditText edtCachLam = findViewById(R.id.edtCachLam);
 
         btnLuu = findViewById(R.id.btnLuu);
+        btnLuuAnh = findViewById(R.id.btnLuuAnh);
 
         imageView1 = findViewById(R.id.imgAnhMon);
         imageView2 = findViewById(R.id.imgAnhCachLam1);
@@ -72,10 +80,12 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         requestMultiplePermissions();
 
 
+        initConfig();
+
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            clickImage=1;
+                clickImage = 1;
                 showPictureDialog();
             }
         });
@@ -83,29 +93,161 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            clickImage=2;
+                clickImage = 2;
                 showPictureDialog();
             }
         });
         imageView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickImage=3;
+                clickImage = 3;
                 showPictureDialog();
             }
         });
         imageView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickImage=4;
+                clickImage = 4;
                 showPictureDialog();
             }
         });
 
+        btnLuuAnh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                MediaManager.get().upload(contentURI1).callback(new UploadCallback() {
+                    @Override
+                    public void onStart(String requestId) {
+                        Log.d(TAG, "onStart: " + " started");
+                    }
+
+                    @Override
+                    public void onProgress(String requestId, long bytes, long totalBytes) {
+                        Log.d(TAG, "onStart: " + " uploading");
+                    }
+
+                    @Override
+                    public void onSuccess(String requestId, Map resultData) {
+                        path1 = (String) resultData.get("url");
+                        Log.d(TAG, "onStart: " + " unsuccess" + path1);
+                    }
+
+                    @Override
+                    public void onError(String requestId, ErrorInfo error) {
+                        Log.d(TAG, "onStart: " + error);
+                    }
+
+                    @Override
+                    public void onReschedule(String requestId, ErrorInfo error) {
+                        Log.d(TAG, "onStart: " + error);
+                    }
+                }).dispatch();
+
+
+                MediaManager.get().upload(contentURI2).callback(new UploadCallback() {
+                    @Override
+                    public void onStart(String requestId) {
+                        Log.d(TAG, "onStart: " + " started");
+                    }
+
+                    @Override
+                    public void onProgress(String requestId, long bytes, long totalBytes) {
+                        Log.d(TAG, "onStart: " + " uploading");
+                    }
+
+                    @Override
+                    public void onSuccess(String requestId, Map resultData) {
+                        path2 = (String) resultData.get("url");
+                        Log.d(TAG, "onStart: " + " unsuccess" + path2);
+                    }
+
+                    @Override
+                    public void onError(String requestId, ErrorInfo error) {
+                        Log.d(TAG, "onStart: " + error);
+                    }
+
+                    @Override
+                    public void onReschedule(String requestId, ErrorInfo error) {
+                        Log.d(TAG, "onStart: " + error);
+                    }
+                }).dispatch();
+
+
+                MediaManager.get().upload(contentURI3).callback(new UploadCallback() {
+                    @Override
+                    public void onStart(String requestId) {
+                        Log.d(TAG, "onStart: " + " started");
+                    }
+
+                    @Override
+                    public void onProgress(String requestId, long bytes, long totalBytes) {
+                        Log.d(TAG, "onStart: " + " uploading");
+                    }
+
+                    @Override
+                    public void onSuccess(String requestId, Map resultData) {
+                        path3 = (String) resultData.get("url");
+                        Log.d(TAG, "onStart: " + " unsuccess" + path3);
+                    }
+
+                    @Override
+                    public void onError(String requestId, ErrorInfo error) {
+                        Log.d(TAG, "onStart: " + error);
+                    }
+
+                    @Override
+                    public void onReschedule(String requestId, ErrorInfo error) {
+                        Log.d(TAG, "onStart: " + error);
+                    }
+                }).dispatch();
+
+
+                MediaManager.get().upload(contentURI4).callback(new UploadCallback() {
+                    @Override
+                    public void onStart(String requestId) {
+                        Log.d(TAG, "onStart: " + " started");
+                    }
+
+                    @Override
+                    public void onProgress(String requestId, long bytes, long totalBytes) {
+                        Log.d(TAG, "onStart: " + " uploading");
+                    }
+
+                    @Override
+                    public void onSuccess(String requestId, Map resultData) {
+                        path4 = (String) resultData.get("url");
+                        Log.d(TAG, "onStart: " + " unsuccess" + path4);
+                    }
+
+                    @Override
+                    public void onError(String requestId, ErrorInfo error) {
+                        Log.d(TAG, "onStart: " + error);
+                    }
+
+                    @Override
+                    public void onReschedule(String requestId, ErrorInfo error) {
+                        Log.d(TAG, "onStart: " + error);
+                    }
+                }).dispatch();
 
 
 
+        }
+    });
+
+
+}
+
+    private void initConfig() {
+        Map config = new HashMap();
+        config.put("cloud_name", "doluugxhe");
+        config.put("api_key", "531346586926927");
+        config.put("api_secret", "4Jfm_W31t0SMm_BDcL2KkSVlwKw");
+//        config.put("secure", true);
+        MediaManager.init(this, config);
     }
+
     private void showPictureDialog() {
         AlertDialog.Builder pictureDialog = new AlertDialog.Builder(this);
         pictureDialog.setTitle("Select Action");
@@ -128,6 +270,7 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                 });
         pictureDialog.show();
     }
+
     public void choosePhotoFromGallary() {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -139,6 +282,7 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, CAMERA);
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -150,9 +294,9 @@ public class ThemMonMoiActivity extends AppCompatActivity {
             case 1:
                 if (requestCode == GALLERY) {
                     if (data != null) {
-                        Uri contentURI = data.getData();
+                        contentURI1 = data.getData();
                         try {
-                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
+                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI1);
                             String path = saveImage(bitmap);
                             Toast.makeText(this, "Image Saved!", Toast.LENGTH_SHORT).show();
                             imageView1.setImageBitmap(bitmap);
@@ -174,9 +318,9 @@ public class ThemMonMoiActivity extends AppCompatActivity {
             case 2:
                 if (requestCode == GALLERY) {
                     if (data != null) {
-                        Uri contentURI = data.getData();
+                        contentURI2 = data.getData();
                         try {
-                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
+                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI2);
                             String path = saveImage(bitmap);
                             Toast.makeText(this, "Image Saved!", Toast.LENGTH_SHORT).show();
                             imageView2.setImageBitmap(bitmap);
@@ -197,9 +341,9 @@ public class ThemMonMoiActivity extends AppCompatActivity {
             case 3:
                 if (requestCode == GALLERY) {
                     if (data != null) {
-                        Uri contentURI = data.getData();
+                        contentURI3 = data.getData();
                         try {
-                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
+                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI3);
                             String path = saveImage(bitmap);
                             Toast.makeText(this, "Image Saved!", Toast.LENGTH_SHORT).show();
                             imageView3.setImageBitmap(bitmap);
@@ -220,9 +364,9 @@ public class ThemMonMoiActivity extends AppCompatActivity {
             case 4:
                 if (requestCode == GALLERY) {
                     if (data != null) {
-                        Uri contentURI = data.getData();
+                        contentURI4 = data.getData();
                         try {
-                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
+                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI4);
                             String path = saveImage(bitmap);
                             Toast.makeText(this, "Image Saved!", Toast.LENGTH_SHORT).show();
                             imageView4.setImageBitmap(bitmap);

@@ -16,12 +16,12 @@ import java.util.ArrayList;
 
 public class DangMonAdapter extends RecyclerView.Adapter<DangMonAdapter.ViewHolder>{
     private Context context;
-    private ArrayList<DangBai> list;
-
-    public DangMonAdapter(Context context, ArrayList<DangBai> list) {
-        this.context = context;
-        this.list = list;
-    }
+//    private ArrayList<DangBai> list;
+//
+//    public DangMonAdapter(Context context, ArrayList<DangBai> list) {
+//        this.context = context;
+//        this.list = list;
+//    }
 
     @NonNull
     @Override
@@ -33,24 +33,24 @@ public class DangMonAdapter extends RecyclerView.Adapter<DangMonAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txttenmon.setText(list.get(position).getTenmon());
-        holder.txtloaimon.setText(list.get(position).getLoaimon());
-        holder.txtthoigiannau.setText(list.get(position).getThoigiannau());
-        holder.txtdokho.setText(list.get(position).getDokho());
-        holder.txtnguyenlieu1.setText(list.get(position).getNguyenlieu1());
-        holder.txtkhoiluong1.setText(list.get(position).getKhoiluong1());
-        holder.txtnguyenlieu2.setText(list.get(position).getNguyenlieu2());
-        holder.txtkhoiluong2.setText(list.get(position).getKhoiluong2());
-        holder.txtnguyenlieu3.setText(list.get(position).getNguyenlieu3());
-        holder.txtkhoiluong3.setText(list.get(position).getKhoiluong3());
-        holder.txtnguyenlieu4.setText(list.get(position).getNguyenlieu4());
-        holder.txtkhoiluong4.setText(list.get(position).getKhoiluong4());
-        holder.txtcachlam.setText(list.get(position).getThoigiannau());
+//        holder.txttenmon.setText(list.get(position).getTenmon());
+//        holder.txtloaimon.setText(list.get(position).getLoaimon());
+//        holder.txtthoigiannau.setText(list.get(position).getThoigiannau());
+//        holder.txtdokho.setText(list.get(position).getDokho());
+//        holder.txtnguyenlieu1.setText(list.get(position).getNguyenlieu1());
+//        holder.txtkhoiluong1.setText(list.get(position).getKhoiluong1());
+//        holder.txtnguyenlieu2.setText(list.get(position).getNguyenlieu2());
+//        holder.txtkhoiluong2.setText(list.get(position).getKhoiluong2());
+//        holder.txtnguyenlieu3.setText(list.get(position).getNguyenlieu3());
+//        holder.txtkhoiluong3.setText(list.get(position).getKhoiluong3());
+//        holder.txtnguyenlieu4.setText(list.get(position).getNguyenlieu4());
+//        holder.txtkhoiluong4.setText(list.get(position).getKhoiluong4());
+//        holder.txtcachlam.setText(list.get(position).getThoigiannau());
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
