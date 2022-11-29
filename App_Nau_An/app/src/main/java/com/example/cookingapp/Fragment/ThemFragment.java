@@ -14,10 +14,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.Adapter.DangMonAdapter;
+import androidx.recyclerview.widget.RecyclerView;
+
+
 import com.example.cookingapp.R;
 import com.example.cookingapp.ThemMonMoiActivity;
 
 import java.util.ArrayList;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 public class ThemFragment extends Fragment {
 
@@ -29,7 +35,6 @@ public class ThemFragment extends Fragment {
 
         Button btnThemMonMoi = view.findViewById(R.id.btnThemMonMoi);
         RecyclerView recyclerMonDang = view.findViewById(R.id.recyclerMonDaDang);
-
 
 //        DangBaiDAO dangBaiDAO = new DangBaiDAO(getContext());
 //        ArrayList<DangBai> list = dangBaiDAO.getDSMon();
@@ -50,9 +55,17 @@ public class ThemFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
+        FloatingActionButton buttonThemMonMoi = view.findViewById(R.id.floatingActionButton);
+        RecyclerView recyclerMonDang = view.findViewById(R.id.recyclerMonDaDang);
+
+
+
+        buttonThemMonMoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
             }
         });
-
 
 
 
