@@ -20,7 +20,7 @@ import com.example.cookingapp.ThemMonMoiActivity;
 import java.util.ArrayList;
 
 public class ThemFragment extends Fragment {
-    Button btnMonCuaToi, btnMonDaLuu;
+
 
     @Nullable
     @Override
@@ -30,6 +30,7 @@ public class ThemFragment extends Fragment {
         Button btnThemMonMoi = view.findViewById(R.id.btnThemMonMoi);
         RecyclerView recyclerMonDang = view.findViewById(R.id.recyclerMonDaDang);
 
+<<<<<<< Updated upstream
 //        DangBaiDAO dangBaiDAO = new DangBaiDAO(getContext());
 //        ArrayList<DangBai> list = dangBaiDAO.getDSMon();
 //
@@ -37,6 +38,9 @@ public class ThemFragment extends Fragment {
 //        recyclerMonDang.setLayoutManager(linearLayoutManager);
 //        DangMonAdapter adaper = new DangMonAdapter(getContext(), list);
 //        recyclerMonDang.setAdapter(adaper);
+=======
+
+>>>>>>> Stashed changes
 
 
         btnThemMonMoi.setOnClickListener(new View.OnClickListener() {
