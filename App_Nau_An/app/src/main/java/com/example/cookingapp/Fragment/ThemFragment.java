@@ -31,6 +31,7 @@ public class ThemFragment extends Fragment {
         RecyclerView recyclerMonDang = view.findViewById(R.id.recyclerMonDaDang);
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 //        DangBaiDAO dangBaiDAO = new DangBaiDAO(getContext());
 //        ArrayList<DangBai> list = dangBaiDAO.getDSMon();
 //
@@ -40,6 +41,13 @@ public class ThemFragment extends Fragment {
 //        recyclerMonDang.setAdapter(adaper);
 =======
 
+>>>>>>> Stashed changes
+=======
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerMonDang.setLayoutManager(linearLayoutManager);
+        DangMonAdapter adaper = new DangMonAdapter(getContext(), list);
+        recyclerMonDang.setAdapter(adaper);
 >>>>>>> Stashed changes
 
 
