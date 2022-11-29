@@ -6,14 +6,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.cookingapp.model.NewNguyenLieu;
-import com.example.cookingapp.DB.db;
+import com.example.cookingapp.DB.NguyenlieuNEW;
 
 import java.util.ArrayList;
 
 public class dao {
-    public db dbHelper;
+    public NguyenlieuNEW dbHelper;
     public dao(Context context){
-        dbHelper = new db(context);
+        dbHelper = new NguyenlieuNEW(context);
     }
     public ArrayList<NewNguyenLieu> getall(){
         ArrayList<NewNguyenLieu> list = new ArrayList<>();

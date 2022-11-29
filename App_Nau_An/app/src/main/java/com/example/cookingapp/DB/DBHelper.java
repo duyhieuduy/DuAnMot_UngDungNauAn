@@ -12,12 +12,12 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String dbAnhMonAN = "CREATE TABLE ANHMONAN ( " +
-                "id_anhmonan INTEGER PRIMARY KEY," +
+                "id_anhmonan INTEGER  PRIMARY KEY autoincrement," +
                 "mamon INTEGER,anhmon Text)";
         sqLiteDatabase.execSQL(dbAnhMonAN);
 
         String dbBinhLuan = "CREATE TABLE BINHLUAN (" +
-                "id_binhluan INTEGER PRIMARY KEY,  " +
+                "id_binhluan INTEGER PRIMARY KEY autoincrement,  " +
                 "mamon INTEGER, tendangnhap TEXT, " +
                 "noidungbinhluan TEXT)";
         sqLiteDatabase.execSQL(dbBinhLuan);
@@ -29,12 +29,12 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(dbCongThucNguyenLieu);
 
         String dbLoaiMon = "CREATE TABLE LOAIMON (" +
-                "maloai INTEGER PRIMARY KEY," +
+                "maloai INTEGER PRIMARY KEY autoincrement," +
                 "tenloai TEXT)";
         sqLiteDatabase.execSQL(dbLoaiMon);
 
         String dbMon = "CREATE TABLE MON (" +
-                "mamon INTEGER PRIMARY KEY," +
+                "mamon INTEGER PRIMARY KEY autoincrement," +
                 "maloai INTEGER," +
                 "tenmon TEXT," +
                 "congthuclam TEXT," +
@@ -45,31 +45,31 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(dbMon);
 
         String dbNguoiDung = "CREATE TABLE NGUOIDUNG (" +
-                "tendangnhap TEXT PRIMARY KEY," +
+                "tendangnhap TEXT PRIMARY KEY autoincrement," +
                 "matkhau TEXT)";
         sqLiteDatabase.execSQL(dbNguoiDung);
 
         String dbNguoiDungDB = "CREATE TABLE NGUOIDUNGDB (" +
-                "id_nguoidungdb INTEGER PRIMARY KEY, " +
+                "id_nguoidungdb INTEGER PRIMARY KEY autoincrement, " +
                 "mamon INTEGER," +
                 "tendangnhap TEXT)";
         sqLiteDatabase.execSQL(dbNguoiDungDB);
 
         String dbNguoiDungSave = "CREATE TABLE NGUOIDUNGSAVE (" +
-                "id_nguoidungsave INTEGER PRIMARY KEY," +
+                "id_nguoidungsave INTEGER PRIMARY KEY autoincrement," +
                 "mamon  INTEGER," +
                 "tendangnhap TEXT, " +
                 "trangthai TEXT)";
         sqLiteDatabase.execSQL(dbNguoiDungSave);
 
         String dbNguyenLieu = "CREATE TABLE NGUYENLIEU ( " +
-                "manguyenlieu  INTEGER PRIMARY KEY, " +
+                "manguyenlieu  INTEGER PRIMARY KEY autoincrement, " +
                 "tennguyenlieu TEXT," +
                 "anhnguyenlieu BLOB)";
         sqLiteDatabase.execSQL(dbNguyenLieu);
 
         String dbThongBao = "CREATE TABLE THONGBAO (" +
-                "id_tb INTEGER PRIMARY KEY," +
+                "id_tb INTEGER PRIMARY KEY autoincrement," +
                 "tendangnhap TEXT," +
                 "noidungthongbao TEXT   )";
         sqLiteDatabase.execSQL(dbThongBao);

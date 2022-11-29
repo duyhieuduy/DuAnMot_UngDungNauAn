@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.cloudinary.android.MediaManager;
 import com.cloudinary.android.callback.ErrorInfo;
 import com.cloudinary.android.callback.UploadCallback;
+import com.example.cookingapp.dao.DangBaiDao;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -50,6 +51,7 @@ public class ThemMonMoiActivity extends AppCompatActivity {
     String path1, path2, path3, path4;
 
     int clickImage;
+    DangBaiDao baiDangDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -236,6 +238,14 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         }
     });
 
+        btnLuu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+            }
+        });
 
 }
 
