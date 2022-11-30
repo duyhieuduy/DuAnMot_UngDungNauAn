@@ -8,10 +8,13 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cookingapp.Interface.IFood;
+import com.example.cookingapp.Interface.INguyenLieu;
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.FoodInFor;
 import com.squareup.picasso.Picasso;
@@ -21,6 +24,14 @@ import java.util.ArrayList;
 public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHolder> {
     private Context context;
     private ArrayList<FoodInFor> list;
+    private IFood iFood;
+    public void setiFood(IFood iFood) {
+        this.iFood = iFood;
+    }
+
+
+
+
 
     public FoodinfoAdapter(Context context, ArrayList<FoodInFor> list) {
         this.context = context;
@@ -46,7 +57,16 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
             holder.dok.setText(list.get(position).getDokho());
             holder.thoigiannau.setText(list.get(position).getTgnau());
 
-        }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iFood.onClickFood(list.get(position));
+            }
+        });
+
+
+    }
 
         @Override
         public int getItemCount() {
@@ -55,6 +75,8 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
+
+
 
             ImageView imgfood;
             TextView TenDs, tennl1, tennl2, dok, thoigiannau;
@@ -68,7 +90,9 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
                 dok = itemView.findViewById(R.id.dok);
                 thoigiannau = itemView.findViewById(R.id.thoigiannau);
 
+
             }
+
         }
     }
 

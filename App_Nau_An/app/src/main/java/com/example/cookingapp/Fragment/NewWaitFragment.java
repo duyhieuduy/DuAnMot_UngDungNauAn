@@ -1,5 +1,6 @@
 package com.example.cookingapp.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.Adapter.FoodinfoAdapter;
+import com.example.cookingapp.CTNLActivity;
+import com.example.cookingapp.Interface.IFood;
 import com.example.cookingapp.R;
 import com.example.cookingapp.dao.CongThucNguyenLieuDAO;
 import com.example.cookingapp.model.FoodInFor;
@@ -29,6 +32,25 @@ public class NewWaitFragment extends Fragment {
         View view = inflater.inflate(R.layout.recycvle_waitng,container,false);
         recyclerView = view.findViewById(R.id.RecyclviewWating);
 
+        reload();
+
+
+        foodForGetCmt.setiFood(new IFood() {
+            @Override
+            public void onClickFood(FoodInFor foodInFor) {
+              Intent intent = new Intent(getContext(), CTNLActivity.class);
+              intent.putExtra("key1",foodInFor.getMamon());
+              startActivity(intent);
+
+            }
+        });
+
+
+
+        return view;
+
+    }
+    public void reload(){
         congThucNguyenLieuDAO = new CongThucNguyenLieuDAO(getContext());
         listfood = new ArrayList<>();
         listfood = congThucNguyenLieuDAO.getAll();
@@ -36,12 +58,5 @@ public class NewWaitFragment extends Fragment {
         GridLayoutManager gridView = new GridLayoutManager(getContext(),1,RecyclerView.HORIZONTAL,false);
         recyclerView.setLayoutManager(gridView);
         recyclerView.setAdapter(foodForGetCmt);
-
-
-        return view;
-
-    }
-    public void reload(){
-
     }
 }

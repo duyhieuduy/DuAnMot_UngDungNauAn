@@ -26,7 +26,7 @@ import com.example.cookingapp.dao.dao;
 
 import java.util.ArrayList;
 
-public class Home_Fragment extends Fragment {
+public class Home_Fragment extends Fragment{
         RecyclerView recyclerviewHCK;
         RecyclerView recyclerviewnewHCK;
         ArrayList<NguyenLieu> list;
@@ -71,8 +71,6 @@ public class Home_Fragment extends Fragment {
                 loadDataNewnl();
             }
         });
-
-
         Button btn = view.findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,13 +81,8 @@ public class Home_Fragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
-
-
-
         return view;
     }
-
     private void loadDataNewnl(){
         listnew.clear();
         daoz = new dao(getContext());
@@ -100,7 +93,5 @@ public class Home_Fragment extends Fragment {
         NewNguyenlieuAdapter adaptera = new NewNguyenlieuAdapter(getContext(),listnew);
         recyclerviewnewHCK.setAdapter(adaptera);
     }
-
-
 
 }

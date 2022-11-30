@@ -12,12 +12,12 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String dbAnhMonAN = "CREATE TABLE ANHMONAN ( " +
-                "id_anhmonan INTEGER PRIMARY KEY," +
+                "idanhmonan INTEGER PRIMARY KEY," +
                 "mamon INTEGER,anhmon Text)";
         sqLiteDatabase.execSQL(dbAnhMonAN);
 
         String dbBinhLuan = "CREATE TABLE BINHLUAN (" +
-                "id_binhluan INTEGER PRIMARY KEY,  " +
+                "idbinhluan INTEGER PRIMARY KEY,  " +
                 "mamon INTEGER, tendangnhap TEXT, " +
                 "noidungbinhluan TEXT)";
         sqLiteDatabase.execSQL(dbBinhLuan);
@@ -65,7 +65,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String dbNguyenLieu = "CREATE TABLE NGUYENLIEU ( " +
                 "manguyenlieu  INTEGER PRIMARY KEY, " +
                 "tennguyenlieu TEXT," +
-                "anhnguyenlieu BLOB)";
+                "anhnguyenlieu TEXT)";
         sqLiteDatabase.execSQL(dbNguyenLieu);
 
         String dbThongBao = "CREATE TABLE THONGBAO (" +
@@ -112,6 +112,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "(2,'ech','https://res.cloudinary.com/doluugxhe/image/upload/v1669565476/Cooking%20app/ech_zv2f4v.jpg'), " +
                 "(19,'hoa he','https://res.cloudinary.com/doluugxhe/image/upload/v1669566138/Cooking%20app/hoahe_okuzyg.jpg')");
 
+        sqLiteDatabase.execSQL("INSERT INTO BINHLUAN VALUES(1,1,'bao','naudoqua')");
 
 
 
