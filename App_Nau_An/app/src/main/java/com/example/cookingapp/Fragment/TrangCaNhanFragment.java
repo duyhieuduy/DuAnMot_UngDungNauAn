@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.cookingapp.R;
 
+import java.util.Random;
+
 public class TrangCaNhanFragment extends Fragment {
 
 
@@ -22,9 +24,13 @@ public class TrangCaNhanFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.trangcanhan_fragment, container, false);
+        final Random rnd = new Random();
 
+
+//
         return view;
 
     }
+
 
 }
