@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.Adapter.DangMonAdapter;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -33,43 +34,20 @@ public class ThemFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.them_fragment, container, false);
 
+
         Button btnThemMonMoi = view.findViewById(R.id.btnThemMonMoi);
         RecyclerView recyclerMonDang = view.findViewById(R.id.recyclerMonDaDang);
-
-//        DangBaiDAO dangBaiDAO = new DangBaiDAO(getContext());
-//        ArrayList<DangBai> list = dangBaiDAO.getDSMon();
-//
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-//        recyclerMonDang.setLayoutManager(linearLayoutManager);
-//        DangMonAdapter adaper = new DangMonAdapter(getContext(), list);
-//        recyclerMonDang.setAdapter(adaper);
-
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        recyclerMonDang.setLayoutManager(linearLayoutManager);
-        DangMonAdapter adaper = new DangMonAdapter(getContext(), list);
-        recyclerMonDang.setAdapter(adaper);
-
-
         btnThemMonMoi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
-        FloatingActionButton buttonThemMonMoi = view.findViewById(R.id.floatingActionButton);
-        RecyclerView recyclerMonDang = view.findViewById(R.id.recyclerMonDaDang);
-
-
-
-        buttonThemMonMoi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
+                FloatingActionButton buttonThemMonMoi = view.findViewById(R.id.floatingActionButton);
+                RecyclerView recyclerMonDang = view.findViewById(R.id.recyclerMonDaDang);
             }
         });
 
-
-
         return view;
+
 
 
     }
