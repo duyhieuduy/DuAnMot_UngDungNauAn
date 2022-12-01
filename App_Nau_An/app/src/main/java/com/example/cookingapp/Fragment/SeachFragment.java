@@ -47,8 +47,9 @@ public class SeachFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerFood.setLayoutManager(linearLayoutManager);
         getListFoodOld = new ArrayList<>();
-        getListFoodOld = congThucNguyenLieuDAO.getAll();
-        searchAdapter = new SearchAdapter(getListFoodOld);
+//        getListFoodOld = congThucNguyenLieuDAO.getAll();
+//        congThucNguyenLieuDAO = new CongThucNguyenLieuDAO(getContext());
+//        searchAdapter = new SearchAdapter(getActivity(),getListFoodOld);
         recyclerFood.setAdapter(searchAdapter);
 
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);

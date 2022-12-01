@@ -40,7 +40,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-        View view = inflater.inflate(R.layout.item_foodinforgetbl, parent, false);
+        View view = inflater.inflate(R.layout.item_search, parent, false);
 
         return new ViewHolder(view);
     }
@@ -48,7 +48,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Picasso.with(context.getApplicationContext()).load(mListFoodOld.get(position).getAnhmonlv0()).placeholder(R.drawable.img).
+        Picasso.get().load(mListFoodOld.get(position).getAnhmonlv0()).placeholder(R.drawable.img).
                 error(R.drawable.img).
                 into(holder.imgfood);
         holder.TenDs.setText(mListFoodOld.get(position).getTenmon());
