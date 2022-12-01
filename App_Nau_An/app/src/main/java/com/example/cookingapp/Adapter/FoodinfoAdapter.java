@@ -29,10 +29,6 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
         this.iFood = iFood;
     }
 
-
-
-
-
     public FoodinfoAdapter(Context context, ArrayList<FoodInFor> list) {
         this.context = context;
         this.list = list;
@@ -67,17 +63,12 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
 
 
     }
-
         @Override
         public int getItemCount() {
             return list.size();
         }
 
-
         public class ViewHolder extends RecyclerView.ViewHolder {
-
-
-
             ImageView imgfood;
             TextView TenDs, tennl1, tennl2, dok, thoigiannau;
             EditText edtbl;

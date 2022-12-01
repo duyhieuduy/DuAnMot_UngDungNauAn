@@ -28,20 +28,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MonCuaToiActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".MonDaLuuActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Menu_Activity"
             android:exported="false">
             <meta-data

@@ -12,12 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-<<<<<<< Updated upstream
 import com.example.cookingapp.Interface.INguyenLieu;
-=======
 
 import com.example.cookingapp.Fragment.Home_Fragment;
->>>>>>> Stashed changes
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.NguyenLieu;
 import com.example.cookingapp.dao.dao;
