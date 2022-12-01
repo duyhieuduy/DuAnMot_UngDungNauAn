@@ -4,8 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class db extends SQLiteOpenHelper {
-    public db(Context context){super(context,"bd",null,1);
+public class NewNldb extends SQLiteOpenHelper {
+    public NewNldb(Context context){super(context,"bd",null,1);
     }
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {

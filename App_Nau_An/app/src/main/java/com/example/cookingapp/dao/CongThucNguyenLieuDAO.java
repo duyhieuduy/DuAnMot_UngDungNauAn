@@ -58,13 +58,12 @@ public class CongThucNguyenLieuDAO {
     }
 
 
-    public ArrayList<FooddetailModel>getClickItemIDmon(int idmamon){
+    public  ArrayList<FooddetailModel> getClickItemIDmon(int idmamon){
         ArrayList<FooddetailModel> list = new ArrayList<>();
-       SQLiteDatabase sqLiteDatabase  = dbHelper.getReadableDatabase();
-       Cursor cursor = sqLiteDatabase.rawQuery("select m.mamon,m.anhmon,m.tenmon, m.congthuclam, m.cachlam " +
-               "from NGUYENLIEU as nl,CONGTHUCNGUYENLIEU as ctnl, ANHMONAN as ama, MON as m " +
-               "where m.mamon = ama.mamon and ctnl.mamon = m.mamon " +
-               "and ctnl.manguyenlieu = nl.manguyenlieu and m.mamon = ?"
+        SQLiteDatabase sqLiteDatabase  = dbHelper.getReadableDatabase();
+       Cursor cursor = sqLiteDatabase.rawQuery("select MON.mamon,MON.anhmon,MON.tenmon, MON.congthuclam, MON.cachlam " +
+               "from  MON  " +
+               "where mamon = ?"
                ,new String[]{String.valueOf(idmamon)});
        if (cursor.getCount() !=0){
            cursor.moveToFirst();
@@ -124,7 +123,7 @@ public class CongThucNguyenLieuDAO {
     public ArrayList<BinhLuan>getClickItembinhuan(int idmamon){
         ArrayList<BinhLuan> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase  = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select bl.idbinhluan ,bl.mamon,bl.tendangnhap,bl.noidungbl " +
+        Cursor cursor = sqLiteDatabase.rawQuery("select bl.idbinhluan ,bl.mamon,bl.tendangnhap,bl.noidungbinhluan " +
                         "from  BINHLUAN as bl, MON as m,NGUOIDUNG as nd " +
                         "where m.mamon = bl.mamon and nd.tendangnhap = bl.tendangnhap " +
                         "and m.mamon = ? "

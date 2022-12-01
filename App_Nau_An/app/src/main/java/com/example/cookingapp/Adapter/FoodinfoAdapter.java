@@ -8,13 +8,11 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.Interface.IFood;
-import com.example.cookingapp.Interface.INguyenLieu;
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.FoodInFor;
 import com.squareup.picasso.Picasso;
@@ -38,13 +36,13 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
     @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-            View view = inflater.inflate(R.layout.item_foodinforgetbl, parent, false);
+            View view = inflater.inflate(R.layout.item_foodinfo, parent, false);
             return new ViewHolder(view);
         }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            Picasso.with(context.getApplicationContext()).load(list.get(position).getAnhmonlv0()).placeholder(R.drawable.img).
+            Picasso.get().load(list.get(position).getAnhmonlv0()).placeholder(R.drawable.img).
                     error(R.drawable.img).
                     into(holder.imgfood);
             holder.TenDs.setText(list.get(position).getTenmon());

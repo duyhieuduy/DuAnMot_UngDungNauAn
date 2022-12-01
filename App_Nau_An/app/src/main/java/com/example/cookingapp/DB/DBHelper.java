@@ -50,13 +50,13 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(dbNguoiDung);
 
         String dbNguoiDungDB = "CREATE TABLE NGUOIDUNGDB (" +
-                "id_nguoidungdb INTEGER PRIMARY KEY, " +
+                "idnguoidungdb INTEGER PRIMARY KEY, " +
                 "mamon INTEGER," +
                 "tendangnhap TEXT)";
         sqLiteDatabase.execSQL(dbNguoiDungDB);
 
         String dbNguoiDungSave = "CREATE TABLE NGUOIDUNGSAVE (" +
-                "id_nguoidungsave INTEGER PRIMARY KEY," +
+                "idnguoidungsave INTEGER PRIMARY KEY," +
                 "mamon  INTEGER," +
                 "tendangnhap TEXT, " +
                 "trangthai TEXT)";
@@ -113,9 +113,10 @@ public class DBHelper extends SQLiteOpenHelper {
                 "(19,'hoa he','https://res.cloudinary.com/doluugxhe/image/upload/v1669566138/Cooking%20app/hoahe_okuzyg.jpg')");
 
         sqLiteDatabase.execSQL("INSERT INTO BINHLUAN VALUES(1,1,'bao','naudoqua')");
-
-
-
+        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNG VALUES('bao','123'),()");
+        sqLiteDatabase.execSQL("INSERT INTO ANHMONAN VALUES(1,1,'https://res.cloudinary.com/doluugxhe/image/upload/v1669565429/Cooking%20app/mucong_b8pjx0.jpg')");
+        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNGDB VALUES(1,1,'bao') ");
+        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNGSAVE VALUES(1,1,'bao','đã lưu')");
 
     }
 
