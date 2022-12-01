@@ -5,16 +5,13 @@ import java.util.ArrayList;
 public class FooddetailModel {
     int mamon;
     String anhmon,tenmon,congthuclam,cachlam;
-    ArrayList<CLAnhMonAn> list;
+    ArrayList<AnhMonAn> list;
     ArrayList<BinhLuan> lista;
     ArrayList<NguyenLieu> listb;
 
-    public FooddetailModel(ArrayList<CLAnhMonAn> list) {
-        this.list = list;
-    }
 
 
-    public FooddetailModel(int mamon, String anhmon, String tenmon, String congthuclam, String cachlam, ArrayList<CLAnhMonAn> list, ArrayList<BinhLuan> lista, ArrayList<NguyenLieu> listb) {
+    public FooddetailModel(int mamon, String anhmon, String tenmon, String congthuclam, String cachlam, ArrayList<AnhMonAn> list, ArrayList<BinhLuan> lista, ArrayList<NguyenLieu> listb) {
         this.mamon = mamon;
         this.anhmon = anhmon;
         this.tenmon = tenmon;
@@ -69,11 +66,11 @@ public class FooddetailModel {
         this.cachlam = cachlam;
     }
 
-    public ArrayList<CLAnhMonAn> getList() {
+    public ArrayList<AnhMonAn> getList() {
         return list;
     }
 
-    public void setList(ArrayList<CLAnhMonAn> list) {
+    public void setList(ArrayList<AnhMonAn> list) {
         this.list = list;
     }
 

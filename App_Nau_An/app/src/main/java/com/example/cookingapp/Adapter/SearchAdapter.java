@@ -30,17 +30,21 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         this.iFood = iFood;
     }
 
-    public SearchAdapter(Context context, List<FoodInFor> mListFood, List<FoodInFor> mListFoodOld) {
+    public SearchAdapter(Context context, List<FoodInFor> mListFood) {
         this.context = context;
         this.mListFood = mListFood;
-        this.mListFoodOld = mListFoodOld;
+        this.mListFoodOld = mListFood;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
+<<<<<<< Updated upstream
         View view = inflater.inflate(R.layout.item_search, parent, false);
+=======
+        View view = inflater.inflate(R.layout.item_foodinfo, parent, false);
+>>>>>>> Stashed changes
 
         return new ViewHolder(view);
     }
@@ -48,14 +52,22 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
+<<<<<<< Updated upstream
         Picasso.get().load(mListFoodOld.get(position).getAnhmonlv0()).placeholder(R.drawable.img).
+=======
+        FoodInFor food = mListFood.get(position);
+        if (food == null){
+            return;
+        }
+        Picasso.get().load(food.getAnhmonlv0()).placeholder(R.drawable.img).
+>>>>>>> Stashed changes
                 error(R.drawable.img).
                 into(holder.imgfood);
-        holder.TenDs.setText(mListFoodOld.get(position).getTenmon());
-        holder.tennl1.setText(mListFoodOld.get(position).getListnl().get(0).getTennguyenlieu());
-        holder.tennl2.setText(mListFoodOld.get(position).getListnl().get(1).getTennguyenlieu());
-        holder.dok.setText(mListFoodOld.get(position).getDokho());
-        holder.thoigiannau.setText(mListFoodOld.get(position).getTgnau());
+        holder.TenDs.setText(food.getTenmon());
+        holder.tennl1.setText(food.getListnl().get(0).getTennguyenlieu());
+        holder.tennl2.setText(food.getListnl().get(1).getTennguyenlieu());
+        holder.dok.setText(food.getDokho());
+        holder.thoigiannau.setText(food.getTgnau());
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +81,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return mListFoodOld.size();
+        if (mListFood != null){
+            return mListFood.size();
+        }
+        return 0;
     }
 
     @Override

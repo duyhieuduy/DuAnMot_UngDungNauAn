@@ -17,12 +17,13 @@ import com.example.cookingapp.dao.CongThucNguyenLieuDAO;
 import com.example.cookingapp.model.FoodInFor;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SeachFragment extends Fragment {
     private RecyclerView recyclerFood;
     private SearchAdapter searchAdapter;
     private SearchView searchView;
-    private ArrayList<FoodInFor> getListFoodOld;
+    private List<FoodInFor> list;
     CongThucNguyenLieuDAO congThucNguyenLieuDAO;
     @Nullable
     @Override
@@ -46,10 +47,18 @@ public class SeachFragment extends Fragment {
         recyclerFood = view.findViewById(R.id.recyclerFood);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerFood.setLayoutManager(linearLayoutManager);
+<<<<<<< Updated upstream
         getListFoodOld = new ArrayList<>();
 //        getListFoodOld = congThucNguyenLieuDAO.getAll();
 //        congThucNguyenLieuDAO = new CongThucNguyenLieuDAO(getContext());
 //        searchAdapter = new SearchAdapter(getActivity(),getListFoodOld);
+=======
+        list = new ArrayList<>();
+        congThucNguyenLieuDAO = new CongThucNguyenLieuDAO(getContext());
+        list = congThucNguyenLieuDAO.getAll();
+
+        searchAdapter = new SearchAdapter(getActivity(),list);
+>>>>>>> Stashed changes
         recyclerFood.setAdapter(searchAdapter);
 
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
