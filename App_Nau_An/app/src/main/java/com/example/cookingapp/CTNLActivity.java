@@ -30,8 +30,6 @@ public class CTNLActivity extends AppCompatActivity {
         int id = intent.getIntExtra("key1",0);
         list = congThucNguyenLieuDAO.getClickItemIDmon(id);
 
-        Log.d("tesstt","id= "+id+"anhmon= "+list.get(0).getAnhmon());
-
         imgAnhMon = findViewById(R.id.imgAnhMon);
 
         textTenMon = findViewById(R.id.tenmon);

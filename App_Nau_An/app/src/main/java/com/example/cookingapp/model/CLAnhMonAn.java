@@ -1,11 +1,11 @@
 package com.example.cookingapp.model;
 
-public class AnhMonAn {
+public class CLAnhMonAn {
    private int idmonan ;
    private int mamonan;
    private String anhmonan;
 
-   public AnhMonAn(int idmonan, int mamonan, String anhmonan) {
+   public CLAnhMonAn(int idmonan, int mamonan, String anhmonan) {
       this.idmonan = idmonan;
       this.mamonan = mamonan;
       this.anhmonan = anhmonan;

@@ -5,7 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.cookingapp.model.BinhLuan;
-import com.example.cookingapp.model.AnhMonAn;
+import com.example.cookingapp.model.CLAnhMonAn;
+import com.example.cookingapp.model.CTNL;
 import com.example.cookingapp.model.FooddetailModel;
 import com.example.cookingapp.model.NguyenLieu;
 import com.example.cookingapp.model.Tennguyenlieu;
@@ -81,17 +82,17 @@ public class CongThucNguyenLieuDAO {
        }
        return list;
     }
-    public ArrayList<AnhMonAn>getClickItemanh(int idmamon){
-        ArrayList<AnhMonAn> list = new ArrayList<>();
+    public ArrayList<CLAnhMonAn>getClickItemanh(int idmamon){
+        ArrayList<CLAnhMonAn> list = new ArrayList<>();
        SQLiteDatabase sqLiteDatabase  = dbHelper.getReadableDatabase();
-       Cursor cursor = sqLiteDatabase.rawQuery("select ama.idanhmonan,ama.mamon,ama.anhmon from  ANHMONAN as ama, MON as m " +
+       Cursor cursor = sqLiteDatabase.rawQuery("select ama.idanhmonan,ama.mamon, ama.anhmon from  ANHMONAN as ama, MON as m " +
                "where m.mamon = ama.mamon  " +
                "and m.mamon = ?"
                ,new String[]{String.valueOf(idmamon)});
        if (cursor.getCount() !=0){
            cursor.moveToFirst();
            do{
-               list.add(new AnhMonAn(cursor.getInt(0),
+               list.add(new CLAnhMonAn(cursor.getInt(0),
                        cursor.getInt(1),
                        cursor.getString(2)));
            }while (cursor.moveToNext());
