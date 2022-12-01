@@ -84,7 +84,7 @@ public class Home_Fragment extends Fragment{
         return view;
     }
     private void loadDataNewnl(){
-<<<<<<< Updated upstream
+
         listnew.clear();
         daoz = new dao(getContext());
         dao daoz = new dao(getActivity());
@@ -93,7 +93,7 @@ public class Home_Fragment extends Fragment{
         recyclerviewnewHCK.setLayoutManager(linearLayoutManagera);
         NewNguyenlieuAdapter adaptera = new NewNguyenlieuAdapter(getContext(),listnew);
         recyclerviewnewHCK.setAdapter(adaptera);
-=======
+
 //        listnew.clear();
 //        daoz = new dao(getContext());
 //        dao daoz = new dao(getActivity());
@@ -107,7 +107,7 @@ public class Home_Fragment extends Fragment{
 //        return view;
 
 
->>>>>>> Stashed changes
+
     }
 
 }

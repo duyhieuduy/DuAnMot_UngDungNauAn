@@ -12,12 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-<<<<<<< Updated upstream
+
 import com.example.cookingapp.Interface.INguyenLieu;
-=======
 
 import com.example.cookingapp.Fragment.Home_Fragment;
->>>>>>> Stashed changes
+
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.NguyenLieu;
 import com.example.cookingapp.dao.dao;
@@ -55,7 +54,7 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         daoz = new dao(context);
         holder.text.setText("" + list.get(position).getTennguyenlieu());
-        Picasso.with(context.getApplicationContext()).load(list.get(position).getAnhnguyenlieu()).placeholder(R.drawable.img).
+        Picasso.get().load(list.get(position).getAnhnguyenlieu()).placeholder(R.drawable.img).
                 error(R.drawable.img).
                 into(holder.img);
 

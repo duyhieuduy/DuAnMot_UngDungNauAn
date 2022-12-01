@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 
 
 import com.example.cookingapp.R;
-import com.example.cookingapp.ThemMonMoiActivity;
+
 
 import java.util.Random;
 
@@ -34,7 +34,7 @@ public class TrangCaNhanFragment extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
+              //  startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
             }
         });
 
@@ -43,7 +43,7 @@ public class TrangCaNhanFragment extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
+               // startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
             }
         });
 

@@ -25,6 +25,10 @@ public class FooddetailModel {
         this.listb = listb;
     }
 
+    public FooddetailModel() {
+
+    }
+
     public int getMamon() {
         return mamon;
     }
