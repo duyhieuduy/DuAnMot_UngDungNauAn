@@ -26,10 +26,7 @@ import com.example.cookingapp.dao.dao;
 
 import java.util.ArrayList;
 
-import java.util.ArrayList;
-
-
-public class Home_Fragment extends Fragment {
+public class Home_Fragment extends Fragment{
         RecyclerView recyclerviewHCK;
         RecyclerView recyclerviewnewHCK;
         ArrayList<NguyenLieu> list;
@@ -75,8 +72,6 @@ public class Home_Fragment extends Fragment {
                 loadDataNewnl();
             }
         });
-
-
         Button btn = view.findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,14 +82,10 @@ public class Home_Fragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
-
-
-
         return view;
     }
-
     private void loadDataNewnl(){
+
         listnew.clear();
         daoz = new dao(getContext());
         dao daoz = new dao(getActivity());
@@ -103,8 +94,21 @@ public class Home_Fragment extends Fragment {
         recyclerviewnewHCK.setLayoutManager(linearLayoutManagera);
         NewNguyenlieuAdapter adaptera = new NewNguyenlieuAdapter(getContext(),listnew);
         recyclerviewnewHCK.setAdapter(adaptera);
+
+//        listnew.clear();
+//        daoz = new dao(getContext());
+//        dao daoz = new dao(getActivity());
+//        listnew = daoz.getall();
+//        adapter.notifyDataSetChanged();
+//        LinearLayoutManager linearLayoutManagera = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+//        recyclerviewnewHCK.setLayoutManager(linearLayoutManagera);
+//        NewNguyenlieuAdapter adaptera = new NewNguyenlieuAdapter(getContext(),listnew);
+//        recyclerviewnewHCK.setAdapter(adaptera);
+//
+//        return view;
+
+
+
     }
-
-
 
 }

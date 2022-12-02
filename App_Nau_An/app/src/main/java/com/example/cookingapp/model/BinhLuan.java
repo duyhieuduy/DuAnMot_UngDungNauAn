@@ -3,13 +3,14 @@ package com.example.cookingapp.model;
 import android.widget.TextView;
 
 public class BinhLuan {
-    int mamon;
-    String textIDND,binhluan;
+    int mamon,idbinhluan;
+    String tendangnhap,noidungbinhluan;
 
-    public BinhLuan(int mamon, String textIDND, String binhluan) {
+    public BinhLuan(int mamon, int idbinhluan, String tendangnhap, String noidungbinhluan) {
         this.mamon = mamon;
-        this.textIDND = textIDND;
-        this.binhluan = binhluan;
+        this.idbinhluan = idbinhluan;
+        this.tendangnhap = tendangnhap;
+        this.noidungbinhluan = noidungbinhluan;
     }
 
     public int getMamon() {
@@ -20,19 +21,27 @@ public class BinhLuan {
         this.mamon = mamon;
     }
 
-    public String getTextIDND() {
-        return textIDND;
+    public int getIdbinhluan() {
+        return idbinhluan;
     }
 
-    public void setTextIDND(String textIDND) {
-        this.textIDND = textIDND;
+    public void setIdbinhluan(int idbinhluan) {
+        this.idbinhluan = idbinhluan;
     }
 
-    public String getBinhluan() {
-        return binhluan;
+    public String getTendangnhap() {
+        return tendangnhap;
     }
 
-    public void setBinhluan(String binhluan) {
-        this.binhluan = binhluan;
+    public void setTendangnhap(String tendangnhap) {
+        this.tendangnhap = tendangnhap;
+    }
+
+    public String getNoidungbinhluan() {
+        return noidungbinhluan;
+    }
+
+    public void setNoidungbinhluan(String noidungbinhluan) {
+        this.noidungbinhluan = noidungbinhluan;
     }
 }

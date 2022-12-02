@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -27,7 +28,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.5.1'
@@ -57,5 +57,12 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
 
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    implementation platform('com.google.firebase:firebase-bom:31.1.0')
+    implementation 'com.google.firebase:firebase-auth'
 
 }

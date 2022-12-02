@@ -11,30 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-
-
 import com.example.cookingapp.R;
-import com.example.cookingapp.ThemMonMoiActivity;
+
+
+import java.util.Random;
 
 public class TrangCaNhanFragment extends Fragment {
-    Button button1;
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.trangcanhan_fragment, container, false);
-
-        button1 = view.findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
-            }
-        });
-
         return view;
-
     }
-
 }

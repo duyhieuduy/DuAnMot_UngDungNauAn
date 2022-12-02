@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.cookingapp.Interface.INguyenLieu;
+
+
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.NguyenLieu;
 import com.example.cookingapp.dao.dao;
@@ -51,8 +53,8 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         daoz = new dao(context);
         holder.text.setText("" + list.get(position).getTennguyenlieu());
-        Glide.with(context.getApplicationContext()).load(list.get(position).getAnhnguyenlieu()).placeholder(R.drawable.img).
-                error(R.drawable.img).
+        Picasso.get().load(list.get(position).getAnhnguyenlieu()).placeholder(R.drawable.anhdangmon).
+                error(R.drawable.anhdangmon).
                 into(holder.img);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
