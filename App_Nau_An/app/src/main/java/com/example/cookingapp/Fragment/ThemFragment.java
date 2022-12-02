@@ -28,7 +28,7 @@ public class ThemFragment extends Fragment {
         View view = inflater.inflate(R.layout.them_fragment, container, false);
 
 
-        Button btnThemMonMoi = view.findViewById(R.id.btnThemMonMoi);
+
         RecyclerView recyclerMonDang = view.findViewById(R.id.recyclerMonDaDang);
 
 

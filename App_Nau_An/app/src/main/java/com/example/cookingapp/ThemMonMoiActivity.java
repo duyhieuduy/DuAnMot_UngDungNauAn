@@ -91,36 +91,55 @@ public class ThemMonMoiActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_them_mon_moi);
+        setContentView(R.layout.activity_add_mon);
 
-        tv_api = findViewById(R.id.tv_api);
-        tv_link_img1 = findViewById(R.id.tv_link_img1);
-        tv_link_img2 = findViewById(R.id.tv_link_img2);
-        tv_link_img3 = findViewById(R.id.tv_link_img3);
-        tv_link_img4 = findViewById(R.id.tv_link_img4);
 
-        EditText edtTenMon = findViewById(R.id.edtTenMon);
-        EditText edtLoaiMon = findViewById(R.id.edtLoaiMon);
-        EditText edtThoiGianNau = findViewById(R.id.edtThoiGianNau);
-        EditText edtDoKho = findViewById(R.id.edtDoKho);
-        EditText edtMota = findViewById(R.id.edtMota);
-        EditText edtNguyenLieu1 = findViewById(R.id.edtNguyenLieu1);
-        EditText edtKhoiLuong1 = findViewById(R.id.edtKhoiLuong1);
-        EditText edtNguyenLieu2 = findViewById(R.id.edtNguyenLieu2);
-        EditText edtKhoiLuong2 = findViewById(R.id.edtKhoiLuong2);
-        EditText edtNguyenLieu3 = findViewById(R.id.edtNguyenLieu3);
-        EditText edtKhoiLuong3 = findViewById(R.id.edtKhoiLuong3);
-        EditText edtNguyenLieu4 = findViewById(R.id.edtNguyenLieu4);
-        EditText edtKhoiLuong4 = findViewById(R.id.edtKhoiLuong4);
-        EditText edtCachLam = findViewById(R.id.edtCachLam);
+        TextView btnthemnl = findViewById(R.id.btnthemnl);
+        btnthemnl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        btnLuu = findViewById(R.id.btnLuu);
-        btnLuuAnh = findViewById(R.id.btnLuuAnh);
+            }
+        });
 
-        imageView1 = findViewById(R.id.imgAnhMon);
-        imageView2 = findViewById(R.id.imgAnhCachLam1);
-        imageView3 = findViewById(R.id.imgAnhCachLam2);
-        imageView4 = findViewById(R.id.imgAnhCachLam3);
+        TextView btnthemnl2 = findViewById(R.id.btnthemnl2);
+        btnthemnl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        TextView btnthemnl3 = findViewById(R.id.btnthemnl3);
+        btnthemnl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        EditText edtTenMon = findViewById(R.id.tenmon);
+        EditText edtLoaiMon = findViewById(R.id.loaimon);
+        EditText edtThoiGianNau = findViewById(R.id.edttgn);
+        EditText edtDoKho = findViewById(R.id.edtdokho);
+        EditText edtMota = findViewById(R.id.mota);
+        EditText edtNguyenLieu1 = findViewById(R.id.edtnl);
+        EditText edtKhoiLuong1 = findViewById(R.id.edtkl);
+        EditText edtNguyenLieu2 = findViewById(R.id.edtnl2);
+        EditText edtKhoiLuong2 = findViewById(R.id.edtkl2);
+        EditText edtNguyenLieu3 = findViewById(R.id.edtnl3);
+        EditText edtKhoiLuong3 = findViewById(R.id.edtkl3);
+        EditText edtNguyenLieu4 = findViewById(R.id.edtnl4);
+        EditText edtKhoiLuong4 = findViewById(R.id.edtkl4);
+        EditText edtCachLam = findViewById(R.id.edtnl2);
+
+        btnLuu = findViewById(R.id.btnluu);
+
+
+        imageView1 = findViewById(R.id.anhdang);
+        imageView2 = findViewById(R.id.ivacl1);
+        imageView3 = findViewById(R.id.ivacl2);
+        imageView4 = findViewById(R.id.ivacl3);
         requestMultiplePermissions();
 
        // sharedPreferences = getSharedPreferences("tennguoidung", Context.MODE_PRIVATE);

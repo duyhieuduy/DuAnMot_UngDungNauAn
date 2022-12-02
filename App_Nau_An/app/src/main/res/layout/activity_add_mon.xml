@@ -380,7 +380,7 @@
         <EditText
             android:id="@+id/edtcachlam1"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="260dp"
             android:layout_below="@+id/tvcachlam"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -391,32 +391,8 @@
             android:backgroundTint="#469C9898"
             android:paddingLeft="20dp"
             android:hint="Công thức làm" />
-        <EditText
-            android:id="@+id/edtcachlam2"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_below="@+id/edtcachlam1"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_toRightOf="@+id/ivacl1"
-            android:background="@drawable/edittextbox"
-            android:backgroundTint="#469C9898"
-            android:paddingLeft="20dp"
-            android:hint="Công thức làm" />
-        <EditText
-            android:id="@+id/edtcachlam3"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_below="@+id/edtcachlam2"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_toRightOf="@+id/ivacl1"
-            android:background="@drawable/edittextbox"
-            android:backgroundTint="#469C9898"
-            android:paddingLeft="20dp"
-            android:hint="Công thức làm" />
+
+
 
 
     </RelativeLayout>

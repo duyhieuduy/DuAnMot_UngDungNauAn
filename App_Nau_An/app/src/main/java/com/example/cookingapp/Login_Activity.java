@@ -38,8 +38,6 @@ public class Login_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        sharedPreferences = getSharedPreferences("tennguoidung",Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
 
         setContentView(R.layout.activity_login);
         EditText edtuser = findViewById(R.id.user);
@@ -66,8 +64,7 @@ public class Login_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(Login_Activity.this,MainActivity.class));
                 String user = edtuser.getText().toString();
-                editor.putString("tenuser", user);
-                editor.apply();
+
             }
         });
         btnlg.setOnClickListener(new View.OnClickListener() {
@@ -76,8 +73,7 @@ public class Login_Activity extends AppCompatActivity {
 
                 startActivity(new Intent(Login_Activity.this,Menu_Activity.class));
                 String user = edtuser.getText().toString();
-                editor.putString("tenuser", user);
-                editor.apply();
+
             }
         });
 

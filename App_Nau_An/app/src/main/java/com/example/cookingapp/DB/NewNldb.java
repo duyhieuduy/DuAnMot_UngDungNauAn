@@ -4,13 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-<<<<<<<< HEAD:App_Nau_An/app/src/main/java/com/example/cookingapp/DB/NguyenlieuNEW.java
-public class NguyenlieuNEW extends SQLiteOpenHelper {
-    public NguyenlieuNEW(Context context){super(context,"bd",null,1);
-========
+
 public class NewNldb extends SQLiteOpenHelper {
     public NewNldb(Context context){super(context,"bd",null,1);
->>>>>>>> main:App_Nau_An/app/src/main/java/com/example/cookingapp/DB/NewNldb.java
     }
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
