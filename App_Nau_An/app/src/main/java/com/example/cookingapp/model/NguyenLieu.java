@@ -38,4 +38,9 @@ public class NguyenLieu {
     public void setAnhnguyenlieu(String anhnguyenlieu) {
         this.anhnguyenlieu = anhnguyenlieu;
     }
+
+
+
+
+
 }

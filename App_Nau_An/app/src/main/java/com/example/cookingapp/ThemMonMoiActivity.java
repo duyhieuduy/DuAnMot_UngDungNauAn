@@ -94,29 +94,6 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_mon);
 
 
-        TextView btnthemnl = findViewById(R.id.btnthemnl);
-        btnthemnl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        TextView btnthemnl2 = findViewById(R.id.btnthemnl2);
-        btnthemnl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        TextView btnthemnl3 = findViewById(R.id.btnthemnl3);
-        btnthemnl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         EditText edtTenMon = findViewById(R.id.tenmon);
         EditText edtLoaiMon = findViewById(R.id.loaimon);
@@ -132,6 +109,15 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         EditText edtNguyenLieu4 = findViewById(R.id.edtnl4);
         EditText edtKhoiLuong4 = findViewById(R.id.edtkl4);
         EditText edtCachLam = findViewById(R.id.edtnl2);
+
+
+        TextView tvnl2 = findViewById(R.id.tvnl2);
+        TextView tvnl3 = findViewById(R.id.tvnl3);
+        TextView tvnl4 = findViewById(R.id.tvnl4);
+        TextView btnthemnl = findViewById(R.id.btnthemnl);
+        TextView btnthemnl2 = findViewById(R.id.btnthemnl2);
+        TextView btnthemnl3 = findViewById(R.id.btnthemnl3);
+
 
         btnLuu = findViewById(R.id.btnluu);
         btnlensong = findViewById(R.id.btnlensong);
@@ -165,6 +151,56 @@ public class ThemMonMoiActivity extends AppCompatActivity {
          anhcachlam1 = path2;
          anhcachlam2 = path3;
          anhcachlam3 = path4;
+
+
+        edtNguyenLieu2.setVisibility(View.GONE);
+        edtKhoiLuong2.setVisibility(View.GONE);
+        tvnl2.setVisibility(View.GONE);
+        btnthemnl2.setVisibility(View.GONE);
+
+
+        edtNguyenLieu3.setVisibility(View.GONE);
+        edtKhoiLuong3.setVisibility(View.GONE);
+        tvnl3.setVisibility(View.GONE);
+        btnthemnl3.setVisibility(View.GONE);
+
+        edtNguyenLieu4.setVisibility(View.GONE);
+        edtKhoiLuong4.setVisibility(View.GONE);
+        tvnl4.setVisibility(View.GONE);
+
+
+
+        btnthemnl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtNguyenLieu2.setVisibility(View.VISIBLE);
+                edtKhoiLuong2.setVisibility(View.VISIBLE);
+                tvnl2.setVisibility(View.VISIBLE);
+                btnthemnl2.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+        btnthemnl2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtNguyenLieu3.setVisibility(View.VISIBLE);
+                edtKhoiLuong3.setVisibility(View.VISIBLE);
+                tvnl3.setVisibility(View.VISIBLE);
+                btnthemnl3.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+        btnthemnl3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtNguyenLieu4.setVisibility(View.VISIBLE);
+                edtKhoiLuong4.setVisibility(View.VISIBLE);
+                tvnl4.setVisibility(View.VISIBLE);
+            }
+        });
+
 
 
         initConfig();

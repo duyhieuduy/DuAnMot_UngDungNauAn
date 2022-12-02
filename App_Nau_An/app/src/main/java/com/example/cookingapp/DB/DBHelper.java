@@ -58,8 +58,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String dbNguoiDungSave = "CREATE TABLE NGUOIDUNGSAVE (" +
                 "idnguoidungsave INTEGER PRIMARY KEY," +
                 "mamon  INTEGER," +
-                "tendangnhap TEXT, " +
-                "trangthai TEXT)";
+                "tendangnhap TEXT)";
         sqLiteDatabase.execSQL(dbNguoiDungSave);
 
         String dbNguyenLieu = "CREATE TABLE NGUYENLIEU ( " +
