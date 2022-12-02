@@ -47,8 +47,8 @@ public class ThemFragment extends Fragment {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerMonDang.setLayoutManager(linearLayoutManager);
-        DangMonAdapter adaper = new DangMonAdapter(getContext(), list);
-        recyclerMonDang.setAdapter(adaper);
+       // DangMonAdapter adaper = new DangMonAdapter(getContext(), list);
+      //  recyclerMonDang.setAdapter(adaper);
 
 
         btnThemMonMoi.setOnClickListener(new View.OnClickListener() {
