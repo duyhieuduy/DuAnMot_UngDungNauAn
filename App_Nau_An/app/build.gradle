@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -41,5 +42,8 @@ dependencies {
 
     implementation 'com.squareup.picasso:picasso:2.8'
     implementation 'me.relex:circleindicator:2.1.6'
+
+    implementation platform('com.google.firebase:firebase-bom:31.1.0')
+    implementation 'com.google.firebase:firebase-auth'
 
 }

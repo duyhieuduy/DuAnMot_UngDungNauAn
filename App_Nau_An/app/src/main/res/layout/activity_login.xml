@@ -66,6 +66,27 @@
         android:layout_marginRight="65dp"
         android:backgroundTint="#2CFFFFFF"/>
 
+    <EditText
+        android:drawableLeft="@drawable/password"
+        android:paddingLeft="10dp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/edt_otp"
+
+        android:inputType="textPassword"
+        android:background="@drawable/edittextbox"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="65dp"
+        android:backgroundTint="#2CFFFFFF"/>
+
+    <Button
+        android:id="@+id/btnVerifyPhoneNumber"
+        android:text="Lấy Mã OTP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
