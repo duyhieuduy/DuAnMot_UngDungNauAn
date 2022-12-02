@@ -30,10 +30,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         this.iFood = iFood;
     }
 
-    public SearchAdapter(Context context, List<FoodInFor> mListFood, List<FoodInFor> mListFoodOld) {
+    public SearchAdapter(Context context, List<FoodInFor> mListFood) {
         this.context = context;
         this.mListFood = mListFood;
-        this.mListFoodOld = mListFoodOld;
+        this.mListFoodOld = mListFood;
     }
 
     @NonNull
@@ -47,15 +47,17 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
-        Picasso.get().load(mListFoodOld.get(position).getAnhmonlv0()).placeholder(R.drawable.img).
+        if (mListFood.get(position) == null){
+            return;
+        }
+        Picasso.get().load(mListFood.get(position).getAnhmonlv0()).placeholder(R.drawable.img).
                 error(R.drawable.img).
                 into(holder.imgfood);
-        holder.TenDs.setText(mListFoodOld.get(position).getTenmon());
-        holder.tennl1.setText(mListFoodOld.get(position).getListnl().get(0).getTennguyenlieu());
-        holder.tennl2.setText(mListFoodOld.get(position).getListnl().get(1).getTennguyenlieu());
-        holder.dok.setText(mListFoodOld.get(position).getDokho());
-        holder.thoigiannau.setText(mListFoodOld.get(position).getTgnau());
+        holder.TenDs.setText(mListFood.get(position).getTenmon());
+        holder.tennl1.setText(mListFood.get(position).getListnl().get(0).getTennguyenlieu());
+        holder.tennl2.setText(mListFood.get(position).getListnl().get(1).getTennguyenlieu());
+        holder.dok.setText(mListFood.get(position).getDokho());
+        holder.thoigiannau.setText(mListFood.get(position).getTgnau());
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +71,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return mListFoodOld.size();
+
+        if (mListFood != null){
+            return mListFood.size();
+        }
+        return 0;
     }
 
     @Override

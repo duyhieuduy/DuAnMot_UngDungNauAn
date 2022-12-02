@@ -13,13 +13,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.cookingapp.AddMonActivity;
 import com.example.cookingapp.R;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class ThemFragment extends Fragment {
-    Button btnMonCuaToi, btnMonDaLuu;
+    FloatingActionButton floatingActionButton;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -31,10 +32,11 @@ public class ThemFragment extends Fragment {
 
 
 
-        buttonThemMonMoi.setOnClickListener(new View.OnClickListener() {
+        floatingActionButton = view.findViewById(R.id.floatingActionButton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(getActivity(), ThemMonMoiActivity.class));
+                startActivity(new Intent(getContext(), AddMonActivity.class));
             }
         });
 

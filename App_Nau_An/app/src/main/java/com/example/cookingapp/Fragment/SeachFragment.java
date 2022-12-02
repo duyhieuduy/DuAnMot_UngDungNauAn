@@ -22,7 +22,7 @@ public class SeachFragment extends Fragment {
     private RecyclerView recyclerFood;
     private SearchAdapter searchAdapter;
     private SearchView searchView;
-    private ArrayList<FoodInFor> getListFoodOld;
+    private ArrayList<FoodInFor> getListFood;
     CongThucNguyenLieuDAO congThucNguyenLieuDAO;
     @Nullable
     @Override
@@ -46,10 +46,11 @@ public class SeachFragment extends Fragment {
         recyclerFood = view.findViewById(R.id.recyclerFood);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerFood.setLayoutManager(linearLayoutManager);
-        getListFoodOld = new ArrayList<>();
-//        getListFoodOld = congThucNguyenLieuDAO.getAll();
-//        congThucNguyenLieuDAO = new CongThucNguyenLieuDAO(getContext());
-//        searchAdapter = new SearchAdapter(getActivity(),getListFoodOld);
+        getListFood = new ArrayList<>();
+        congThucNguyenLieuDAO = new CongThucNguyenLieuDAO(getContext());
+        getListFood = congThucNguyenLieuDAO.getAll();
+
+        searchAdapter = new SearchAdapter(getActivity(),getListFood);
         recyclerFood.setAdapter(searchAdapter);
 
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
