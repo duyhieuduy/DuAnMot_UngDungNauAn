@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -17,11 +18,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cloudinary.android.MediaManager;
 import com.cloudinary.android.callback.ErrorInfo;
 import com.cloudinary.android.callback.UploadCallback;
+import com.example.cookingapp.Interface.ApiInterface;
+import com.example.cookingapp.dao.DangBaiDao;
+import com.example.cookingapp.model.Post;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -34,10 +39,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ThemMonMoiActivity extends AppCompatActivity {
     private static final String TAG = "Upload @@@";
@@ -46,20 +56,54 @@ public class ThemMonMoiActivity extends AppCompatActivity {
     private static final String IMAGE_DIRECTORY = "/demonuts";
     private int GALLERY = 1, CAMERA = 2;
 
+
+
+    TextView tv_api, tv_link_img1, tv_link_img2, tv_link_img3, tv_link_img4;
+
     Uri contentURI1, contentURI2, contentURI3, contentURI4;
     String path1, path2, path3, path4;
+    String tendangnhap = "1";
+    String tenloai;
+    String tenmon;
+    String congthuclam;
+    String tgnau;
+    String dokho;
+    String anhmonlvo;
+    String tennguyenlieu1;
+    String khoiluong1;
+    String tennguyenlieu2;
+    String khoiluong2;
+    String tennguyenlieu3;
+    String khoiluong3;
+    String tennguyenlieu4;
+    String khoiluong4;
+    String cachlam;
+    String anhcachlam1;
+    String anhcachlam2;
+    String anhcachlam3;
+
+
+    SharedPreferences sharedPreferences;
 
     int clickImage;
+    DangBaiDao baiDangDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_them_mon_moi);
 
+        tv_api = findViewById(R.id.tv_api);
+        tv_link_img1 = findViewById(R.id.tv_link_img1);
+        tv_link_img2 = findViewById(R.id.tv_link_img2);
+        tv_link_img3 = findViewById(R.id.tv_link_img3);
+        tv_link_img4 = findViewById(R.id.tv_link_img4);
+
         EditText edtTenMon = findViewById(R.id.edtTenMon);
         EditText edtLoaiMon = findViewById(R.id.edtLoaiMon);
         EditText edtThoiGianNau = findViewById(R.id.edtThoiGianNau);
         EditText edtDoKho = findViewById(R.id.edtDoKho);
+        EditText edtMota = findViewById(R.id.edtMota);
         EditText edtNguyenLieu1 = findViewById(R.id.edtNguyenLieu1);
         EditText edtKhoiLuong1 = findViewById(R.id.edtKhoiLuong1);
         EditText edtNguyenLieu2 = findViewById(R.id.edtNguyenLieu2);
@@ -78,6 +122,29 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         imageView3 = findViewById(R.id.imgAnhCachLam2);
         imageView4 = findViewById(R.id.imgAnhCachLam3);
         requestMultiplePermissions();
+
+       // sharedPreferences = getSharedPreferences("tennguoidung", Context.MODE_PRIVATE);
+
+        // String tendangnhap = sharedPreferences.getString("tenuser" ,null);
+         tendangnhap = "1";
+         tenloai = edtLoaiMon.getText().toString();
+         tenmon = edtTenMon.getText().toString();
+         congthuclam = edtMota.getText().toString();
+         tgnau = edtThoiGianNau.getText().toString();
+         dokho = edtDoKho.getText().toString();
+         anhmonlvo = path1;
+         tennguyenlieu1 = edtNguyenLieu1.getText().toString();
+         khoiluong1 = edtKhoiLuong1.getText().toString();
+         tennguyenlieu2 = edtNguyenLieu2.getText().toString();
+         khoiluong2 = edtKhoiLuong2.getText().toString();
+         tennguyenlieu3 = edtNguyenLieu3.getText().toString();
+         khoiluong3 = edtKhoiLuong3.getText().toString();
+         tennguyenlieu4 = edtNguyenLieu4.getText().toString();
+         khoiluong4 = edtKhoiLuong4.getText().toString();
+         cachlam = edtCachLam.getText().toString();
+         anhcachlam1 = path2;
+         anhcachlam2 = path3;
+         anhcachlam3 = path4;
 
 
         initConfig();
@@ -116,6 +183,10 @@ public class ThemMonMoiActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
+
+
                 MediaManager.get().upload(contentURI1).callback(new UploadCallback() {
                     @Override
                     public void onStart(String requestId) {
@@ -130,7 +201,9 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path1 = (String) resultData.get("url");
-                        Log.d(TAG, "onStart: " + " unsuccess" + path1);
+                        tv_link_img1.setText(path1);
+
+                        Log.d(TAG, "onStart: " + " unsuccess  " + path1);
                     }
 
                     @Override
@@ -159,7 +232,9 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path2 = (String) resultData.get("url");
-                        Log.d(TAG, "onStart: " + " unsuccess" + path2);
+                        tv_link_img2.setText(path2);
+
+                        Log.d(TAG, "onStart: " + " unsuccess  " + path2);
                     }
 
                     @Override
@@ -188,7 +263,8 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path3 = (String) resultData.get("url");
-                        Log.d(TAG, "onStart: " + " unsuccess" + path3);
+                        tv_link_img3.setText(path3);
+                        Log.d(TAG, "onStart: " + " unsuccess   " + path3);
                     }
 
                     @Override
@@ -217,7 +293,8 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path4 = (String) resultData.get("url");
-                        Log.d(TAG, "onStart: " + " unsuccess" + path4);
+                        tv_link_img4.setText(path4);
+                        Log.d(TAG, "onStart: " + " unsuccess   " + path4);
                     }
 
                     @Override
@@ -232,12 +309,54 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                 }).dispatch();
 
 
+            }
+        });
 
-        }
-    });
+        btnLuu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Post post = new Post(
+                        tenloai,
+                        tenmon,
+                        congthuclam,
+                        tgnau,
+                        dokho,
+                        anhmonlvo,
+                        tendangnhap,
+                        tennguyenlieu1,
+                        khoiluong1,
+                        tennguyenlieu2,
+                        khoiluong2,
+                        tennguyenlieu3,
+                        khoiluong3,
+                        tennguyenlieu4,
+                        khoiluong4,
+                        cachlam,
+                        anhcachlam1,
+                        anhcachlam2,
+                        anhcachlam3);
+                ApiInterface.apiInterface.sendPosts(post).enqueue(new Callback<Post>() {
+                    @Override
+                    public void onResponse(Call<Post> call, Response<Post> response) {
+                        Toast.makeText(ThemMonMoiActivity.this, "call api success", Toast.LENGTH_SHORT).show();
 
+                        Post postResult = response.body();
+                        if (postResult != null){
+                            tv_api.setText(postResult.toString());
+                        }
+                    }
 
-}
+                    @Override
+                    public void onFailure(Call<Post> call, Throwable t) {
+                        Toast.makeText(ThemMonMoiActivity.this, "call api error", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+        });
+
+    }
+
 
     private void initConfig() {
         Map config = new HashMap();

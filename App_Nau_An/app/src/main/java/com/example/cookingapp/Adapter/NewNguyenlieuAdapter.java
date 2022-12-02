@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.NewNguyenLieu;
 import com.example.cookingapp.dao.dao;
@@ -43,7 +44,7 @@ public class NewNguyenlieuAdapter extends RecyclerView.Adapter<NewNguyenlieuAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.text.setText("" + list.get(position).getTennguyenlieu());
-        Picasso.with(context.getApplicationContext()).load(list.get(position).getAnhnguyenlieu()).placeholder(R.drawable.img).
+        Glide.with(context.getApplicationContext()).load(list.get(position).getAnhnguyenlieu()).placeholder(R.drawable.img).
                 error(R.drawable.img).
                 into(holder.img);
 

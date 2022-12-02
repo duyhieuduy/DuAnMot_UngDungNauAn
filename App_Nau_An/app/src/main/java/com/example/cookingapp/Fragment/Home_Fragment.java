@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 import java.util.ArrayList;
 
-public class Home_Fragment extends Fragment {
+
 public class Home_Fragment extends Fragment {
         RecyclerView recyclerviewHCK;
         RecyclerView recyclerviewnewHCK;
