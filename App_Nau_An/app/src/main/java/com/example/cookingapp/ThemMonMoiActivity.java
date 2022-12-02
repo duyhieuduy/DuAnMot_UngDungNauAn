@@ -52,7 +52,7 @@ import retrofit2.Response;
 public class ThemMonMoiActivity extends AppCompatActivity {
     private static final String TAG = "Upload @@@";
     ImageView imageView1, imageView2, imageView3, imageView4;
-    private Button btnLuu, btnLuuAnh;
+    private Button btnLuu,btnlensong;
     private static final String IMAGE_DIRECTORY = "/demonuts";
     private int GALLERY = 1, CAMERA = 2;
 
@@ -134,6 +134,7 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         EditText edtCachLam = findViewById(R.id.edtnl2);
 
         btnLuu = findViewById(R.id.btnluu);
+        btnlensong = findViewById(R.id.btnlensong);
 
 
         imageView1 = findViewById(R.id.anhdang);
@@ -198,13 +199,9 @@ public class ThemMonMoiActivity extends AppCompatActivity {
             }
         });
 
-        btnLuuAnh.setOnClickListener(new View.OnClickListener() {
+        btnLuu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
-
 
                 MediaManager.get().upload(contentURI1).callback(new UploadCallback() {
                     @Override
@@ -331,7 +328,7 @@ public class ThemMonMoiActivity extends AppCompatActivity {
             }
         });
 
-        btnLuu.setOnClickListener(new View.OnClickListener() {
+        btnlensong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Post post = new Post(
