@@ -131,6 +131,7 @@ public class DBHelper extends SQLiteOpenHelper {
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS NGUOIDUNGSAVE");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS NGUYENLIEU");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS THONGBAO");
+            onCreate(sqLiteDatabase);
         }
     }
 

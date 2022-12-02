@@ -2,13 +2,9 @@ package com.example.cookingapp.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.cookingapp.DB.DBHelper;
-import com.example.cookingapp.model.DangBai;
-
-import java.util.ArrayList;
 
 public class DangBaiDao {
     DBHelper dbHelper;
