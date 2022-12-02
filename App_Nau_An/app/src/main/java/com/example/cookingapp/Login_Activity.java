@@ -20,6 +20,10 @@ public class Login_Activity extends AppCompatActivity {
         Button btnlg = findViewById(R.id.btnlogin);
         ImageView backbtn = findViewById(R.id.backbtn);
 
+
+
+
+
         
 
         backbtn.setOnClickListener(new View.OnClickListener() {
@@ -34,5 +38,10 @@ public class Login_Activity extends AppCompatActivity {
                 startActivity(new Intent(Login_Activity.this,Menu_Activity.class));
             }
         });
+
+
+
+
+
     }
 }
