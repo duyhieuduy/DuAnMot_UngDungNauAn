@@ -42,8 +42,8 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            Picasso.get().load(list.get(position).getAnhmonlv0()).placeholder(R.drawable.img).
-                    error(R.drawable.img).
+            Picasso.get().load(list.get(position).getAnhmonlv0()).placeholder(R.drawable.anhdangmon).
+                    error(R.drawable.anhdangmon).
                     into(holder.imgfood);
             holder.TenDs.setText(list.get(position).getTenmon());
             holder.tennl1.setText(list.get(position).getListnl().get(0).getTennguyenlieu());

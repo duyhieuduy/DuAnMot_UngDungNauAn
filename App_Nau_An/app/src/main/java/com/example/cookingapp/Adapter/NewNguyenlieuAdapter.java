@@ -43,8 +43,8 @@ public class NewNguyenlieuAdapter extends RecyclerView.Adapter<NewNguyenlieuAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.text.setText("" + list.get(position).getTennguyenlieu());
-        Picasso.get().load(list.get(position).getAnhnguyenlieu()).placeholder(R.drawable.img).
-                error(R.drawable.img).
+        Picasso.get().load(list.get(position).getAnhnguyenlieu()).placeholder(R.drawable.anhdangmon).
+                error(R.drawable.anhdangmon).
                 into(holder.img);
 
 

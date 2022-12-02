@@ -50,8 +50,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         if (mListFood.get(position) == null){
             return;
         }
-        Picasso.get().load(mListFood.get(position).getAnhmonlv0()).placeholder(R.drawable.img).
-                error(R.drawable.img).
+        Picasso.get().load(mListFood.get(position).getAnhmonlv0()).placeholder(R.drawable.anhdangmon).
+                error(R.drawable.anhdangmon).
                 into(holder.imgfood);
         holder.TenDs.setText(mListFood.get(position).getTenmon());
         holder.tennl1.setText(mListFood.get(position).getListnl().get(0).getTennguyenlieu());

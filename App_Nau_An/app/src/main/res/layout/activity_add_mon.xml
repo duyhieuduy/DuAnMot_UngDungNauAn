@@ -1,10 +1,423 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddMonActivity">
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddMonActivity">
 
-    
-</RelativeLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/luu_lensong_ex"
+            android:text="Lưu"
+            android:id="@+id/btnluu"
+
+            android:layout_marginTop="10dp"
+
+            android:layout_marginLeft="200dp"
+            android:textColor="@color/content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnlensong"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/btnluu"
+            android:background="@drawable/luu_lensong_ex"
+            android:backgroundTint="#4B6627C6"
+            android:text="Lên Sóng"
+            android:textColor="@color/content" />
+
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/btnluu"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/anhdangmon"
+            android:id="@+id/anhdang"/>
+
+        <EditText
+            android:id="@+id/tenmon"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/anhdang"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:hint="Tên Món"
+            android:paddingLeft="20dp"
+            />
+
+        <EditText
+            android:id="@+id/loaimon"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tenmon"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:hint="Loại Món"
+            android:paddingLeft="20dp"
+            />
+
+        <EditText
+            android:id="@+id/mota"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/loaimon"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Mô Tả" />
+
+        <TextView
+            android:id="@+id/tgntv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thời Gian Nấu"
+            android:layout_below="@+id/mota"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:id="@+id/dktv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Độ Khó"
+            android:layout_below="@+id/tgntv"
+            android:layout_marginLeft="20dp"/>
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:background="@drawable/edittextbox"
+            android:layout_below="@+id/mota"
+            android:layout_alignParentEnd="true"
+            android:hint="1h30 phút"
+            android:paddingLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="#469C9898"
+            android:id="@+id/edttgn"
+            />
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:background="@drawable/edittextbox"
+            android:layout_below="@+id/edttgn"
+            android:layout_alignParentEnd="true"
+            android:hint="Khó"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="#469C9898"
+            android:id="@+id/edtdokho"
+            />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:id="@+id/tvnl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nguyên Liệu"
+            android:textStyle="bold"
+            android:layout_below="@+id/edtdokho"
+            android:layout_marginLeft="20dp"/>
+        <EditText
+            android:id="@+id/edtnl"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tvnl"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Tên Nguyên Liệu" />
+        <EditText
+            android:id="@+id/edtkl"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/edtnl"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Khối Lượng" />
+        <TextView
+            android:id="@+id/btnthemnl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtkl"
+            android:text="Thêm Nguyên Liệu"
+            android:textSize="20dp"
+            android:drawableLeft="@drawable/ic_add"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:id="@+id/tvnl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nguyên Liệu 2"
+            android:textStyle="bold"
+            android:layout_below="@+id/btnthemnl"
+            android:layout_marginLeft="20dp"/>
+        <EditText
+            android:id="@+id/edtnl2"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tvnl2"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Tên Nguyên Liệu" />
+        <EditText
+            android:id="@+id/edtkl2"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/edtnl2"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Khối Lượng" />
+        <TextView
+            android:id="@+id/btnthemnl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtkl2"
+            android:text="Thêm Nguyên Liệu"
+            android:textSize="20dp"
+            android:drawableLeft="@drawable/ic_add"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:id="@+id/tvnl3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nguyên Liệu 3"
+            android:textStyle="bold"
+            android:layout_below="@+id/btnthemnl2"
+            android:layout_marginLeft="20dp"/>
+        <EditText
+            android:id="@+id/edtnl3"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tvnl3"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Tên Nguyên Liệu" />
+        <EditText
+            android:id="@+id/edtkl3"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/edtnl3"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Khối Lượng" />
+        <TextView
+            android:id="@+id/btnthemnl3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtkl3"
+            android:text="Thêm Nguyên Liệu"
+            android:textSize="20dp"
+            android:drawableLeft="@drawable/ic_add"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:id="@+id/tvnl4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nguyên Liệu 4"
+            android:textStyle="bold"
+            android:layout_below="@+id/btnthemnl3"
+            android:layout_marginLeft="20dp"/>
+        <EditText
+            android:id="@+id/edtnl4"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tvnl4"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Tên Nguyên Liệu" />
+        <EditText
+            android:id="@+id/edtkl4"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/edtnl4"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Khối Lượng" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:id="@+id/tvcachlam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cách Làm"
+            android:textStyle="bold"
+            android:layout_below="@+id/edtkl4"
+            android:layout_marginLeft="20dp"/>
+
+        <ImageView
+            android:id="@+id/ivnum"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tvcachlam"
+            android:background="@drawable/mot"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/ivacl1"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tvcachlam"
+            android:layout_toRightOf="@id/ivnum"
+            android:background="@drawable/image_search"
+            />
+
+        <ImageView
+            android:id="@+id/ivnum2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/ivnum"
+            android:background="@drawable/hai"
+            />
+
+        <ImageView
+            android:id="@+id/ivacl2"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/ivnum"
+            android:layout_toRightOf="@id/ivnum2"
+            android:background="@drawable/image_search"
+            />
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/ivnum3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/ivnum2"
+            android:background="@drawable/ba"
+            />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/ivacl3"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/ivnum2"
+            android:layout_toRightOf="@id/ivnum3"
+            android:background="@drawable/image_search"
+            />
+
+        <EditText
+            android:id="@+id/edtcachlam1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tvcachlam"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/ivacl1"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Công thức làm" />
+        <EditText
+            android:id="@+id/edtcachlam2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/edtcachlam1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/ivacl1"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Công thức làm" />
+        <EditText
+            android:id="@+id/edtcachlam3"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/edtcachlam2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/ivacl1"
+            android:background="@drawable/edittextbox"
+            android:backgroundTint="#469C9898"
+            android:paddingLeft="20dp"
+            android:hint="Công thức làm" />
+
+
+    </RelativeLayout>
+</ScrollView>
