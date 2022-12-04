@@ -133,8 +133,7 @@ public class Home_Fragment extends Fragment{
 //
 //        return view;
 
-        mList = new ArrayList<>();
-        List<Food> list = new  getListUsers;
+
         insertDao = new InsertDao(getContext());
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
