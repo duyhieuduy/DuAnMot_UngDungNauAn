@@ -6,25 +6,37 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cookingapp.Adapter.FoodAdapter;
 import com.example.cookingapp.Adapter.NewNguyenlieuAdapter;
 import com.example.cookingapp.Adapter.NguyenLieuAdapter;
+import com.example.cookingapp.CallApi.ApiService;
+import com.example.cookingapp.CallApi.Food;
 import com.example.cookingapp.Interface.INguyenLieu;
 import com.example.cookingapp.R;
+import com.example.cookingapp.dao.InsertDao;
+import com.example.cookingapp.model.FoodInFor;
 import com.example.cookingapp.model.NewNguyenLieu;
 import com.example.cookingapp.model.NguyenLieu;
 import com.example.cookingapp.dao.dao;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Home_Fragment extends Fragment{
         RecyclerView recyclerviewHCK;
@@ -32,8 +44,12 @@ public class Home_Fragment extends Fragment{
         ArrayList<NguyenLieu> list;
         ArrayList<NewNguyenLieu> listnew;
         dao daoz;
+        Button btnInsert;
+        NguyenLieuAdapter adapter;
+        InsertDao insertDao;
+        List<Food> mList;
 
-    NguyenLieuAdapter adapter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -107,8 +123,44 @@ public class Home_Fragment extends Fragment{
 //
 //        return view;
 
+        mList = new ArrayList<>();
+        List<Food> list = new  getListUsers;
+        insertDao = new InsertDao(getContext());
+        btnInsert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                recyclerMon = findViewById(R.id.recyclerMon);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+                recyclerMon.setLayoutManager(linearLayoutManager);
+
+                DividerItemDecoration itemDecoration = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
+                recyclerMon.addItemDecoration(itemDecoration);
+
+                mList = new ArrayList<>();
+                callApiGetUser();
+            }
+        });
 
 
     }
+    private void callApiGetUser() {
+        ApiService.apiService.getListUsers(1).enqueue(new Callback<List<Food>>() {
+            @Override
+            public void onResponse(Call<List<Food>> call, Response<List<Food>> response) {
+                mList = response.body();
+                FoodAdapter adapter = new FoodAdapter(mList);
+                recyclerMon.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Food>> call, Throwable t) {
+                Toast.makeText(getContext(), "Call api fail", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
 
 }

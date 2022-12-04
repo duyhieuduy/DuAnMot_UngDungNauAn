@@ -140,6 +140,13 @@ public class CongThucNguyenLieuDAO {
         }
         return list;
     }
+//
+//    public ArrayList<>getNGUOIDUNGSAVE(int idmonan){
+//        ArrayList<> list = new ArrayList();
+//        SQLiteDatabase sqLiteDatabase  = dbHelper.getReadableDatabase();
+//        Cursor cursor = sqLiteDatabase.rawQuery();
+//    }
+//
 
 
 

@@ -35,7 +35,7 @@ public class ThemFragment extends Fragment {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), AddMonActivity.class));
+               // startActivity(new Intent(getContext(), AddMonActivity.class));
             }
         });
 
