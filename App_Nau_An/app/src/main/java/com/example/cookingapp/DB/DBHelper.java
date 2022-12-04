@@ -23,9 +23,11 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(dbBinhLuan);
 
         String dbCongThucNguyenLieu = "CREATE TABLE CONGTHUCNGUYENLIEU (" +
+                "idctnl Integer primary key autoincrement," +
                 "mamon INTEGER, " +
                 "manguyenlieu INTEGER, " +
-                "khoiluong TEXT)";
+                "khoiluong TEXT, " +
+                "tennguyenlieu TEXT)";
         sqLiteDatabase.execSQL(dbCongThucNguyenLieu);
 
         String dbLoaiMon = "CREATE TABLE LOAIMON (" +
@@ -45,7 +47,7 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(dbMon);
 
         String dbNguoiDung = "CREATE TABLE NGUOIDUNG (" +
-                "tendangnhap TEXT PRIMARY KEY autoincrement," +
+                "tendangnhap TEXT PRIMARY KEY ," +
                 "matkhau TEXT)";
         sqLiteDatabase.execSQL(dbNguoiDung);
 
@@ -58,15 +60,9 @@ public class DBHelper extends SQLiteOpenHelper {
         String dbNguoiDungSave = "CREATE TABLE NGUOIDUNGSAVE (" +
                 "idnguoidungsave INTEGER PRIMARY KEY," +
                 "mamon  INTEGER," +
-                "tendangnhap TEXT, " +
-                "trangthai TEXT)";
+                "tendangnhap TEXT)";
         sqLiteDatabase.execSQL(dbNguoiDungSave);
 
-        String dbNguyenLieu = "CREATE TABLE NGUYENLIEU ( " +
-                "manguyenlieu  INTEGER PRIMARY KEY autoincrement, " +
-                "tennguyenlieu TEXT," +
-                "anhnguyenlieu TEXT)";
-        sqLiteDatabase.execSQL(dbNguyenLieu);
 
         String dbThongBao = "CREATE TABLE THONGBAO (" +
                 "id_tb INTEGER PRIMARY KEY autoincrement," +
@@ -75,8 +71,8 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(dbThongBao);
 
         sqLiteDatabase.execSQL("INSERT INTO MON VALUES (" +
-                "1 ,7 ,'Mực Ống Xào Măng Trúc', 'Mực Ống Xào Măng Trúc', '40 phút', 'dễ','https://res.cloudinary.com/doluugxhe/image/upload/v1669553276/Cooking%20app/mucongxaomangtruc_o2lfxb.jpg','cachlam')," +
-                "(2, 7, 'Ếch Xào Hoa Hẹ', 'Ếch Xào Hoa Hẹ', '40 phút', 'dễ','https://res.cloudinary.com/doluugxhe/image/upload/v1669553276/Cooking%20app/mucongxaomangtruc_o2lfxb.jpg','cachlam')");
+                "1 ,7 ,'Mực Ống Xào Măng Trúc', 'Mực Ống Xào Măng Trúc', '40 phút', 'Dễ','https://res.cloudinary.com/doluugxhe/image/upload/v1669553276/Cooking%20app/mucongxaomangtruc_o2lfxb.jpg','cachlam')," +
+                "(2, 7, 'Ếch Xào Hoa Hẹ', 'Ếch Xào Hoa Hẹ', '40 phút', 'Dễ','https://res.cloudinary.com/doluugxhe/image/upload/v1669553276/Cooking%20app/mucongxaomangtruc_o2lfxb.jpg','cachlam')");
 
         sqLiteDatabase.execSQL("INSERT INTO LOAIMON VALUES (" +
                 "4 ,'khác'), " +
@@ -102,21 +98,16 @@ public class DBHelper extends SQLiteOpenHelper {
                 "(1, 'Sinh tố & giải khát'), " +
                 "(16, 'Thập cẩm')");
         sqLiteDatabase.execSQL("INSERT INTO CONGTHUCNGUYENLIEU VALUES " +
-                "(1,1,'1 con'), " +
-                "(1,18,'100gram')," +
-                "(2,2,'1 con'), " +
-                "(2,19,'300gram')");
-        sqLiteDatabase.execSQL("INSERT INTO NGUYENLIEU VALUES " +
-                "(1,'muc ong','https://res.cloudinary.com/doluugxhe/image/upload/v1669565429/Cooking%20app/mucong_b8pjx0.jpg'), " +
-                "(18,'mang truc','https://res.cloudinary.com/doluugxhe/image/upload/v1669565974/Cooking%20app/mangtruc_fz2b5n.jpg')," +
-                "(2,'ech','https://res.cloudinary.com/doluugxhe/image/upload/v1669565476/Cooking%20app/ech_zv2f4v.jpg'), " +
-                "(19,'hoa he','https://res.cloudinary.com/doluugxhe/image/upload/v1669566138/Cooking%20app/hoahe_okuzyg.jpg')");
+                "(1,1,1,'1 con','Mực ống'), " +
+                "(2,1,18,'100gram','Măng Trúc')," +
+                "(3,2,2,'1 con','Ếch'), " +
+                "(4,2,19,'300gram','Hoa Hẹ')");
 
         sqLiteDatabase.execSQL("INSERT INTO BINHLUAN VALUES(1,1,'bao','naudoqua')");
         sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNG VALUES('bao','123')");
         sqLiteDatabase.execSQL("INSERT INTO ANHMONAN VALUES(1,1,'https://res.cloudinary.com/doluugxhe/image/upload/v1669565429/Cooking%20app/mucong_b8pjx0.jpg')");
         sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNGDB VALUES(1,1,'bao') ");
-        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNGSAVE VALUES(1,1,'bao','đã lưu')");
+        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNGSAVE VALUES(1,1,'bao')");
 
     }
 
@@ -131,7 +122,6 @@ public class DBHelper extends SQLiteOpenHelper {
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS NGUOIDUNG");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS NGUOIDUNGDB");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS NGUOIDUNGSAVE");
-            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS NGUYENLIEU");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS THONGBAO");
             onCreate(sqLiteDatabase);
         }

@@ -25,7 +25,6 @@ import com.cloudinary.android.MediaManager;
 import com.cloudinary.android.callback.ErrorInfo;
 import com.cloudinary.android.callback.UploadCallback;
 import com.example.cookingapp.Interface.ApiInterface;
-import com.example.cookingapp.dao.DangBaiDao;
 import com.example.cookingapp.model.Post;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
@@ -39,7 +38,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -55,8 +53,6 @@ public class ThemMonMoiActivity extends AppCompatActivity {
     private Button btnLuu,btnlensong;
     private static final String IMAGE_DIRECTORY = "/demonuts";
     private int GALLERY = 1, CAMERA = 2;
-
-
 
     TextView tv_api, tv_link_img1, tv_link_img2, tv_link_img3, tv_link_img4;
 
@@ -82,41 +78,11 @@ public class ThemMonMoiActivity extends AppCompatActivity {
     String anhcachlam2;
     String anhcachlam3;
 
-
-    SharedPreferences sharedPreferences;
-
     int clickImage;
-    DangBaiDao baiDangDAO;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_mon);
-
-
-        TextView btnthemnl = findViewById(R.id.btnthemnl);
-        btnthemnl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        TextView btnthemnl2 = findViewById(R.id.btnthemnl2);
-        btnthemnl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        TextView btnthemnl3 = findViewById(R.id.btnthemnl3);
-        btnthemnl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         EditText edtTenMon = findViewById(R.id.tenmon);
         EditText edtLoaiMon = findViewById(R.id.loaimon);
@@ -132,18 +98,29 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         EditText edtNguyenLieu4 = findViewById(R.id.edtnl4);
         EditText edtKhoiLuong4 = findViewById(R.id.edtkl4);
         EditText edtCachLam = findViewById(R.id.edtnl2);
+        imageView1 = findViewById(R.id.anhdang);
+        imageView2 = findViewById(R.id.ivacl1);
+        imageView3 = findViewById(R.id.ivacl2);
+        imageView4 = findViewById(R.id.ivacl3);
+
+        TextView tvnl2 = findViewById(R.id.tvnl2);
+        TextView tvnl3 = findViewById(R.id.tvnl3);
+        TextView tvnl4 = findViewById(R.id.tvnl4);
+        TextView btnthemnl = findViewById(R.id.btnthemnl);
+        TextView btnthemnl2 = findViewById(R.id.btnthemnl2);
+        TextView btnthemnl3 = findViewById(R.id.btnthemnl3);
+
+
+
 
         btnLuu = findViewById(R.id.btnluu);
         btnlensong = findViewById(R.id.btnlensong);
 
 
-        imageView1 = findViewById(R.id.anhdang);
-        imageView2 = findViewById(R.id.ivacl1);
-        imageView3 = findViewById(R.id.ivacl2);
-        imageView4 = findViewById(R.id.ivacl3);
+
         requestMultiplePermissions();
 
-       // sharedPreferences = getSharedPreferences("tennguoidung", Context.MODE_PRIVATE);
+       // SharedPreferences sharedPreferences = getSharedPreferences("tennguoidung", Context.MODE_PRIVATE);
 
         // String tendangnhap = sharedPreferences.getString("tenuser" ,null);
          tendangnhap = "1";
@@ -167,6 +144,48 @@ public class ThemMonMoiActivity extends AppCompatActivity {
          anhcachlam3 = path4;
 
 
+        edtNguyenLieu2.setVisibility(View.GONE);
+        edtKhoiLuong2.setVisibility(View.GONE);
+        tvnl2.setVisibility(View.GONE);
+        btnthemnl2.setVisibility(View.GONE);
+
+
+        edtNguyenLieu3.setVisibility(View.GONE);
+        edtKhoiLuong3.setVisibility(View.GONE);
+        tvnl3.setVisibility(View.GONE);
+        btnthemnl3.setVisibility(View.GONE);
+
+        edtNguyenLieu4.setVisibility(View.GONE);
+        edtKhoiLuong4.setVisibility(View.GONE);
+        tvnl4.setVisibility(View.GONE);
+
+        btnthemnl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtNguyenLieu2.setVisibility(View.VISIBLE);
+                edtKhoiLuong2.setVisibility(View.VISIBLE);
+                tvnl2.setVisibility(View.VISIBLE);
+                btnthemnl2.setVisibility(View.VISIBLE);
+            }
+        });
+        btnthemnl2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtNguyenLieu3.setVisibility(View.VISIBLE);
+                edtKhoiLuong3.setVisibility(View.VISIBLE);
+                tvnl3.setVisibility(View.VISIBLE);
+                btnthemnl3.setVisibility(View.VISIBLE);
+            }
+        });
+        btnthemnl3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtNguyenLieu4.setVisibility(View.VISIBLE);
+                edtKhoiLuong4.setVisibility(View.VISIBLE);
+                tvnl4.setVisibility(View.VISIBLE);
+            }
+        });
+
         initConfig();
 
         imageView1.setOnClickListener(new View.OnClickListener() {
@@ -176,7 +195,6 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                 showPictureDialog();
             }
         });
-
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

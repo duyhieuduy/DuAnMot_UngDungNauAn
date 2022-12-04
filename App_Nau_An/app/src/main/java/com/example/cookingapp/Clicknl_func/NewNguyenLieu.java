@@ -1,17 +1,15 @@
-package com.example.cookingapp.model;
+package com.example.cookingapp.Clicknl_func;
 
-public class NguyenLieu {
+import android.app.Application;
+
+public class NewNguyenLieu extends Application {
     String tennguyenlieu;
 
-
-    public NguyenLieu( String tennguyenlieu) {
-
+    public NewNguyenLieu( String tennguyenlieu) {
         this.tennguyenlieu = tennguyenlieu;
     }
 
-    public NguyenLieu() {
 
-    }
 
     public String getTennguyenlieu() {
         return tennguyenlieu;
@@ -20,9 +18,5 @@ public class NguyenLieu {
     public void setTennguyenlieu(String tennguyenlieu) {
         this.tennguyenlieu = tennguyenlieu;
     }
-
-
-
-
 
 }

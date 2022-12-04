@@ -8,27 +8,71 @@
         android:layout_height="wrap_content"
         android:text="Kho cảm hứng"
         android:textSize="30dp"
+        android:textColor="#0A8074"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/textKCH"
+        />
+    <ImageView
+        android:id="@+id/l"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/linea"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="#7CB28BDF"
+        android:layout_below="@+id/recyclviewnewKCH"/>
+    <ImageView
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/linea"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="#7CB28BDF"
+        android:layout_below="@+id/recyclviewKCH"
+        />
+    <ImageView
+        android:id="@+id/l2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/linea"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#7CB28BDF"
+        android:layout_below="@+id/lvloaimon"
         />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclviewKCH"
        android:layout_width="match_parent"
-       android:layout_height="100dp"
+       android:layout_height="120dp"
         android:layout_below="@+id/textKCH"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclviewnewKCH"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@+id/recyclviewKCH"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@+id/l1"
 
         />
+    <ListView
+        android:id="@+id/lvloaimon"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/l"
+
+        />
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:id="@+id/container"
-        android:layout_below="@+id/recyclviewnewKCH"/>
+        android:layout_below="@+id/l2"/>
 
 
     <Button
@@ -51,11 +95,25 @@
 <!--            android:layout_centerHorizontal="true"-->
 <!--            android:layout_marginTop="100dp"-->
 <!--            android:layout_height="40dp"/>-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/recyclviewKCH"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/search" />
+    
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerMonAn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <androidx.viewpager.widget.ViewPager
+            android:layout_below="@+id/container"
+            android:id="@+id/ViewPger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
 
 
 </RelativeLayout>
