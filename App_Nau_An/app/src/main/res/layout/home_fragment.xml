@@ -74,11 +74,7 @@
         android:id="@+id/container"
         android:layout_below="@+id/l2"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add"
-        android:id="@+id/btn"/>
+
     <Button
        android:layout_marginLeft="13dp"
         android:text="Chuyển"
