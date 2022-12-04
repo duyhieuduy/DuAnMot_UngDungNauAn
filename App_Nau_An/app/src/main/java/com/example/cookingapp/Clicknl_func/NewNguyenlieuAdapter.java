@@ -1,4 +1,4 @@
-package com.example.cookingapp.Adapter;
+package com.example.cookingapp.Clicknl_func;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,10 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.cookingapp.R;
-import com.example.cookingapp.model.NewNguyenLieu;
-import com.example.cookingapp.dao.dao;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -44,17 +41,13 @@ public class NewNguyenlieuAdapter extends RecyclerView.Adapter<NewNguyenlieuAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.text.setText("" + list.get(position).getTennguyenlieu());
-        Picasso.get().load(list.get(position).getAnhnguyenlieu()).placeholder(R.drawable.anhdangmon).
-                error(R.drawable.anhdangmon).
-                into(holder.img);
-
 
 
         holder.iv_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dao loaiSachDAO = new dao(context);
-                boolean check = loaiSachDAO.xoaNguyenLieu(list.get(holder.getAdapterPosition()).getManguyenlieu());
+                boolean check = loaiSachDAO.xoaNguyenLieu(list.get(holder.getAdapterPosition()).getTennguyenlieu());
 
                 if(check){
                     list.clear();
