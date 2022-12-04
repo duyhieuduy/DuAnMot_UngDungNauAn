@@ -32,7 +32,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="40dp"
-        android:backgroundTint="#7CB28BDF"
+        android:backgroundTint="#46B28BDF"
         android:layout_below="@+id/recyclviewKCH"
         />
     <ImageView
