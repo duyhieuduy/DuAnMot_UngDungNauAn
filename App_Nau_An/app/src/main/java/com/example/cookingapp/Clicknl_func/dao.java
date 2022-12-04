@@ -1,12 +1,9 @@
-package com.example.cookingapp.dao;
+package com.example.cookingapp.Clicknl_func;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-import com.example.cookingapp.model.NewNguyenLieu;
-import com.example.cookingapp.DB.NewNldb;
 
 import java.util.ArrayList;
 
@@ -22,18 +19,16 @@ public class dao {
         if (cursor.getCount() != 0){
             cursor.moveToFirst();
             do {
-                list.add(new NewNguyenLieu(cursor.getInt(0), cursor.getString(1), cursor.getString(2)));
+                list.add(new NewNguyenLieu(cursor.getString(0)));
             }while (cursor.moveToNext());
         }
         return list;
     }
 
-    public boolean insert(int manl, String tennl, String anhnl){
+    public boolean insert(String tennl){
         SQLiteDatabase database = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("manl", manl);
         contentValues.put("tennl", tennl);
-        contentValues.put("anhnl", anhnl);
         long check = database.insert("newNL", null, contentValues);
         if (check == -1){
             return false;
@@ -41,13 +36,10 @@ public class dao {
         return true;
 
     }
-    public boolean xoaNguyenLieu(int id){
+    public boolean xoaNguyenLieu(String id){
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
-//        Cursor cursor  = sqLiteDatabase.rawQuery("SELECT*FROM newNL WHERE manl=?",new String[]{String.valueOf(id)});
-//        if (cursor.getCount() !=0){
-//            return -1;
-//        }
-        long check = sqLiteDatabase.delete("newNL","manl=?",new String[]{String.valueOf(id)});
+
+        long check = sqLiteDatabase.delete("newNL","tennl=?",new String[]{String.valueOf(id)});
         if (check == -1)
             return false;
         return true;

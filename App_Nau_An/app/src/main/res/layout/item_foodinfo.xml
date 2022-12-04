@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="190dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="wrap_content">
+    android:layout_height="280dp"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="20dp"
+    android:backgroundTint="#5BDFD5EC"
+    android:backgroundTintMode="src_in">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -11,19 +16,22 @@
         <ImageView
             android:id="@+id/imgfood"
             android:layout_width="match_parent"
-            android:layout_height="235dp"
+            android:layout_height="110dp"
             android:layout_alignParentTop="true"
             android:layout_marginBottom="5dp"
             android:src="@mipmap/ic_launcher" />
+
         <TextView
             android:id="@+id/TenDs"
-            android:textSize="20dp"
-            android:text="Tên đồ ăn"
-            android:layout_below="@+id/imgfood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/imgfood"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_marginLeft="10dp"
+            android:text="Tên đồ ăn"
+            android:textColor="#0A8074"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/img1"
@@ -31,50 +39,52 @@
             android:layout_height="15dp"
             android:layout_below="@+id/TenDs"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="7dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/nguyenlieua" />
 
         <ImageView
             android:id="@+id/img2"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:layout_below="@+id/img1"
+            android:layout_below="@+id/tennl1"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/dokho" />
 
         <ImageView
             android:id="@+id/img3"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:layout_margin="5dp"
             android:layout_below="@+id/img2"
-            android:src="@mipmap/ic_launcher" />
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/clock" />
 
         <TextView
             android:id="@+id/tnl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/TenDs"
-            android:layout_toRightOf="@+id/img1"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@+id/img1"
             android:text="Tên nguyên liệu:" />
+
         <TextView
+            android:id="@+id/dk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Độ khó:"
-            android:layout_toRightOf="@id/img1"
-            android:layout_below="@+id/tnl"
-            android:id="@+id/dk"
+            android:layout_below="@+id/tennl1"
             android:layout_marginStart="5dp"
-            />
+            android:layout_toRightOf="@id/img1"
+            android:text="Độ khó:" />
 
         <TextView
             android:id="@+id/tgn"
@@ -87,20 +97,23 @@
             android:layout_marginBottom="5dp"
             android:layout_toRightOf="@id/img1"
             android:text="Thời gian nấu:" />
+
         <TextView
             android:id="@+id/tennl1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/TenDs"
-            android:layout_margin="5dp"
-            android:layout_toRightOf="@id/tnl"
-            android:text="tennguyenlieu1" />
+            android:layout_below="@+id/tnl"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="tennguyenlieu1"
+            android:textColor="#1976D2"/>
+
         <TextView
             android:id="@+id/dauphay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/TenDs"
-            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tnl"
             android:layout_toRightOf="@id/tennl1"
             android:text="," />
 
@@ -108,17 +121,24 @@
             android:id="@+id/tennl2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/TenDs"
-            android:layout_margin="5dp"
+            android:layout_below="@+id/tnl"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_toRightOf="@id/dauphay"
-            android:text="tennguyenlieu2" />
+            android:text="tennl2"
+            android:textColor="#1976D2"/>
+
         <TextView
             android:id="@+id/dok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tennl1"
             android:layout_toRightOf="@id/dk"
+            android:paddingLeft="5dp"
+            android:textColor="#1976D2"
             android:text="dokho" />
+
         <TextView
             android:id="@+id/thoigiannau"
             android:layout_width="wrap_content"
@@ -126,24 +146,22 @@
             android:layout_below="@+id/dok"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/tgn"
-            android:text="tgnau" />
+            android:text="tgnau"
+            android:textColor="#1976D2"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnluu"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/hearts"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/white"
+            android:backgroundTint="#FDE1C5C5"
             android:textSize="10dp"
             android:textStyle="italic" />
-
-
 
 
     </RelativeLayout>

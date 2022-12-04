@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,13 +16,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cookingapp.Adapter.NewNguyenlieuAdapter;
+import com.example.cookingapp.Clicknl_func.NewNguyenlieuAdapter;
 import com.example.cookingapp.Adapter.NguyenLieuAdapter;
 import com.example.cookingapp.Interface.INguyenLieu;
 import com.example.cookingapp.R;
-import com.example.cookingapp.model.NewNguyenLieu;
+import com.example.cookingapp.Clicknl_func.NewNguyenLieu;
 import com.example.cookingapp.model.NguyenLieu;
-import com.example.cookingapp.dao.dao;
+import com.example.cookingapp.Clicknl_func.dao;
 
 import java.util.ArrayList;
 
@@ -47,17 +45,17 @@ public class Home_Fragment extends Fragment{
         list = new ArrayList<>();
         listnew = new ArrayList<>();
 
-        list.add(new NguyenLieu(1,"Thịt Hiếu","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
-        list.add(new NguyenLieu(2,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
-        list.add(new NguyenLieu(3,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
-        list.add(new NguyenLieu(4,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
-        list.add(new NguyenLieu(5,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
-        list.add(new NguyenLieu(6,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
-        list.add(new NguyenLieu(7,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
-        list.add(new NguyenLieu(8,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
-        list.add(new NguyenLieu(9,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
-        list.add(new NguyenLieu(10,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
-        listnew.add(new NewNguyenLieu(10,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
+        list.add(new NguyenLieu("Thịt Hiếu"));
+        list.add(new NguyenLieu("Thịt Bảo"));
+        list.add(new NguyenLieu( "Thịt a"));
+        list.add(new NguyenLieu( "Thịt b"));
+        list.add(new NguyenLieu( "Thịt c"));
+        list.add(new NguyenLieu( "Thịt d"));
+        list.add(new NguyenLieu( "Thịt e"));
+        list.add(new NguyenLieu( "Thịt f"));
+        list.add(new NguyenLieu( "Thịt aq"));
+        list.add(new NguyenLieu( "Thịt à"));
+        listnew.add(new NewNguyenLieu("Thịt Ád"));
 
 
         loadDataNewnl();
@@ -70,7 +68,7 @@ public class Home_Fragment extends Fragment{
             @Override
             public void onClick(NguyenLieu nguyenLieu) {
                 dao daoz = new dao(getContext());
-                daoz.insert(nguyenLieu.getManguyenlieu(),nguyenLieu.getTennguyenlieu(), nguyenLieu.getAnhnguyenlieu());
+                daoz.insert(nguyenLieu.getTennguyenlieu());
                 loadDataNewnl();
             }
         });
