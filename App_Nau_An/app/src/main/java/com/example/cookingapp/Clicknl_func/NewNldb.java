@@ -13,7 +13,6 @@ public class NewNldb extends SQLiteOpenHelper {
         String newNL = "create table newNL( tennl text)";
         sqLiteDatabase.execSQL(newNL);
 
-        sqLiteDatabase.execSQL("insert into newNL values ('test')");
     }
 
     @Override
