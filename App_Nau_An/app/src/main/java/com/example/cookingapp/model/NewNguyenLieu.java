@@ -1,18 +1,16 @@
 package com.example.cookingapp.model;
 
-public class NguyenLieu {
+import android.app.Application;
+
+public class NewNguyenLieu extends Application {
     int manguyenlieu;
     String tennguyenlieu;
     String anhnguyenlieu;
 
-    public NguyenLieu(int manguyenlieu, String tennguyenlieu, String anhnguyenlieu) {
+    public NewNguyenLieu(int manguyenlieu, String tennguyenlieu, String anhnguyenlieu) {
         this.manguyenlieu = manguyenlieu;
         this.tennguyenlieu = tennguyenlieu;
         this.anhnguyenlieu = anhnguyenlieu;
-    }
-
-    public NguyenLieu() {
-
     }
 
     public int getManguyenlieu() {

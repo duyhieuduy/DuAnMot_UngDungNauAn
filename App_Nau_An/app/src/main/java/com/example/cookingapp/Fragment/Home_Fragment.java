@@ -20,7 +20,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.Adapter.FoodAdapter;
 import com.example.cookingapp.Adapter.NewNguyenlieuAdapter;
-import com.example.cookingapp.Clicknl_func.NewNguyenlieuAdapter;
 import com.example.cookingapp.Adapter.NguyenLieuAdapter;
 import com.example.cookingapp.CallApi.ApiService;
 import com.example.cookingapp.CallApi.Food;
@@ -29,9 +28,8 @@ import com.example.cookingapp.R;
 import com.example.cookingapp.dao.InsertDao;
 import com.example.cookingapp.model.FoodInFor;
 import com.example.cookingapp.model.NewNguyenLieu;
-import com.example.cookingapp.Clicknl_func.NewNguyenLieu;
 import com.example.cookingapp.model.NguyenLieu;
-import com.example.cookingapp.Clicknl_func.dao;
+import com.example.cookingapp.dao.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +43,6 @@ public class Home_Fragment extends Fragment{
         RecyclerView recyclerviewnewHCK;
         ArrayList<NguyenLieu> list;
         ArrayList<NewNguyenLieu> listnew;
-
         dao daoz;
         Button btnInsert;
         NguyenLieuAdapter adapter;
@@ -58,22 +55,23 @@ public class Home_Fragment extends Fragment{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_fragment, container, false);
 
+        RecyclerView recyclerMonAn = view.findViewById(R.id.recyclerMonAn);
         recyclerviewHCK = view.findViewById(R.id.recyclviewKCH);
         recyclerviewnewHCK = view.findViewById(R.id.recyclviewnewKCH);
         list = new ArrayList<>();
         listnew = new ArrayList<>();
 
-        list.add(new NguyenLieu("Thịt Hiếu"));
-        list.add(new NguyenLieu("Thịt Bảo"));
-        list.add(new NguyenLieu( "Thịt a"));
-        list.add(new NguyenLieu( "Thịt b"));
-        list.add(new NguyenLieu( "Thịt c"));
-        list.add(new NguyenLieu( "Thịt d"));
-        list.add(new NguyenLieu( "Thịt e"));
-        list.add(new NguyenLieu( "Thịt f"));
-        list.add(new NguyenLieu( "Thịt aq"));
-        list.add(new NguyenLieu( "Thịt à"));
-        listnew.add(new NewNguyenLieu("Thịt Ád"));
+        list.add(new NguyenLieu(1,"Thịt Hiếu","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
+        list.add(new NguyenLieu(2,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
+        list.add(new NguyenLieu(3,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
+        list.add(new NguyenLieu(4,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
+        list.add(new NguyenLieu(5,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
+        list.add(new NguyenLieu(6,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
+        list.add(new NguyenLieu(7,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
+        list.add(new NguyenLieu(8,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
+        list.add(new NguyenLieu(9,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
+        list.add(new NguyenLieu(10,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
+        listnew.add(new NewNguyenLieu(10,"Thịt Bảo","https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg"));
 
 
         loadDataNewnl();
@@ -86,7 +84,7 @@ public class Home_Fragment extends Fragment{
             @Override
             public void onClick(NguyenLieu nguyenLieu) {
                 dao daoz = new dao(getContext());
-                daoz.insert(nguyenLieu.getTennguyenlieu());
+                daoz.insert(nguyenLieu.getManguyenlieu(),nguyenLieu.getTennguyenlieu(), nguyenLieu.getAnhnguyenlieu());
                 loadDataNewnl();
             }
         });
@@ -100,15 +98,7 @@ public class Home_Fragment extends Fragment{
                 fragmentTransaction.commit();
             }
         });
-//        mai lam
-//        list<loaimon> listloaimon = new ArrayList<>();
-//        ListView lvloaimon = view.findViewById(R.id.lvloaimon);
-//        ArrayAdapter arrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, listloaimon);
-//        lvloaimon.setAdapter(arrayAdapter);
-//
         return view;
-
-
     }
     private void loadDataNewnl(){
 

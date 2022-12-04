@@ -1,4 +1,4 @@
-package com.example.cookingapp.Clicknl_func;
+package com.example.cookingapp.DB;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,10 +10,10 @@ public class NewNldb extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String newNL = "create table newNL( tennl text)";
+        String newNL = "create table newNL(manl integer, tennl text,anhnl text)";
         sqLiteDatabase.execSQL(newNL);
 
-        sqLiteDatabase.execSQL("insert into newNL values ('test')");
+        sqLiteDatabase.execSQL("insert into newNL values (1,'hieupro','https://res.cloudinary.com/doluugxhe/image/upload/v1668265730/Cooking%20app/1_rjnyq8.jpg')");
     }
 
     @Override

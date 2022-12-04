@@ -44,9 +44,9 @@ public class CongThucNguyenLieuDAO {
     public ArrayList<Tennguyenlieu> gettennltheoidmon(int idmon){
         ArrayList<Tennguyenlieu> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select ctnl.tennguyenlieu" +
-                " from CONGTHUCNGUYENLIEU as ctnl, MON as m " +
-                " where m.mamon = ctnl.mamon" +
+        Cursor cursor = sqLiteDatabase.rawQuery("select nl.tennguyenlieu" +
+                " from CONGTHUCNGUYENLIEU as ctnl, NGUYENLIEU as nl, MON as m " +
+                " where m.mamon = ctnl.mamon and  ctnl.manguyenlieu = nl.manguyenlieu" +
                 " and m.mamon = ?",new String[]{String.valueOf(idmon)});
         if (cursor.getCount() != 0){
             cursor.moveToFirst();
@@ -103,15 +103,17 @@ public class CongThucNguyenLieuDAO {
     public ArrayList<NguyenLieu>getClickItemngl(int idmamon){
         ArrayList<NguyenLieu> list = new ArrayList<>();
        SQLiteDatabase sqLiteDatabase  = dbHelper.getReadableDatabase();
-       Cursor cursor = sqLiteDatabase.rawQuery("select nl.tennguyenlieu " +
-               "from   MON as m,CONGTHUCNGUYENLIEU as nl " +
-               "where m.mamon = nl.mamon " +
+       Cursor cursor = sqLiteDatabase.rawQuery("select nl.manguyenlieu,nl.tennguyenlieu,nl.anhnguyenlieu " +
+               "from  NGUYENLIEU as nl, MON as m,CONGTHUCNGUYENLIEU as ct " +
+               "where m.mamon = ct.mamon and ct.manguyenlieu = nl.manguyenlieu " +
                "and m.mamon = ?"
                ,new String[]{String.valueOf(idmamon)});
        if (cursor.getCount() !=0){
            cursor.moveToFirst();
            do{
-               list.add(new NguyenLieu(cursor.getString(0)));
+               list.add(new NguyenLieu(cursor.getInt(0),
+                       cursor.getString(1),
+                       cursor.getString(2)));
            }while (cursor.moveToNext());
 
        }
@@ -145,9 +147,6 @@ public class CongThucNguyenLieuDAO {
 //        Cursor cursor = sqLiteDatabase.rawQuery();
 //    }
 //
-
-
-
 
 
 

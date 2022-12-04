@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.R;
 
-import com.example.cookingapp.ThemMonMoiActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
@@ -36,7 +35,7 @@ public class ThemFragment extends Fragment {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), ThemMonMoiActivity.class));
+               // startActivity(new Intent(getContext(), AddMonActivity.class));
             }
         });
 
