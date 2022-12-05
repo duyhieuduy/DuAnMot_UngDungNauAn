@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:background="@drawable/sreentitle"
-
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,13 +48,13 @@
         android:layout_marginLeft="65dp"
         android:layout_marginTop="0dp"
         android:layout_marginRight="65dp"
-        android:text="Name"
+        android:text="Tên đăng nhập"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/namerg"
+        android:id="@+id/edttendangnhap"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
@@ -70,13 +68,13 @@
         android:layout_marginLeft="65dp"
         android:layout_marginTop="0dp"
         android:layout_marginRight="65dp"
-        android:text="User Name"
+        android:text="Mật khẩu"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/userrg"
+        android:id="@+id/edtmatkhau"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
@@ -91,13 +89,13 @@
         android:layout_marginLeft="65dp"
         android:layout_marginTop="0dp"
         android:layout_marginRight="65dp"
-        android:text="Password"
+        android:text="SĐT"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/passrg"
+        android:id="@+id/edtsdt"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
@@ -112,13 +110,53 @@
         android:layout_marginLeft="65dp"
         android:layout_marginTop="0dp"
         android:layout_marginRight="65dp"
-        android:text="Confirm Password"
+        android:text="Email"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/confirm"
+        android:id="@+id/edtemail"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="65dp"
+        android:background="@drawable/edittextbox"
+        android:backgroundTint="#2CFFFFFF" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="65dp"
+        android:text="Địa chỉ"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtdiachi"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="65dp"
+        android:background="@drawable/edittextbox"
+        android:backgroundTint="#2CFFFFFF" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="65dp"
+        android:text="Tuổi"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edttuoi"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"

@@ -22,7 +22,6 @@ import com.example.cookingapp.CallApi.nguoidungsavefs;
 import com.example.cookingapp.R;
 import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.model.FoodInFor;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +30,7 @@ public class TuongTacFragment extends Fragment {
     RecyclerView recyclerSave;
     GetAllDAO getAllDAO;
     FoodinfoAdapter foodinfoAdapter;
-    List<nguoidungsavefs> nguoidungdbfsList;
+    List<nguoidungsavefs> nguoidungsavefsList;
     ArrayList<FoodInFor> foodInForList;
     String tenuser;
     @Nullable
@@ -53,11 +52,11 @@ public class TuongTacFragment extends Fragment {
     }
      void loaddatafoodsave() {
         getAllDAO= new GetAllDAO(getContext());
-        nguoidungdbfsList = new ArrayList<>();
+        nguoidungsavefsList = new ArrayList<>();
         foodInForList = new ArrayList<>();
-        nguoidungdbfsList = getAllDAO.getMaMonTheoTenNguoiDungSave(tenuser);
+        nguoidungsavefsList = getAllDAO.getMaMonTheoTenNguoiDungSave(tenuser);
 
-        for (nguoidungsavefs s: nguoidungdbfsList) {
+        for (nguoidungsavefs s: nguoidungsavefsList) {
             Toast.makeText(getContext(), ""+getAllDAO.getAllfoodtheomamon(s.getMamon()).get(0), Toast.LENGTH_SHORT).show();
             foodInForList.add(getAllDAO.getAllfoodtheomamon(s.getMamon()).get(0));
         }

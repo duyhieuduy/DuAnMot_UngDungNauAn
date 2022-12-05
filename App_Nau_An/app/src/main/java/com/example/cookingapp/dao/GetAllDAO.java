@@ -187,11 +187,11 @@ public class GetAllDAO {
         }
         return list;
     }
-    public ArrayList<nguoidungsavefs> getMaMonTheoTenNguoiDungSave(String tendangnhap){
+    public ArrayList<nguoidungsavefs> getMaMonTheoTenNguoiDungSave(String tennguoidung){
         ArrayList<nguoidungsavefs> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT n.mamon FROM NGUOIDUNGSAVE as n,mon as m" +
-                " where m.mamon = n.mamon and n.tennguoidung = ?", new String[]{tendangnhap});
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT n.mamon FROM nguoidungsave as n,mon as m" +
+                " where m.mamon = n.mamon and n.tennguoidung = ?", new String[]{tennguoidung});
         if (cursor.getCount()!= 0){
             cursor.moveToFirst();
             do {

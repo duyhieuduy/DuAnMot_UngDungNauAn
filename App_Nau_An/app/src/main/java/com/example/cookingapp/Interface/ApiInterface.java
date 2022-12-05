@@ -1,6 +1,7 @@
 package com.example.cookingapp.Interface;
 
 import com.example.cookingapp.model.Post;
+import com.example.cookingapp.model.Register;
 import com.example.cookingapp.model.UserSave;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -28,4 +29,8 @@ public interface ApiInterface {
     // post user save
     @POST("api/adnds")
     Call<UserSave> senPostUserSave(@Body UserSave userSave);
+
+    // post register
+    @POST("api/adduser")
+    Call<Register> senPostUserRegister(@Body Register register);
 }

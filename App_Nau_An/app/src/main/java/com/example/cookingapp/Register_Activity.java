@@ -12,5 +12,6 @@ public class Register_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
+
     }
 }
