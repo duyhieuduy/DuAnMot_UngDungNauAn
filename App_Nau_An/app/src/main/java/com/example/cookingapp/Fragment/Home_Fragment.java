@@ -19,7 +19,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.Adapter.FoodAdapter;
+<<<<<<< HEAD
 
+=======
+import com.example.cookingapp.Adapter.NewNguyenlieuAdapter;
+>>>>>>> parent of 7c2a5be (a)
 import com.example.cookingapp.Clicknl_func.NewNguyenlieuAdapter;
 import com.example.cookingapp.Adapter.NguyenLieuAdapter;
 import com.example.cookingapp.CallApi.ApiService;
@@ -28,7 +32,11 @@ import com.example.cookingapp.Interface.INguyenLieu;
 import com.example.cookingapp.R;
 import com.example.cookingapp.dao.InsertDao;
 import com.example.cookingapp.model.FoodInFor;
+<<<<<<< HEAD
 
+=======
+import com.example.cookingapp.model.NewNguyenLieu;
+>>>>>>> parent of 7c2a5be (a)
 import com.example.cookingapp.Clicknl_func.NewNguyenLieu;
 import com.example.cookingapp.model.NguyenLieu;
 import com.example.cookingapp.Clicknl_func.dao;
@@ -109,6 +117,7 @@ public class Home_Fragment extends Fragment{
         return view;
 
 
+<<<<<<< HEAD
     }
     private void loadDataNewnl(){
         listnew.clear();
@@ -170,3 +179,69 @@ public class Home_Fragment extends Fragment{
 //        });
 //    }
 
+=======
+    }
+    private void loadDataNewnl(){
+
+        listnew.clear();
+        daoz = new dao(getContext());
+        dao daoz = new dao(getActivity());
+        listnew = daoz.getall();
+        LinearLayoutManager linearLayoutManagera = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerviewnewHCK.setLayoutManager(linearLayoutManagera);
+        NewNguyenlieuAdapter adaptera = new NewNguyenlieuAdapter(getContext(),listnew);
+        recyclerviewnewHCK.setAdapter(adaptera);
+
+//        listnew.clear();
+//        daoz = new dao(getContext());
+//        dao daoz = new dao(getActivity());
+//        listnew = daoz.getall();
+//        adapter.notifyDataSetChanged();
+//        LinearLayoutManager linearLayoutManagera = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+//        recyclerviewnewHCK.setLayoutManager(linearLayoutManagera);
+//        NewNguyenlieuAdapter adaptera = new NewNguyenlieuAdapter(getContext(),listnew);
+//        recyclerviewnewHCK.setAdapter(adaptera);
+//
+//        return view;
+
+
+        insertDao = new InsertDao(getContext());
+        btnInsert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                recyclerMon = findViewById(R.id.recyclerMon);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+                recyclerMon.setLayoutManager(linearLayoutManager);
+
+                DividerItemDecoration itemDecoration = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
+                recyclerMon.addItemDecoration(itemDecoration);
+
+                mList = new ArrayList<>();
+                callApiGetUser();
+            }
+        });
+
+
+    }
+    private void callApiGetUser() {
+        ApiService.apiService.getListUsers(1).enqueue(new Callback<List<Food>>() {
+            @Override
+            public void onResponse(Call<List<Food>> call, Response<List<Food>> response) {
+                mList = response.body();
+                FoodAdapter adapter = new FoodAdapter(mList);
+                recyclerMon.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Food>> call, Throwable t) {
+                Toast.makeText(getContext(), "Call api fail", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
+
+}
+>>>>>>> parent of 7c2a5be (a)

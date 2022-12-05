@@ -70,9 +70,12 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
         public class ViewHolder extends RecyclerView.ViewHolder {
             ImageView imgfood;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             TextView TenDs, tennl1, tennl2,tennl3,tennl4, dok, thoigiannau;
 =======
+=======
+>>>>>>> parent of 7c2a5be (a)
             TextView TenDs, tennl1, tennl2, dok, thoigiannau;
             EditText edtbl;
 >>>>>>> parent of e0f5e82 (db)

@@ -39,6 +39,7 @@ public class InsertDao {
         return true;
     }
 
+<<<<<<< HEAD
 //        public ArrayList<NguyenLieu> InsertMon () {
 //            //ArrayList<NguyenLieu> list = new ArrayList<>();
 //            SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
@@ -64,6 +65,33 @@ public class InsertDao {
 //            SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
 //            Cursor cursor = sqLiteDatabase.insert()
 //        }
+=======
+        public ArrayList<NguyenLieu> InsertMon () {
+            //ArrayList<NguyenLieu> list = new ArrayList<>();
+            SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+            Cursor cursor = sqLiteDatabase.insert()
+        }
+        public ArrayList<NguyenLieu> InsertCongThucNguyenLieu () {
+            ArrayList<NguyenLieu> list = new ArrayList<>();
+            SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+            Cursor cursor = sqLiteDatabase.insert()
+        }
+        public ArrayList<NguyenLieu> InsertLoaiMon () {
+            ArrayList<NguyenLieu> list = new ArrayList<>();
+            SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+            Cursor cursor = sqLiteDatabase.insert()
+        }
+        public ArrayList<NguyenLieu> InsertBinhLuan () {
+            ArrayList<NguyenLieu> list = new ArrayList<>();
+            SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+            Cursor cursor = sqLiteDatabase.insert()
+        }
+        public ArrayList<NguyenLieu> InsertAnhMonAn () {
+            ArrayList<NguyenLieu> list = new ArrayList<>();
+            SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+            Cursor cursor = sqLiteDatabase.insert()
+        }
+>>>>>>> parent of 7c2a5be (a)
 
 //    public void deleteAll(){
 //        SQLiteDatabase db = dbHelper.getWritableDatabase();
