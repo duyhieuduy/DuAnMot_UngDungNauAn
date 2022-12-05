@@ -6,4 +6,6 @@ import com.example.cookingapp.model.FoodInFor;
 
 public interface IFood {
     public void onClickFood(FoodInFor foodInFor);
+
+
 }

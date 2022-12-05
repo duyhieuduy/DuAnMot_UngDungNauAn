@@ -1,10 +1,7 @@
 package com.example.cookingapp.Fragment;
 
 
-import static com.example.cookingapp.CallApi.ApiService.BASE_Service;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,54 +13,45 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-
-import com.example.cookingapp.Adapter.LMAdapter;
-import com.example.cookingapp.CallApi.ApiService;
-import com.example.cookingapp.CallApi.anhmonanfs;
-import com.example.cookingapp.CallApi.binhluanfs;
-import com.example.cookingapp.CallApi.congthucnguyenlieufs;
-import com.example.cookingapp.CallApi.nguoidungdbfs;
-import com.example.cookingapp.CallApi.nguoidungsavefs;
+import com.example.cookingapp.Adapter.FoodAdapter;
 
 import com.example.cookingapp.Clicknl_func.NewNguyenlieuAdapter;
 import com.example.cookingapp.Adapter.NguyenLieuAdapter;
+import com.example.cookingapp.CallApi.ApiService;
 import com.example.cookingapp.CallApi.Food;
 import com.example.cookingapp.Interface.INguyenLieu;
 import com.example.cookingapp.R;
-import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.dao.InsertDao;
-
 import com.example.cookingapp.model.FoodInFor;
 
-
 import com.example.cookingapp.Clicknl_func.NewNguyenLieu;
-import com.example.cookingapp.model.LOAIMONmodel;
 import com.example.cookingapp.model.NguyenLieu;
 import com.example.cookingapp.Clicknl_func.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+public class Home_Fragment extends Fragment{
+        RecyclerView recyclerviewHCK;
+        RecyclerView recyclerviewnewHCK;
+        ArrayList<NguyenLieu> list;
+        ArrayList<NewNguyenLieu> listnew;
 
-public class Home_Fragment extends Fragment {
-    RecyclerView recyclerviewHCK;
-    RecyclerView recyclerviewnewHCK;
-    ArrayList<NguyenLieu> listnl;
-    ArrayList<NewNguyenLieu> listnewnl;
-    dao newnldaoz;
-    Button btnInsert, btnfind;
-    NguyenLieuAdapter adapter;
-    InsertDao insertDao;
-    RecyclerView lvloaimon;
-    ArrayList<LOAIMONmodel> listloaimon;
-    GetAllDAO getAllDAO;
+        dao daoz;
+        Button btnInsert;
+        NguyenLieuAdapter adapter;
+        InsertDao insertDao;
+        List<Food> mList;
+
 
     @Nullable
     @Override
@@ -72,33 +60,38 @@ public class Home_Fragment extends Fragment {
 
         recyclerviewHCK = view.findViewById(R.id.recyclviewKCH);
         recyclerviewnewHCK = view.findViewById(R.id.recyclviewnewKCH);
-        lvloaimon = view.findViewById(R.id.lvloaimon);
-        btnfind = view.findViewById(R.id.btn);
-        listnl = new ArrayList<>();
-        listnewnl = new ArrayList<>();
-        btnInsert = view.findViewById(R.id.btnInsert);
+        list = new ArrayList<>();
+        listnew = new ArrayList<>();
 
-        loaddataLoaiMon();
+        list.add(new NguyenLieu("Thịt Hiếu"));
+        list.add(new NguyenLieu("Thịt Bảo"));
+        list.add(new NguyenLieu( "Thịt a"));
+        list.add(new NguyenLieu( "Thịt b"));
+        list.add(new NguyenLieu( "Thịt c"));
+        list.add(new NguyenLieu( "Thịt d"));
+        list.add(new NguyenLieu( "Thịt e"));
+        list.add(new NguyenLieu( "Thịt f"));
+        list.add(new NguyenLieu( "Thịt aq"));
+        list.add(new NguyenLieu( "Thịt à"));
+        listnew.add(new NewNguyenLieu("Thịt Ád"));
+
+
         loadDataNewnl();
-        loadDataNl();
-
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container, new WaitFragment(), null);
-        fragmentTransaction.commit();
-
+        adapter = new NguyenLieuAdapter(getContext(), list);
+        GridLayoutManager gridView = new GridLayoutManager(getContext(),2,RecyclerView.HORIZONTAL,false);
+        recyclerviewHCK.setLayoutManager(gridView);
+        recyclerviewHCK.setAdapter(adapter);
 
         adapter.setiNguyenLieu(new INguyenLieu() {
             @Override
             public void onClick(NguyenLieu nguyenLieu) {
-                newnldaoz = new dao(getContext());
-                newnldaoz.insert(nguyenLieu.getTennguyenlieu());
+                dao daoz = new dao(getContext());
+                daoz.insert(nguyenLieu.getTennguyenlieu());
                 loadDataNewnl();
             }
         });
-
-
-        btnfind.setOnClickListener(new View.OnClickListener() {
+        Button btn = view.findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -107,7 +100,13 @@ public class Home_Fragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
+//        mai lam
+//        list<loaimon> listloaimon = new ArrayList<>();
+//        ListView lvloaimon = view.findViewById(R.id.lvloaimon);
+//        ArrayAdapter arrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, listloaimon);
+//        lvloaimon.setAdapter(arrayAdapter);
+//
+        return view;
 
 
     }
@@ -148,27 +147,11 @@ public class Home_Fragment extends Fragment {
 //
 //                mList = new ArrayList<>();
 //                callApiGetUser();
-
-        btnInsert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.container, new WaitFragment(), null);
-                fragmentTransaction.commit();
-                insertDao = new InsertDao(getContext());
-                insertDao.deleteAll();
-                callApiGetUser();
-
             }
 //        });
 
 
-        return view;
-
-
     }
-
 //    private void callApiGetUser() {
 //        ApiService.apiService.getListUsers(1).enqueue(new Callback<List<Food>>() {
 //            @Override
@@ -186,97 +169,4 @@ public class Home_Fragment extends Fragment {
 //            }
 //        });
 //    }
-
-
-
-    private void loadDataNl() {
-        getAllDAO = new GetAllDAO(getActivity());
-        listnl = getAllDAO.getAllnl();
-        adapter = new NguyenLieuAdapter(getContext(), listnl);
-        GridLayoutManager gridView = new GridLayoutManager(getContext(), 2, RecyclerView.HORIZONTAL, false);
-        recyclerviewHCK.setLayoutManager(gridView);
-        recyclerviewHCK.setAdapter(adapter);
-    }
-
-    void loaddataLoaiMon() {
-        listloaimon = new ArrayList<>();
-        getAllDAO = new GetAllDAO(getContext());
-        listloaimon = getAllDAO.getAlllm();
-        LinearLayoutManager linearLayoutManagera = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        lvloaimon.setLayoutManager(linearLayoutManagera);
-        LMAdapter foodAdapter = new LMAdapter(listloaimon);
-        lvloaimon.setAdapter(foodAdapter);
-    }
-
-    private void loadDataNewnl() {
-        listnewnl.clear();
-        newnldaoz = new dao(getContext());
-        listnewnl = newnldaoz.getall();
-        LinearLayoutManager linearLayoutManagera = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerviewnewHCK.setLayoutManager(linearLayoutManagera);
-        NewNguyenlieuAdapter adaptera = new NewNguyenlieuAdapter(getContext(), listnewnl);
-        recyclerviewnewHCK.setAdapter(adaptera);
-    }
-
-
-    private void callApiGetUser() {
-        ApiService requestInterface = new Retrofit.Builder()
-                .baseUrl(BASE_Service)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
-                .build().create(ApiService.class);
-
-        new CompositeDisposable().add(requestInterface.getListFood()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(this::handleResponse, this::handleError)
-        );
-    }
-
-    private void handleResponse(ArrayList<Food> food) {
-        Log.d("AAA",food.get(0).getTenmon());
-        for (Food fooda : food) {
-            insertDao.insertMON(
-                    fooda.getMamon(),
-                    fooda.getMaloai(),
-                    fooda.getTenmon(),
-                    fooda.getCongthuclam(),
-                    fooda.getTgnau(),
-                    fooda.getDokho(),
-                    fooda.getAnhmonlvo(),
-                    fooda.getCachlam());
-            insertDao.insertLOAIMON(fooda.getMaloai(),fooda.getTenloai());
-
-            for (anhmonanfs ama: fooda.getAnhmonanfs()) {
-                insertDao.insertANHMONAN(ama.getIdAma(), ama.getMamon(), ama.getAnhmon());
-            }
-
-            for (binhluanfs binhluanfs: fooda.getBinhluanfs()) {
-                insertDao.insertBINHLUAN(binhluanfs.getIdBl(), binhluanfs.getMamon(), binhluanfs.getTendangnhap(),binhluanfs.getNoidungbl());
-            }
-
-            for (congthucnguyenlieufs congthucnguyenlieufsa: fooda.getCongthucnguyenlieufs()) {
-                insertDao.insertCONGTHUCNGUYENLIEU(congthucnguyenlieufsa.getIdctnl(), congthucnguyenlieufsa.getMamon(), congthucnguyenlieufsa.getTennguyenlieu(),congthucnguyenlieufsa.getKhoiluong());
-            }
-
-
-            for (nguoidungdbfs nguoidungdbfs: fooda.getNguoidungdbfs()) {
-                insertDao.insertNGUOIDUNGDB(nguoidungdbfs.getIdndb(), nguoidungdbfs.getMamon(), nguoidungdbfs.getTennguoidung());
-            }
-
-            for (nguoidungsavefs  nguoidungsavefs: fooda.getNguoidungsavefs()) {
-                insertDao.insertNGUOIDUNGDB(nguoidungsavefs.getIdnds(), nguoidungsavefs.getMamon(), nguoidungsavefs.getTennguoidung());
-            }
-
-
-        }
-
-
-    }
-
-    private void handleError(Throwable error) {
-        Log.d("CALL LOI",")()())()()(" + error);
-        Toast.makeText(getActivity(), "Call Fail  " + error, Toast.LENGTH_LONG).show();
-    }
-}
 

@@ -15,10 +15,8 @@ public class Food {
     private List<anhmonanfs> anhmonanfs;
     private List<binhluanfs> binhluanfs;
     private List<congthucnguyenlieufs> congthucnguyenlieufs;
-    private List<nguoidungsavefs> nguoidungsavefs;
-    private List<nguoidungdbfs> nguoidungdbfs;
 
-    public Food(int mamon, int maloai, String tenloai, String tenmon, String congthuclam, String tgnau, String dokho, String anhmonlvo, String cachlam, List<com.example.cookingapp.CallApi.anhmonanfs> anhmonanfs, List<com.example.cookingapp.CallApi.binhluanfs> binhluanfs, List<com.example.cookingapp.CallApi.congthucnguyenlieufs> congthucnguyenlieufs, List<com.example.cookingapp.CallApi.nguoidungsavefs> nguoidungsavefs, List<com.example.cookingapp.CallApi.nguoidungdbfs> nguoidungdbfs) {
+    public Food(int mamon, int maloai, String tenloai, String tenmon, String congthuclam, String tgnau, String dokho, String anhmonlvo, String cachlam, List<com.example.cookingapp.CallApi.anhmonanfs> anhmonanfs, List<com.example.cookingapp.CallApi.binhluanfs> binhluanfs, List<com.example.cookingapp.CallApi.congthucnguyenlieufs> congthucnguyenlieufs) {
         this.mamon = mamon;
         this.maloai = maloai;
         this.tenloai = tenloai;
@@ -31,8 +29,6 @@ public class Food {
         this.anhmonanfs = anhmonanfs;
         this.binhluanfs = binhluanfs;
         this.congthucnguyenlieufs = congthucnguyenlieufs;
-        this.nguoidungsavefs = nguoidungsavefs;
-        this.nguoidungdbfs = nguoidungdbfs;
     }
 
     public int getMamon() {
@@ -130,21 +126,4 @@ public class Food {
     public void setCongthucnguyenlieufs(List<com.example.cookingapp.CallApi.congthucnguyenlieufs> congthucnguyenlieufs) {
         this.congthucnguyenlieufs = congthucnguyenlieufs;
     }
-
-    public List<com.example.cookingapp.CallApi.nguoidungsavefs> getNguoidungsavefs() {
-        return nguoidungsavefs;
-    }
-
-    public void setNguoidungsavefs(List<com.example.cookingapp.CallApi.nguoidungsavefs> nguoidungsavefs) {
-        this.nguoidungsavefs = nguoidungsavefs;
-    }
-
-    public List<com.example.cookingapp.CallApi.nguoidungdbfs> getNguoidungdbfs() {
-        return nguoidungdbfs;
-    }
-
-    public void setNguoidungdbfs(List<com.example.cookingapp.CallApi.nguoidungdbfs> nguoidungdbfs) {
-        this.nguoidungdbfs = nguoidungdbfs;
-    }
 }
-

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.cookingapp.Adapter.SearchAdapter;
 import com.example.cookingapp.R;
-import com.example.cookingapp.dao.GetAllDAO;
+import com.example.cookingapp.dao.CongThucNguyenLieuDAO;
 import com.example.cookingapp.model.FoodInFor;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class SeachFragment extends Fragment {
     private SearchAdapter searchAdapter;
     private SearchView searchView;
     private ArrayList<FoodInFor> getListFood;
-    GetAllDAO congThucNguyenLieuDAO;
+    CongThucNguyenLieuDAO congThucNguyenLieuDAO;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class SeachFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerFood.setLayoutManager(linearLayoutManager);
         getListFood = new ArrayList<>();
-        congThucNguyenLieuDAO = new GetAllDAO(getContext());
+        congThucNguyenLieuDAO = new CongThucNguyenLieuDAO(getContext());
         getListFood = congThucNguyenLieuDAO.getAll();
 
         searchAdapter = new SearchAdapter(getActivity(),getListFood);

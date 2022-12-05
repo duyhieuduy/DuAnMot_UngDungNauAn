@@ -59,12 +59,12 @@
         android:layout_below="@+id/l1"
 
         />
-    <androidx.recyclerview.widget.RecyclerView
+    <ListView
         android:id="@+id/lvloaimon"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_below="@+id/l"
-        android:layout_marginTop="5dp"
+
         />
 
     <FrameLayout
@@ -72,25 +72,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:id="@+id/container"
-        android:layout_below="@+id/l2"
-        android:paddingLeft="5dp"/>
+        android:layout_below="@+id/l2"/>
 
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
+       android:layout_marginLeft="13dp"
+        android:text="Chuyển"
         android:id="@+id/btnInsert"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/refresh"
-        android:textColor="@color/white" />
-
+        android:layout_toRightOf="@+id/textKCH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    
 
 <!--        <androidx.viewpager.widget.ViewPager-->
 <!--            android:layout_below="@+id/container"-->
