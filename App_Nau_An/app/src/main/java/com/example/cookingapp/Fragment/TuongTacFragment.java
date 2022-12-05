@@ -56,7 +56,7 @@ public class TuongTacFragment extends Fragment {
         foodInForList = new ArrayList<>();
         nguoidungsavefsList = getAllDAO.getMaMonTheoTenNguoiDungSave(tenuser);
 
-        for (nguoidungsavefs s: nguoidungsavefsList) {
+        for (nguoidungsavefs s : nguoidungsavefsList) {
             Toast.makeText(getContext(), ""+getAllDAO.getAllfoodtheomamon(s.getMamon()).get(0), Toast.LENGTH_SHORT).show();
             foodInForList.add(getAllDAO.getAllfoodtheomamon(s.getMamon()).get(0));
         }

@@ -204,7 +204,7 @@ public class Home_Fragment extends Fragment {
             }
 
             for (nguoidungsavefs  nguoidungsavefs: fooda.getNguoidungsavefs()) {
-                insertDao.insertNGUOIDUNGDB(nguoidungsavefs.getIdnds(), nguoidungsavefs.getMamon(), nguoidungsavefs.getTennguoidung());
+                insertDao.insertNGUOIDUNGSAVE(nguoidungsavefs.getIdnds(), nguoidungsavefs.getMamon(), nguoidungsavefs.getTennguoidung());
             }
 
 

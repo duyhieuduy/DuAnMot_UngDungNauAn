@@ -174,11 +174,11 @@ public class GetAllDAO {
         }
         return list;
     }
-    public ArrayList<nguoidungdbfs> getMaMonTheoTenNguoiDungDangBai(String tendangnhap){
+    public ArrayList<nguoidungdbfs> getMaMonTheoTenNguoiDungDangBai(String tennguoidung){
         ArrayList<nguoidungdbfs> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT n.mamon FROM nguoidungdb as n,mon as m" +
-                " where m.mamon = n.mamon and n.tennguoidung = ?", new String[]{tendangnhap});
+                " where m.mamon = n.mamon and n.tennguoidung = ?", new String[]{tennguoidung});
         if (cursor.getCount()!= 0){
             cursor.moveToFirst();
             do {
@@ -190,8 +190,8 @@ public class GetAllDAO {
     public ArrayList<nguoidungsavefs> getMaMonTheoTenNguoiDungSave(String tennguoidung){
         ArrayList<nguoidungsavefs> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT n.mamon FROM nguoidungsave as n,mon as m" +
-                " where m.mamon = n.mamon and n.tennguoidung = ?", new String[]{tennguoidung});
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT na.mamon FROM NGUOIDUNGSAVE as na,mon as ma" +
+                " where ma.mamon = na.mamon and na.tennguoidung = ?", new String[]{tennguoidung});
         if (cursor.getCount()!= 0){
             cursor.moveToFirst();
             do {
