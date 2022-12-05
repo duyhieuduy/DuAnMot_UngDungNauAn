@@ -9,4 +9,8 @@
         android:layout_gravity="center"
         android:text="MÓN ĂN ĐÃ LƯU"
         android:textSize="50sp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

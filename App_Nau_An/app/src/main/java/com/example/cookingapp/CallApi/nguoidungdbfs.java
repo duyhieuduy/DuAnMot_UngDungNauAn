@@ -11,6 +11,10 @@ public class nguoidungdbfs {
         this.tennguoidung = tennguoidung;
     }
 
+    public nguoidungdbfs(int mamon) {
+        this.mamon = mamon;
+    }
+
     public int getIdndb() {
         return idndb;
     }

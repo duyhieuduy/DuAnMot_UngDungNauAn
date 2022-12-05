@@ -29,6 +29,7 @@ import com.example.cookingapp.CallApi.nguoidungsavefs;
 import com.example.cookingapp.Clicknl_func.NewNguyenlieuAdapter;
 import com.example.cookingapp.Adapter.NguyenLieuAdapter;
 import com.example.cookingapp.CallApi.Food;
+import com.example.cookingapp.Interface.ApiInterface;
 import com.example.cookingapp.Interface.INguyenLieu;
 import com.example.cookingapp.R;
 import com.example.cookingapp.dao.GetAllDAO;
@@ -37,6 +38,7 @@ import com.example.cookingapp.Clicknl_func.NewNguyenLieu;
 import com.example.cookingapp.model.LOAIMONmodel;
 import com.example.cookingapp.model.NguyenLieu;
 import com.example.cookingapp.Clicknl_func.dao;
+import com.example.cookingapp.model.UserSave;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.ArrayList;
@@ -44,6 +46,9 @@ import java.util.ArrayList;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -212,4 +217,22 @@ public class Home_Fragment extends Fragment {
         Log.d("CALL LOI",")()())()()(" + error);
         Toast.makeText(getActivity(), "Call Fail  " + error, Toast.LENGTH_LONG).show();
     }
+
+    private void senPostsUserSave(){
+        UserSave userSave = new UserSave("1", 1);
+        ApiInterface.apiInterface.senPostUserSave(userSave).enqueue(new Callback<UserSave>() {
+            @Override
+            public void onResponse(Call<UserSave> call, Response<UserSave> response) {
+                Toast.makeText(getContext(), "call api success", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<UserSave> call, Throwable t) {
+                Toast.makeText(getContext(), "call api success", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
+
 }

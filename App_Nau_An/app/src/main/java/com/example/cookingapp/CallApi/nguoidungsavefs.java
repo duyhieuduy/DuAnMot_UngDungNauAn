@@ -5,6 +5,11 @@ public class nguoidungsavefs {
     int idnds;
     int mamon;
     String tennguoidung;
+
+    public nguoidungsavefs(int mamon) {
+        this.mamon = mamon;
+    }
+
     public nguoidungsavefs(int idnds, int mamon, String tennguoidung) {
         this.idnds = idnds;
         this.mamon = mamon;

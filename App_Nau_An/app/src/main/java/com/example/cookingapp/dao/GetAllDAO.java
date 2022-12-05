@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.cookingapp.CallApi.nguoidungdbfs;
+import com.example.cookingapp.CallApi.nguoidungsavefs;
 import com.example.cookingapp.model.BinhLuan;
 import com.example.cookingapp.model.CLAnhMonAn;
 import com.example.cookingapp.model.FooddetailModel;
@@ -168,6 +170,54 @@ public class GetAllDAO {
             cursor.moveToFirst();
             do {
                 list.add(new NguyenLieu(cursor.getString(0)));
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
+    public ArrayList<nguoidungdbfs> getMaMonTheoTenNguoiDungDangBai(String tendangnhap){
+        ArrayList<nguoidungdbfs> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT n.mamon FROM nguoidungdb as n,mon as m" +
+                " where m.mamon = n.mamon and n.tennguoidung = ?", new String[]{tendangnhap});
+        if (cursor.getCount()!= 0){
+            cursor.moveToFirst();
+            do {
+                list.add(new nguoidungdbfs(cursor.getInt(0)));
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
+    public ArrayList<nguoidungsavefs> getMaMonTheoTenNguoiDungSave(String tendangnhap){
+        ArrayList<nguoidungsavefs> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT n.mamon FROM NGUOIDUNGSAVE as n,mon as m" +
+                " where m.mamon = n.mamon and n.tennguoidung = ?", new String[]{tendangnhap});
+        if (cursor.getCount()!= 0){
+            cursor.moveToFirst();
+            do {
+                list.add(new nguoidungsavefs(cursor.getInt(0)));
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
+
+
+
+
+    public ArrayList<FoodInFor> getAllfoodtheomamon(int mamon){
+        ArrayList<FoodInFor> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select m.mamon,m.tenmon,m.dokho,m.tgnau,m.anhmonlvo" +
+                " from MON as m where m.mamon = ?", new String[]{String.valueOf(mamon)});
+        if (cursor.getCount() != 0){
+            cursor.moveToFirst();
+            do {
+                list.add(new FoodInFor(cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        gettennltheoidmon(cursor.getInt(0))));
             }while (cursor.moveToNext());
         }
         return list;

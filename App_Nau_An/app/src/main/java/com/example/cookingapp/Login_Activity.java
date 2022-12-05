@@ -57,7 +57,8 @@ public class Login_Activity extends AppCompatActivity {
                 sendVerificationCode(strPhone);
             }
         });
-        
+
+
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +74,10 @@ public class Login_Activity extends AppCompatActivity {
 
                 startActivity(new Intent(Login_Activity.this,Menu_Activity.class));
                 String user = edtuser.getText().toString();
-
+                SharedPreferences pref = getSharedPreferences("USERNAME", MODE_PRIVATE);
+                SharedPreferences.Editor editor=pref.edit();
+                editor.putString("username",user);
+                editor.commit();
             }
         });
 
