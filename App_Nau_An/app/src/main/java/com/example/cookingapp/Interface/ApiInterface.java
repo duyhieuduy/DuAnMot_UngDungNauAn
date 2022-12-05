@@ -22,7 +22,7 @@ public interface ApiInterface {
             .build()
             .create(ApiInterface.class);
 
-
+    // post mondang
     @POST("/api/addall")
     Call<Post> sendPosts(@Body Post post);
 
