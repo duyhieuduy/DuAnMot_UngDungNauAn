@@ -5,70 +5,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CTNLActivity">
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
 
-<!--    <ImageView-->
-<!--        android:id="@+id/imgctnl"-->
-<!--        android:src="@mipmap/ic_launcher"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="220dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/tenmonan"-->
-<!--        android:layout_below="@+id/imgctnl"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"/>-->
-<!--    <TextView-->
-<!--       -->
-<!--        android:layout_below="@+id/tenmonan"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"/>-->
+              <ImageView
+                  android:id="@+id/imgCTNL"
+                  android:layout_width="match_parent"
+                  android:layout_height="200dp"
+                  android:src="@drawable/img" />
 
+              <TextView
 
+                  android:id="@+id/MOXT"
+                  android:textSize="20dp"
+                  android:layout_margin="10dp"
+                  android:layout_below="@+id/imgCTNL"
+                  android:text="Mực Ống Xào Măng Trúc"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+              <TextView
 
+                  android:id="@+id/GT"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/MOXT"
+                  android:layout_margin="10dp"
+                  android:hint="Lờinói chẳng mất tiền mua, vậy tại sao chúng ta không dành một lời kích lệ cho ngườinấu ăn để họ vui hơn và dốcsức nấu ăn ngon hơn phải không?" />
 
-        <RelativeLayout
-            android:id="@+id/layoutDangMon1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+              <ImageView
+                  android:id="@+id/linea"
+                  android:layout_below="@+id/GT"
+                  android:src="@drawable/linea"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"/>
+              <ImageView
 
-        </RelativeLayout>
+                  android:layout_centerHorizontal="true"
+                  android:id="@+id/DH"
+                  android:layout_below="@+id/linea"
+                  android:src="@drawable/dongho"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"/>
+              <TextView
+                  android:layout_marginTop="10dp"
+                  android:text="40 phút"
+                  android:layout_toRightOf="@+id/DH"
+                  android:layout_below="@+id/linea"
+                  android:id="@+id/textTG"
+                  android:layout_width="100dp"
+                  android:layout_height="20dp"/>
+              <ImageView
+                  android:layout_below="@+id/DH"
+                  android:id="@+id/linea1"
+                  android:src="@drawable/linea"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"/>
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"/>
 
-        <LinearLayout
-            android:id="@+id/layoutDangMon2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/layoutDangMon1"
-            android:orientation="vertical">
+      </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/imgAnhMon"
-            android:layout_width="match_parent"
-            android:layout_height="235dp"
-            android:src="@mipmap/ic_launcher" />
-        <TextView
-            android:id="@+id/tenmon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tên món:"
-            android:layout_margin="10dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_margin="10dp"
-            android:id="@+id/Congthuclam"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:gravity="start"
-            android:hint="Công Thức Làm"/>
-         <TextView
-             android:id="@+id/cachlam"
-             android:hint="Cách làm"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"/>
-        </LinearLayout>
-
-        </RelativeLayout>
 
 </ScrollView>
