@@ -5,8 +5,10 @@ import static com.example.cookingapp.CallApi.ApiService.BASE_Service;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cookingapp.CallApi.ApiService;
@@ -21,6 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Register_Activity extends AppCompatActivity {
     EditText edtTenDangNhap, edtMatKhau, edtSDT, edtEmail, edtDiaChi, edtTuoi;
+    TextView txtAlready;
     Button btnDangKy;
     String tendangnhap, matkhau, diachi, email;
     int tuoi, sdt;
@@ -29,6 +32,8 @@ public class Register_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        txtAlready = findViewById(R.id.txtAlready);
+
         edtTenDangNhap = findViewById(R.id.edtTenDangNhap);
         edtMatKhau = findViewById(R.id.edtMatKhau);
         edtSDT = findViewById(R.id.edtSDT);
@@ -36,6 +41,18 @@ public class Register_Activity extends AppCompatActivity {
         edtDiaChi = findViewById(R.id.edtDiaChi);
         edtTuoi = findViewById(R.id.edtTuoi);
         btnDangKy = findViewById(R.id.btnDangKy);
+        btnDangKy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendPosts();
+            }
+        });
+        txtAlready.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
     }
