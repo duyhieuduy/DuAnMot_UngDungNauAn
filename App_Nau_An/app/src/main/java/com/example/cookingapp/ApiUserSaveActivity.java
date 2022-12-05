@@ -26,6 +26,7 @@ public class ApiUserSaveActivity extends AppCompatActivity {
         btnSendPostsUserSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 sendPostsUserSave();
             }
         });
@@ -37,13 +38,11 @@ public class ApiUserSaveActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<UserSave> call, Response<UserSave> response) {
                 Toast.makeText(ApiUserSaveActivity.this, "Call Api Success", Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
             public void onFailure(Call<UserSave> call, Throwable t) {
                 Toast.makeText(ApiUserSaveActivity.this, "Call Api Success", Toast.LENGTH_SHORT).show();
-
             }
         });
     }

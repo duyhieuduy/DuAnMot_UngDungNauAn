@@ -73,6 +73,7 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 iFood.onClickFood(list.get(position));
             }
         });
@@ -86,8 +87,8 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             ImageView imgfood;
+
             TextView TenDs, tennl1, tennl2,tennl3,tennl4, dok, thoigiannau;
-            EditText edtbl;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 imgfood = itemView.findViewById(R.id.imgfood);
