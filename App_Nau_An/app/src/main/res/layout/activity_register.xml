@@ -54,7 +54,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edttendangnhap"
+        android:id="@+id/edtTenDangNhap"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
@@ -74,7 +74,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtmatkhau"
+        android:id="@+id/edtMatKhau"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
@@ -95,7 +95,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtsdt"
+        android:id="@+id/edtSDT"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
@@ -116,7 +116,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtemail"
+        android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
@@ -136,7 +136,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtdiachi"
+        android:id="@+id/edtDiaChi"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
@@ -156,7 +156,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edttuoi"
+        android:id="@+id/edtTuoi"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
@@ -186,7 +186,7 @@
         android:textSize="20dp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnsingup"
+        android:id="@+id/btnDangKy"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
