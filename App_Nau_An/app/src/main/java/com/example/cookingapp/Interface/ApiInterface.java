@@ -1,6 +1,7 @@
 package com.example.cookingapp.Interface;
 
 import com.example.cookingapp.model.Post;
+import com.example.cookingapp.model.UserSave;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -20,7 +21,10 @@ public interface ApiInterface {
             .build()
             .create(ApiInterface.class);
 
-
+    // post api dang mon
     @POST("/api/addall")
     Call<Post> sendPosts(@Body Post post);
+
+    // post api nguoidungsave
+    Call<UserSave> sendPostsUserSave(@Body UserSave userSave);
 }
