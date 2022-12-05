@@ -54,8 +54,28 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 error(R.drawable.anhdangmon).
                 into(holder.imgfood);
         holder.TenDs.setText(mListFood.get(position).getTenmon());
-        holder.tennl1.setText(mListFood.get(position).getListnl().get(0).getTennguyenlieu());
-        holder.tennl2.setText(mListFood.get(position).getListnl().get(1).getTennguyenlieu());
+        if (mListFood.get(position).getListnl().size()>0) {
+            holder.tennl1.setText(mListFood.get(position).getListnl().get(0).getTennguyenlieu());
+        }
+
+        if (mListFood.get(position).getListnl().size()>1) {
+            holder.tennl2.setText(" ,"+mListFood.get(position).getListnl().get(1).getTennguyenlieu());
+        }
+        else {
+            holder.tennl2.setVisibility(View.GONE);
+        }
+        if (mListFood.get(position).getListnl().size()>2) {
+            holder.tennl3.setText(" ,"+mListFood.get(position).getListnl().get(2).getTennguyenlieu());
+        }
+        else {
+            holder.tennl3.setVisibility(View.GONE);
+        }
+        if (mListFood.get(position).getListnl().size()>3){
+            holder.tennl4.setText(" ,"+mListFood.get(position).getListnl().get(3).getTennguyenlieu());
+        }
+        else {
+            holder.tennl4.setVisibility(View.GONE);
+        }
         holder.dok.setText(mListFood.get(position).getDokho());
         holder.thoigiannau.setText(mListFood.get(position).getTgnau());
 
@@ -116,7 +136,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
 public class ViewHolder extends RecyclerView.ViewHolder{
     ImageView imgfood;
-    TextView TenDs, tennl1, tennl2, dok, thoigiannau;
+    TextView TenDs, tennl1, tennl2,tennl3,tennl4, dok, thoigiannau;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
 
@@ -124,6 +144,8 @@ public class ViewHolder extends RecyclerView.ViewHolder{
                 TenDs = itemView.findViewById(R.id.TenDs);
                 tennl1 = itemView.findViewById(R.id.tennl1);
                 tennl2 = itemView.findViewById(R.id.tennl2);
+                tennl3 = itemView.findViewById(R.id.tennl3);
+                tennl4 = itemView.findViewById(R.id.tennl4);
                 dok = itemView.findViewById(R.id.dok);
                 thoigiannau = itemView.findViewById(R.id.thoigiannau);
 

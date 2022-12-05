@@ -46,8 +46,26 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
                     error(R.drawable.anhdangmon).
                     into(holder.imgfood);
             holder.TenDs.setText(list.get(position).getTenmon());
-            holder.tennl1.setText(list.get(position).getListnl().get(0).getTennguyenlieu());
-            holder.tennl2.setText(list.get(position).getListnl().get(1).getTennguyenlieu());
+            if (list.get(position).getListnl().size()>0)
+                holder.tennl1.setText(list.get(position).getListnl().get(0).getTennguyenlieu());
+            if (list.get(position).getListnl().size()>1){
+                holder.tennl2.setText(" ,"+list.get(position).getListnl().get(1).getTennguyenlieu());
+            }
+            else {
+                holder.tennl2.setVisibility(View.GONE);
+            }
+            if (list.get(position).getListnl().size()>2) {
+                holder.tennl3.setText(" ,"+list.get(position).getListnl().get(2).getTennguyenlieu());
+            }
+            else {
+                holder.tennl3.setVisibility(View.GONE);
+            }
+            if (list.get(position).getListnl().size()>3){
+                holder.tennl4.setText(" ,"+list.get(position).getListnl().get(3).getTennguyenlieu());
+            }
+            else {
+                holder.tennl4.setVisibility(View.GONE);
+            }
             holder.dok.setText(list.get(position).getDokho());
             holder.thoigiannau.setText(list.get(position).getTgnau());
 
@@ -68,7 +86,7 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             ImageView imgfood;
-            TextView TenDs, tennl1, tennl2, dok, thoigiannau;
+            TextView TenDs, tennl1, tennl2,tennl3,tennl4, dok, thoigiannau;
             EditText edtbl;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
@@ -76,6 +94,8 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
                 TenDs = itemView.findViewById(R.id.TenDs);
                 tennl1 = itemView.findViewById(R.id.tennl1);
                 tennl2 = itemView.findViewById(R.id.tennl2);
+                tennl3 = itemView.findViewById(R.id.tennl3);
+                tennl4 = itemView.findViewById(R.id.tennl4);
                 dok = itemView.findViewById(R.id.dok);
                 thoigiannau = itemView.findViewById(R.id.thoigiannau);
 

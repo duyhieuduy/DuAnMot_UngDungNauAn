@@ -4,29 +4,21 @@ import java.util.ArrayList;
 
 public class FooddetailModel {
     int mamon;
-    String anhmon,tenmon,congthuclam,cachlam;
+    String anhmon,tenmon,tgnau,congthuclam,cachlam;
     ArrayList<CLAnhMonAn> list;
     ArrayList<BinhLuan> lista;
     ArrayList<NguyenLieu> listb;
 
-    public FooddetailModel(ArrayList<CLAnhMonAn> list) {
-        this.list = list;
-    }
-
-
-    public FooddetailModel(int mamon, String anhmon, String tenmon, String congthuclam, String cachlam, ArrayList<CLAnhMonAn> list, ArrayList<BinhLuan> lista, ArrayList<NguyenLieu> listb) {
+    public FooddetailModel(int mamon, String anhmon, String tenmon, String tgnau, String congthuclam, String cachlam, ArrayList<CLAnhMonAn> list, ArrayList<BinhLuan> lista, ArrayList<NguyenLieu> listb) {
         this.mamon = mamon;
         this.anhmon = anhmon;
         this.tenmon = tenmon;
+        this.tgnau = tgnau;
         this.congthuclam = congthuclam;
         this.cachlam = cachlam;
         this.list = list;
         this.lista = lista;
         this.listb = listb;
-    }
-
-    public FooddetailModel() {
-
     }
 
     public int getMamon() {
@@ -51,6 +43,14 @@ public class FooddetailModel {
 
     public void setTenmon(String tenmon) {
         this.tenmon = tenmon;
+    }
+
+    public String getTgnau() {
+        return tgnau;
+    }
+
+    public void setTgnau(String tgnau) {
+        this.tgnau = tgnau;
     }
 
     public String getCongthuclam() {

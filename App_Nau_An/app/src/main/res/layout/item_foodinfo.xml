@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="190dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="280dp"
+    android:layout_height="300dp"
     android:layout_margin="5dp"
     app:cardCornerRadius="20dp"
     android:backgroundTint="#5BDFD5EC"
@@ -35,34 +35,32 @@
 
         <ImageView
             android:id="@+id/img1"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
             android:layout_below="@+id/TenDs"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginTop="9dp"
             android:layout_marginBottom="5dp"
             android:src="@drawable/nguyenlieua" />
 
         <ImageView
             android:id="@+id/img2"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_below="@+id/tennl1"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_below="@+id/tennl3"
             android:layout_marginStart="5dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:src="@drawable/dokho" />
 
         <ImageView
             android:id="@+id/img3"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
             android:layout_below="@+id/img2"
+
             android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginTop="3dp"
             android:layout_marginBottom="5dp"
             android:src="@drawable/clock" />
 
@@ -71,19 +69,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/TenDs"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="7dp"
             android:layout_marginEnd="5dp"
             android:layout_toRightOf="@+id/img1"
             android:text="Tên nguyên liệu:" />
 
         <TextView
             android:id="@+id/dk"
+            android:layout_marginTop="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tennl1"
-            android:layout_marginStart="5dp"
-            android:layout_toRightOf="@id/img1"
+            android:layout_below="@+id/tennl3"
+            android:layout_toRightOf="@id/img2"
             android:text="Độ khó:" />
 
         <TextView
@@ -91,11 +88,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/dk"
-            android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_toRightOf="@id/img1"
+            android:layout_toRightOf="@id/img3"
             android:text="Thời gian nấu:" />
 
         <TextView
@@ -104,38 +100,49 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tnl"
             android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="tennguyenlieu1"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
             android:textColor="#1976D2"/>
 
-        <TextView
-            android:id="@+id/dauphay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tnl"
-            android:layout_toRightOf="@id/tennl1"
-            android:text="," />
 
         <TextView
             android:id="@+id/tennl2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tnl"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_toRightOf="@id/tennl1"
+            android:textColor="#1976D2"/>
+        <TextView
+            android:id="@+id/tennl3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tennl1"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_toRightOf="@id/dauphay"
-            android:text="tennl2"
+            android:textColor="#1976D2"/>
+        <TextView
+            android:id="@+id/tennl4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tennl2"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@id/tennl3"
             android:textColor="#1976D2"/>
 
         <TextView
             android:id="@+id/dok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tennl1"
+            android:layout_below="@+id/tennl3"
             android:layout_toRightOf="@id/dk"
             android:paddingLeft="5dp"
+            android:layout_marginTop="2dp"
             android:textColor="#1976D2"
             android:text="dokho" />
 

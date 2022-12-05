@@ -8,7 +8,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.cookingapp.dao.CongThucNguyenLieuDAO;
+import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.model.FooddetailModel;
 import com.squareup.picasso.Picasso;
 
@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class CTNLActivity extends AppCompatActivity {
-    CongThucNguyenLieuDAO congThucNguyenLieuDAO;
+    GetAllDAO congThucNguyenLieuDAO;
     ArrayList<FooddetailModel>  list ;
     TextView textTenMon,textctl,textcl;
     ImageView imgAnhMon;
@@ -25,7 +25,7 @@ public class CTNLActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ctnl);
         list = new ArrayList<>();
-        congThucNguyenLieuDAO = new CongThucNguyenLieuDAO(this);
+        congThucNguyenLieuDAO = new GetAllDAO(this);
         Intent intent = getIntent();
         int id = intent.getIntExtra("key1",0);
         list = congThucNguyenLieuDAO.getClickItemIDmon(id);

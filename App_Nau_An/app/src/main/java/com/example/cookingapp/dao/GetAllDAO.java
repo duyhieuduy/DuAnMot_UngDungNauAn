@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.cookingapp.model.BinhLuan;
 import com.example.cookingapp.model.CLAnhMonAn;
-import com.example.cookingapp.model.CTNL;
 import com.example.cookingapp.model.FooddetailModel;
+import com.example.cookingapp.model.LOAIMONmodel;
 import com.example.cookingapp.model.NguyenLieu;
 import com.example.cookingapp.model.Tennguyenlieu;
 import com.example.cookingapp.DB.DBHelper;
@@ -15,18 +15,17 @@ import com.example.cookingapp.model.FoodInFor;
 
 import java.util.ArrayList;
 
-public class CongThucNguyenLieuDAO {
+public class GetAllDAO {
     public DBHelper dbHelper;
-    public CongThucNguyenLieuDAO(Context context){
+    public GetAllDAO(Context context){
         dbHelper = new DBHelper(context);
     }
 
     public ArrayList<FoodInFor> getAll(){
         ArrayList<FoodInFor> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select m.mamon,m.tenmon,m.dokho,m.thoigiannau,m.anhmon,lm.tenloai" +
-                " from MON as m, LOAIMON as lm" +
-                " where lm.maloai = m.maloai",null);
+        Cursor cursor = sqLiteDatabase.rawQuery("select m.mamon,m.tenmon,m.dokho,m.tgnau,m.anhmonlvo" +
+                " from MON as m",null);
         if (cursor.getCount() != 0){
             cursor.moveToFirst();
             do {
@@ -35,7 +34,6 @@ public class CongThucNguyenLieuDAO {
                         cursor.getString(2),
                         cursor.getString(3),
                         cursor.getString(4),
-                        cursor.getString(5),
                         gettennltheoidmon(cursor.getInt(0))));
             }while (cursor.moveToNext());
         }
@@ -61,7 +59,7 @@ public class CongThucNguyenLieuDAO {
     public  ArrayList<FooddetailModel> getClickItemIDmon(int idmamon){
         ArrayList<FooddetailModel> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase  = dbHelper.getReadableDatabase();
-       Cursor cursor = sqLiteDatabase.rawQuery("select MON.mamon,MON.anhmon,MON.tenmon, MON.congthuclam, MON.cachlam " +
+       Cursor cursor = sqLiteDatabase.rawQuery("select MON.mamon,MON.anhmonlvo,MON.tenmon,Mon.tgnau, MON.congthuclam, MON.cachlam " +
                "from  MON  " +
                "where mamon = ?"
                ,new String[]{String.valueOf(idmamon)});
@@ -73,6 +71,7 @@ public class CongThucNguyenLieuDAO {
                        cursor.getString(2),
                        cursor.getString(3),
                        cursor.getString(4),
+                       cursor.getString(5),
                        getClickItemanh(cursor.getInt(0)),
                        getClickItembinhuan(cursor.getInt(0)),
                        getClickItemngl(cursor.getInt(0))
@@ -85,7 +84,7 @@ public class CongThucNguyenLieuDAO {
     public ArrayList<CLAnhMonAn>getClickItemanh(int idmamon){
         ArrayList<CLAnhMonAn> list = new ArrayList<>();
        SQLiteDatabase sqLiteDatabase  = dbHelper.getReadableDatabase();
-       Cursor cursor = sqLiteDatabase.rawQuery("select ama.idanhmonan,ama.mamon, ama.anhmon from  ANHMONAN as ama, MON as m " +
+       Cursor cursor = sqLiteDatabase.rawQuery("select ama.idAma,ama.mamon, ama.anhmon from  ANHMONAN as ama, MON as m " +
                "where m.mamon = ama.mamon  " +
                "and m.mamon = ?"
                ,new String[]{String.valueOf(idmamon)});
@@ -121,7 +120,7 @@ public class CongThucNguyenLieuDAO {
     public ArrayList<BinhLuan>getClickItembinhuan(int idmamon){
         ArrayList<BinhLuan> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase  = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select bl.idbinhluan ,bl.mamon,bl.tendangnhap,bl.noidungbinhluan " +
+        Cursor cursor = sqLiteDatabase.rawQuery("select bl.idBl ,bl.mamon,bl.tendangnhap,bl.noidungbl " +
                         "from  BINHLUAN as bl, MON as m,NGUOIDUNG as nd " +
                         "where m.mamon = bl.mamon and nd.tendangnhap = bl.tendangnhap " +
                         "and m.mamon = ? "
@@ -146,7 +145,33 @@ public class CongThucNguyenLieuDAO {
 //    }
 //
 
+    public ArrayList<LOAIMONmodel> getAlllm(){
+        ArrayList<LOAIMONmodel> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select Distinct maloai,tenloai from loaimon",null);
+        if (cursor.getCount() != 0){
+            cursor.moveToFirst();
+            do {
+                list.add(new LOAIMONmodel(cursor.getInt(0),
+                        cursor.getString(1)));
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
 
+
+    public ArrayList<NguyenLieu> getAllnl(){
+        ArrayList<NguyenLieu> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select DISTINCT tennguyenlieu from CONGTHUCNGUYENLIEU",null);
+        if (cursor.getCount() != 0){
+            cursor.moveToFirst();
+            do {
+                list.add(new NguyenLieu(cursor.getString(0)));
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
 
 
 

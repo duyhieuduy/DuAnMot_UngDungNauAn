@@ -16,14 +16,14 @@ import com.example.cookingapp.Adapter.FoodinfoAdapter;
 import com.example.cookingapp.CTNLActivity;
 import com.example.cookingapp.Interface.IFood;
 import com.example.cookingapp.R;
-import com.example.cookingapp.dao.CongThucNguyenLieuDAO;
+import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.model.FoodInFor;
 
 import java.util.ArrayList;
 
 public class NewWaitFragment extends Fragment {
     RecyclerView recyclerView;
-    CongThucNguyenLieuDAO congThucNguyenLieuDAO;
+    GetAllDAO congThucNguyenLieuDAO;
     ArrayList<FoodInFor> listfood;
     FoodinfoAdapter foodForGetCmt;
     @Nullable
@@ -51,7 +51,7 @@ public class NewWaitFragment extends Fragment {
 
     }
     public void reload(){
-        congThucNguyenLieuDAO = new CongThucNguyenLieuDAO(getContext());
+        congThucNguyenLieuDAO = new GetAllDAO(getContext());
         listfood = new ArrayList<>();
         listfood = congThucNguyenLieuDAO.getAll();
         foodForGetCmt = new FoodinfoAdapter(getContext(), listfood);
