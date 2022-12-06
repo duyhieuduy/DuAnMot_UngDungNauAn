@@ -14,9 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.Adapter.FoodinfoAdapter;
+import com.example.cookingapp.Adapter.LuuMonAdapter;
 import com.example.cookingapp.CallApi.nguoidungdbfs;
 import com.example.cookingapp.CallApi.nguoidungsavefs;
 import com.example.cookingapp.R;
@@ -29,7 +31,7 @@ import java.util.List;
 public class TuongTacFragment extends Fragment {
     RecyclerView recyclerSave;
     GetAllDAO getAllDAO;
-    FoodinfoAdapter foodinfoAdapter;
+    LuuMonAdapter foodinfoAdapter;
     List<nguoidungsavefs> nguoidungsavefsList;
     ArrayList<FoodInFor> foodInForList;
     String tenuser;
@@ -44,7 +46,6 @@ public class TuongTacFragment extends Fragment {
         recyclerSave = view.findViewById(R.id.recyclerSave);
         SharedPreferences pref = getActivity().getSharedPreferences("USERNAME", MODE_PRIVATE);
         tenuser = pref.getString("username", "");
-        Toast.makeText(getContext(), "asdd   "+ tenuser, Toast.LENGTH_SHORT).show();
         loaddatafoodsave();
 
 
@@ -57,13 +58,12 @@ public class TuongTacFragment extends Fragment {
         nguoidungsavefsList = getAllDAO.getMaMonTheoTenNguoiDungSave(tenuser);
 
         for (nguoidungsavefs s : nguoidungsavefsList) {
-            Toast.makeText(getContext(), ""+getAllDAO.getAllfoodtheomamon(s.getMamon()).get(0), Toast.LENGTH_SHORT).show();
             foodInForList.add(getAllDAO.getAllfoodtheomamon(s.getMamon()).get(0));
         }
 
-        foodinfoAdapter = new FoodinfoAdapter(getContext(), foodInForList);
-        GridLayoutManager gridView = new GridLayoutManager(getContext(),2, RecyclerView.VERTICAL,false);
-        recyclerSave.setLayoutManager(gridView);
+        foodinfoAdapter = new LuuMonAdapter(getContext(), foodInForList);
+         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        recyclerSave.setLayoutManager(linearLayoutManager);
         recyclerSave.setAdapter(foodinfoAdapter);
     }
 }
