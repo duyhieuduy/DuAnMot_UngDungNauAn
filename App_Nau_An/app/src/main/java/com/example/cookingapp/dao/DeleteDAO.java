@@ -13,7 +13,7 @@ public class DeleteDAO {
 
     public boolean xoaMonLuu(int mamon){
         SQLiteDatabase database = dbHelper.getWritableDatabase();
-        int row =database.delete("CONGTHUCNGUYENLIEU, MON", "mamon = ?", new String[]{String.valueOf(mamon)});
+        int row = database.delete("CONGTHUCNGUYENLIEU, MON", "mamon = ?", new String[]{String.valueOf(mamon)});
         return (row>0);
     }
 }

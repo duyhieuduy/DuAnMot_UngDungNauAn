@@ -1,10 +1,13 @@
 package com.example.cookingapp.Adapter;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -90,10 +93,29 @@ public class LuuMonAdapter extends RecyclerView.Adapter<LuuMonAdapter.ViewHolder
         holder.btnboluu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            openDialog_deleteMon();
             }
         });
 
+    }
+
+    private void openDialog_deleteMon() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        final AlertDialog dialog = builder.create();
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        builder.setMessage("Bạn có muốn bỏ lưu không ? ");
+        builder.setCancelable(false);
+        builder.setNegativeButton("không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).setPositiveButton("có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).show();
     }
 
     @Override
