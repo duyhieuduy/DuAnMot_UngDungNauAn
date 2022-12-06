@@ -18,7 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.cookingapp.Adapter.FoodinfoAdapter;
+import com.example.cookingapp.CTNLActivity;
 import com.example.cookingapp.CallApi.nguoidungdbfs;
+import com.example.cookingapp.Interface.IFood;
 import com.example.cookingapp.R;
 
 import com.example.cookingapp.ThemMonMoiActivity;
@@ -59,6 +61,16 @@ public class ThemFragment extends Fragment {
         });
 
         loaddatafooddang();
+
+        foodinfoAdapter.setiFood(new IFood() {
+            @Override
+            public void onClickFood(FoodInFor foodInFor) {
+                Intent intent = new Intent(getContext(), CTNLActivity.class);
+                intent.putExtra("key1",foodInFor.getMamon());
+                startActivity(intent);
+
+            }
+        });
 
         return view;
 
