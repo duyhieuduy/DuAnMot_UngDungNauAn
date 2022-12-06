@@ -9,7 +9,7 @@
 
 
         <ImageView
-            android:id="@+id/imgfood1"
+            android:id="@+id/imgfood"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
@@ -17,8 +17,8 @@
             android:src="@mipmap/ic_launcher" />
         <TextView
             android:textColor="#1976D2"
-            android:id="@+id/TenDs1"
-            android:layout_toRightOf="@+id/imgfood1"
+            android:id="@+id/TenDs"
+            android:layout_toRightOf="@+id/imgfood"
             android:textSize="20dp"
             android:text="Tên đồ ăn"
             android:layout_width="wrap_content"
@@ -30,12 +30,12 @@
             android:id="@+id/img1"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:layout_below="@+id/TenDs1"
+            android:layout_below="@+id/TenDs"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_toRightOf="@+id/imgfood1"
+            android:layout_toRightOf="@+id/imgfood"
             android:src="@drawable/nguyenlieua" />
 
         <ImageView
@@ -46,7 +46,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
-            android:layout_toRightOf="@+id/imgfood1"
+            android:layout_toRightOf="@+id/imgfood"
             android:layout_marginBottom="5dp"
             android:src="@drawable/clock" />
 
@@ -56,14 +56,14 @@
             android:layout_height="15dp"
             android:layout_margin="5dp"
             android:layout_below="@+id/img2"
-            android:layout_toRightOf="@+id/imgfood1"
+            android:layout_toRightOf="@+id/imgfood"
             android:src="@drawable/dokho" />
 
         <TextView
             android:id="@+id/tnl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/TenDs1"
+            android:layout_below="@+id/TenDs"
             android:layout_toRightOf="@+id/img1"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
@@ -93,10 +93,10 @@
             android:text="Thời gian nấu:" />
 
         <TextView
-            android:id="@+id/tennl11"
+            android:id="@+id/tennl1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/TenDs1"
+            android:layout_below="@+id/TenDs"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
@@ -106,52 +106,52 @@
 
 
         <TextView
-            android:id="@+id/tennl21"
+            android:id="@+id/tennl2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/TenDs1"
+            android:layout_below="@+id/TenDs"
             android:layout_marginStart="1dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
-            android:layout_toRightOf="@id/tennl11"
+            android:layout_toRightOf="@id/tennl1"
             android:textColor="#1976D2"/>
         <TextView
-            android:id="@+id/tennl41"
+            android:id="@+id/tennl4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tennl21"
+            android:layout_below="@+id/tennl2"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="3dp"
-            android:layout_toRightOf="@id/tennl31"
+            android:layout_toRightOf="@id/tennl3"
             android:textColor="#1976D2"/>
         <TextView
-            android:id="@+id/tennl31"
+            android:id="@+id/tennl3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tennl21"
+            android:layout_below="@+id/tennl2"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="3dp"
-            android:layout_toRightOf="@+id/dok1"
+            android:layout_toRightOf="@+id/dok"
             android:textColor="#1976D2"/>
         <TextView
-            android:id="@+id/dok1"
+            android:id="@+id/dok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tennl11"
+            android:layout_below="@+id/tennl1"
             android:layout_toRightOf="@id/dk"
             android:text="dokho"
             android:paddingLeft="5dp"
             android:layout_marginTop="5dp"
             android:textColor="#1976D2"/>
         <TextView
-            android:id="@+id/txtthoigiannau"
+            android:id="@+id/thoigiannau"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dok1"
+            android:layout_below="@+id/dok"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/tgn"
             android:text="tgnau"
