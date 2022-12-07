@@ -80,7 +80,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "(2, 7, 'Ếch Xào Hoa Hẹ', 'Ếch Xào Hoa Hẹ', '40 phút', 'Dễ','https://res.cloudinary.com/doluugxhe/image/upload/v1669553276/Cooking%20app/mucongxaomangtruc_o2lfxb.jpg','cachlam')");
 
         sqLiteDatabase.execSQL("INSERT INTO LOAIMON VALUES (" +
-                "4 ,'khác'), " +
+                "4 ,'Khác'), " +
                 "(15, 'Món bánh'), " +
                 "(20, 'Món bún'), " +
                 "(10, 'Món canh'), " +

@@ -96,11 +96,7 @@ public class Home_Fragment extends Fragment {
         listnewnl = new ArrayList<>();
         listloaimon = new ArrayList<>();
 
-//        callApiGetUser();
-//                FragmentManager fragmentManager =getActivity().getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.containerhome, new WaitFragment(), null);
-//        fragmentTransaction.commit();
+       // callApiGetUser();
         loadallmon();
         loaddataLoaiMon();
         loadDataNewnl();
