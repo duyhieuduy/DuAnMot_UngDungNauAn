@@ -191,7 +191,6 @@ public class Menu_Activity extends AppCompatActivity {
             }
         });
     }
-    onRe
 
     private void callApiGetUser() {
         ApiService requestInterface = new Retrofit.Builder()

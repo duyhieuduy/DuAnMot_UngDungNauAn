@@ -78,9 +78,9 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnInsert"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:id="@+id/btnReload"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"

@@ -132,7 +132,16 @@ public class Home_Fragment extends Fragment {
         });
 
 
+        Button btnReload = view.findViewById(R.id.btnReload);
+        btnReload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insertDao = new InsertDao(getContext());
+                insertDao.deleteAll();
+                callApiGetUser();
 
+            }
+        });
 
         return view;
 
