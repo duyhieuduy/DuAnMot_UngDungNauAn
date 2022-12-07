@@ -2,6 +2,7 @@ package com.example.cookingapp.Fragment;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,11 +15,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.Adapter.FoodinfoAdapter;
+import com.example.cookingapp.Adapter.LuuMonAdapter;
+import com.example.cookingapp.CTNLActivity;
 import com.example.cookingapp.CallApi.nguoidungdbfs;
 import com.example.cookingapp.CallApi.nguoidungsavefs;
+import com.example.cookingapp.Interface.IFood;
 import com.example.cookingapp.R;
 import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.model.FoodInFor;
@@ -29,7 +34,7 @@ import java.util.List;
 public class TuongTacFragment extends Fragment {
     RecyclerView recyclerSave;
     GetAllDAO getAllDAO;
-    FoodinfoAdapter foodinfoAdapter;
+    LuuMonAdapter foodinfoAdapter;
     List<nguoidungsavefs> nguoidungsavefsList;
     ArrayList<FoodInFor> foodInForList;
     String tenuser;
@@ -44,8 +49,17 @@ public class TuongTacFragment extends Fragment {
         recyclerSave = view.findViewById(R.id.recyclerSave);
         SharedPreferences pref = getActivity().getSharedPreferences("USERNAME", MODE_PRIVATE);
         tenuser = pref.getString("username", "");
-        Toast.makeText(getContext(), "asdd   "+ tenuser, Toast.LENGTH_SHORT).show();
         loaddatafoodsave();
+
+        foodinfoAdapter.setiFood(new IFood() {
+            @Override
+            public void onClickFood(FoodInFor foodInFor) {
+                Intent intent = new Intent(getContext(), CTNLActivity.class);
+                intent.putExtra("key1",foodInFor.getMamon());
+                startActivity(intent);
+
+            }
+        });
 
 
         return view;
@@ -57,13 +71,12 @@ public class TuongTacFragment extends Fragment {
         nguoidungsavefsList = getAllDAO.getMaMonTheoTenNguoiDungSave(tenuser);
 
         for (nguoidungsavefs s : nguoidungsavefsList) {
-            Toast.makeText(getContext(), ""+getAllDAO.getAllfoodtheomamon(s.getMamon()).get(0), Toast.LENGTH_SHORT).show();
             foodInForList.add(getAllDAO.getAllfoodtheomamon(s.getMamon()).get(0));
         }
 
-        foodinfoAdapter = new FoodinfoAdapter(getContext(), foodInForList);
-        GridLayoutManager gridView = new GridLayoutManager(getContext(),2, RecyclerView.VERTICAL,false);
-        recyclerSave.setLayoutManager(gridView);
+        foodinfoAdapter = new LuuMonAdapter(getContext(), foodInForList);
+         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        recyclerSave.setLayoutManager(linearLayoutManager);
         recyclerSave.setAdapter(foodinfoAdapter);
     }
 }

@@ -78,6 +78,7 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
         });
 
 
+
     }
         @Override
         public int getItemCount() {
@@ -87,17 +88,16 @@ public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHo
         public class ViewHolder extends RecyclerView.ViewHolder {
             ImageView imgfood;
             TextView TenDs, tennl1, tennl2,tennl3,tennl4, dok, thoigiannau;
-            EditText edtbl;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                imgfood = itemView.findViewById(R.id.imgfood);
-                TenDs = itemView.findViewById(R.id.TenDs);
-                tennl1 = itemView.findViewById(R.id.tennl1);
-                tennl2 = itemView.findViewById(R.id.tennl2);
-                tennl3 = itemView.findViewById(R.id.tennl3);
-                tennl4 = itemView.findViewById(R.id.tennl4);
-                dok = itemView.findViewById(R.id.dok);
-                thoigiannau = itemView.findViewById(R.id.thoigiannau);
+                imgfood = itemView.findViewById(R.id.imgfood1);
+                TenDs = itemView.findViewById(R.id.TenDs1);
+                tennl1 = itemView.findViewById(R.id.tennl11);
+                tennl2 = itemView.findViewById(R.id.tennl21);
+                tennl3 = itemView.findViewById(R.id.tennl31);
+                tennl4 = itemView.findViewById(R.id.tennl41);
+                dok = itemView.findViewById(R.id.dok1);
+                thoigiannau = itemView.findViewById(R.id.txtthoigiannau);
 
 
             }

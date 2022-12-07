@@ -2,6 +2,7 @@ package com.example.cookingapp.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cookingapp.CTNLActivity;
 import com.example.cookingapp.Interface.IFood;
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.FoodInFor;
@@ -26,6 +28,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     private List<FoodInFor> mListFood;
     private List<FoodInFor> mListFoodOld;
     private IFood iFood;
+
     public void setiFood(IFood iFood) {
         this.iFood = iFood;
     }
@@ -86,6 +89,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 iFood.onClickFood(mListFoodOld.get(position));
             }
         });
+
 
     }
 

@@ -48,7 +48,7 @@ public class WaitFragment extends Fragment {
                     public void run() {
                         FragmentManager fragmentManager =getActivity().getSupportFragmentManager();
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                        fragmentTransaction.replace(R.id.container, new NewWaitFragment(), null);
+                        fragmentTransaction.replace(R.id.container, new ShowFoodtFragment(), null);
                         fragmentTransaction.commit();
                     }
                 });

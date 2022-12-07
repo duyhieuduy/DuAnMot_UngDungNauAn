@@ -75,44 +75,44 @@ public class DBHelper extends SQLiteOpenHelper {
                 "noidungthongbao TEXT   )";
         sqLiteDatabase.execSQL(dbThongBao);
 
-//        sqLiteDatabase.execSQL("INSERT INTO MON VALUES (" +
-//                "1 ,7 ,'Mực Ống Xào Măng Trúc', 'Mực Ống Xào Măng Trúc', '40 phút', 'Dễ','https://res.cloudinary.com/doluugxhe/image/upload/v1669553276/Cooking%20app/mucongxaomangtruc_o2lfxb.jpg','cachlam')," +
-//                "(2, 7, 'Ếch Xào Hoa Hẹ', 'Ếch Xào Hoa Hẹ', '40 phút', 'Dễ','https://res.cloudinary.com/doluugxhe/image/upload/v1669553276/Cooking%20app/mucongxaomangtruc_o2lfxb.jpg','cachlam')");
-//
-//        sqLiteDatabase.execSQL("INSERT INTO LOAIMON VALUES (" +
-//                "4 ,'khác'), " +
-//                "(15, 'Món bánh'), " +
-//                "(20, 'Món bún'), " +
-//                "(10, 'Món canh'), " +
-//                "(11, 'Món chay'), " +
-//                "(9, 'Món chiên'), " +
-//                "(14, 'Món cháo'), " +
-//                "(17, 'Món chè'), " +
-//                "(13, 'Món cuốn'), " +
-//                "(12, 'Món cơm'), " +
-//                "(6, 'Món gỏi'), " +
-//                "(18, 'Món hấp'), " +
-//                "(8, 'Món hầm'), " +
-//                "(2, 'Món khai vị'), " +
-//                "(3, 'Món kho'), " +
-//                "(21, 'Món luộc'), " +
-//                "(22, 'Món lẩu'), " +
-//                "(5, 'Món nướng'), " +
-//                "(19, 'Món rang'), " +
-//                "(7, 'Món xào'), " +
-//                "(1, 'Sinh tố & giải khát'), " +
-//                "(16, 'Thập cẩm')");
-//        sqLiteDatabase.execSQL("INSERT INTO CONGTHUCNGUYENLIEU VALUES " +
-//                "(1,1,'Mực ống','1 con'), " +
-//                "(2,1,'Măng Trúc','100gram')," +
-//                "(3,2,'Ếch','1 con'), " +
-//                "(4,2,'Hoa Hẹ','300gram')");
-//
-//        sqLiteDatabase.execSQL("INSERT INTO BINHLUAN VALUES(1,1,'bao','naudoqua')");
-//        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNG VALUES('bao','123',1,'','',1)");
-//        sqLiteDatabase.execSQL("INSERT INTO ANHMONAN VALUES(1,1,'https://res.cloudinary.com/doluugxhe/image/upload/v1669565429/Cooking%20app/mucong_b8pjx0.jpg')");
-//        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNGDB VALUES(1,1,'bao') ");
-//        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNGSAVE VALUES(1,1,'bao')");
+        sqLiteDatabase.execSQL("INSERT INTO MON VALUES (" +
+                "1 ,7 ,'Mực Ống Xào Măng Trúc', 'Mực Ống Xào Măng Trúc', '40 phút', 'Dễ','https://res.cloudinary.com/doluugxhe/image/upload/v1669553276/Cooking%20app/mucongxaomangtruc_o2lfxb.jpg','cachlam')," +
+                "(2, 7, 'Ếch Xào Hoa Hẹ', 'Ếch Xào Hoa Hẹ', '40 phút', 'Dễ','https://res.cloudinary.com/doluugxhe/image/upload/v1669553276/Cooking%20app/mucongxaomangtruc_o2lfxb.jpg','cachlam')");
+
+        sqLiteDatabase.execSQL("INSERT INTO LOAIMON VALUES (" +
+                "4 ,'khác'), " +
+                "(15, 'Món bánh'), " +
+                "(20, 'Món bún'), " +
+                "(10, 'Món canh'), " +
+                "(11, 'Món chay'), " +
+                "(9, 'Món chiên'), " +
+                "(14, 'Món cháo'), " +
+                "(17, 'Món chè'), " +
+                "(13, 'Món cuốn'), " +
+                "(12, 'Món cơm'), " +
+                "(6, 'Món gỏi'), " +
+                "(18, 'Món hấp'), " +
+                "(8, 'Món hầm'), " +
+                "(2, 'Món khai vị'), " +
+                "(3, 'Món kho'), " +
+                "(21, 'Món luộc'), " +
+                "(22, 'Món lẩu'), " +
+                "(5, 'Món nướng'), " +
+                "(19, 'Món rang'), " +
+                "(7, 'Món xào'), " +
+                "(1, 'Sinh tố & giải khát'), " +
+                "(16, 'Thập cẩm')");
+        sqLiteDatabase.execSQL("INSERT INTO CONGTHUCNGUYENLIEU VALUES " +
+                "(1,1,'Mực ống','1 con'), " +
+                "(2,1,'Măng Trúc','100gram')," +
+                "(3,2,'Ếch','1 con'), " +
+                "(4,2,'Hoa Hẹ','300gram')");
+
+        sqLiteDatabase.execSQL("INSERT INTO BINHLUAN VALUES(1,1,'bao','naudoqua')");
+        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNG VALUES('bao','123',1,'','',1)");
+        sqLiteDatabase.execSQL("INSERT INTO ANHMONAN VALUES(1,1,'https://res.cloudinary.com/doluugxhe/image/upload/v1669565429/Cooking%20app/mucong_b8pjx0.jpg')");
+        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNGDB VALUES(1,1,'bao') ");
+        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNGSAVE VALUES(1,1,'bao')");
 
     }
 

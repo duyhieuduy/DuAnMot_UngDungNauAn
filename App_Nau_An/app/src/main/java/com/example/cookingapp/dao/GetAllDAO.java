@@ -223,6 +223,25 @@ public class GetAllDAO {
         return list;
     }
 
+    public ArrayList<FoodInFor> getAllfoodtheomaloai(int maloai){
+        ArrayList<FoodInFor> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select distinct m.mamon,m.tenmon,m.dokho,m.tgnau,m.anhmonlvo" +
+                " from MON as m, loaimon as l where m.maloai = l.maloai and m.mamon = ?", new String[]{String.valueOf(maloai)});
+        if (cursor.getCount() != 0){
+            cursor.moveToFirst();
+            do {
+                list.add(new FoodInFor(cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        gettennltheoidmon(cursor.getInt(0))));
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
+
 
 
 

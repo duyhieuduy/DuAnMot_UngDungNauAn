@@ -1,10 +1,15 @@
 package com.example.cookingapp.Fragment;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,14 +23,17 @@ import com.example.cookingapp.Interface.IFood;
 import com.example.cookingapp.R;
 import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.model.FoodInFor;
+import com.example.cookingapp.model.LOAIMONmodel;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class NewWaitFragment extends Fragment {
+public class ShowFoodtFragment extends Fragment {
     RecyclerView recyclerView;
     GetAllDAO congThucNguyenLieuDAO;
     ArrayList<FoodInFor> listfood;
     FoodinfoAdapter foodForGetCmt;
+    int maloai;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -33,7 +41,10 @@ public class NewWaitFragment extends Fragment {
         recyclerView = view.findViewById(R.id.RecyclviewWating);
 
         reload();
-
+//        Bundle bun = getArguments();
+//        maloai = bun.getInt("maloai",0);
+        Toast.makeText(getContext(), ""+maloai, Toast.LENGTH_SHORT).show();
+//        loadmontheomaloai();
 
         foodForGetCmt.setiFood(new IFood() {
             @Override
@@ -41,14 +52,24 @@ public class NewWaitFragment extends Fragment {
               Intent intent = new Intent(getContext(), CTNLActivity.class);
               intent.putExtra("key1",foodInFor.getMamon());
               startActivity(intent);
-
             }
         });
+
+//
 
 
 
         return view;
 
+    }
+
+    public void loadmontheomaloai(){
+        listfood = new ArrayList<>();
+        listfood = congThucNguyenLieuDAO.getAllfoodtheomaloai(maloai);
+        foodForGetCmt = new FoodinfoAdapter(getContext(), listfood);
+        GridLayoutManager gridView = new GridLayoutManager(getContext(),1,RecyclerView.HORIZONTAL,false);
+        recyclerView.setLayoutManager(gridView);
+        recyclerView.setAdapter(foodForGetCmt);
     }
     public void reload(){
         congThucNguyenLieuDAO = new GetAllDAO(getContext());
