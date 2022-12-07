@@ -131,7 +131,6 @@ public class Home_Fragment extends Fragment {
                 RecyclviewWating.setAdapter(foodForGetCmt);
 
                 Toast.makeText(getContext(), ""+listfood.get(0).getTenmon(), Toast.LENGTH_SHORT).show();
-
                 Toast.makeText(getContext(), ""+loaimoNmodel.getMaloai(), Toast.LENGTH_SHORT).show();
 
             }
