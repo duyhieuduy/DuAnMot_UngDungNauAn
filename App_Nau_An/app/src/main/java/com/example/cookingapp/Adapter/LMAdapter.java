@@ -1,47 +1,80 @@
 package com.example.cookingapp.Adapter;
 
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.cookingapp.Fragment.ShowFoodtFragment;
+import com.example.cookingapp.Fragment.WaitFragment;
+import com.example.cookingapp.Interface.ILM;
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.LOAIMONmodel;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class LMAdapter extends RecyclerView.Adapter<LMAdapter.ViewHolder>{
-    private List<LOAIMONmodel> mList;
-
-    public LMAdapter(List<LOAIMONmodel> mList) {
-        this.mList = mList;
+    private Context context;
+    private ArrayList<LOAIMONmodel> list;
+    private ILM ilm;
+    Fragment showFoodtFragment;
+    public void setIlm(ILM ilm) {
+        this.ilm = ilm;
     }
+
+    public LMAdapter(Context context, ArrayList<LOAIMONmodel> list) {
+        this.context = context;
+        this.list = list;
+    }
+
+    
+
+
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_lm, parent, false);
+        LayoutInflater inflater = ((Activity) context).getLayoutInflater();
+        View view = inflater.inflate(R.layout.item_lm, parent, false);
+
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        LOAIMONmodel food = mList.get(position);
-        if (food == null){
-            return;
-        }
-        holder.txttenloai.setText(String.valueOf(food.getTenloai()));
-    }
+       holder.txttenloai.setText(String.valueOf(list.get(position).getTenloai()));
+       holder.itemView.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+//               ilm.OnclickLM(list.get(position));
+               AppCompatActivity activity = (AppCompatActivity) view.getContext();
+//               Bundle bun = new Bundle();
+//              bun.putInt("maloai",-1);
+               //showFoodtFragment.setArguments(bun);
+               showFoodtFragment = new WaitFragment();
+              FragmentManager fragmentManager = activity.getSupportFragmentManager();
+              fragmentManager.beginTransaction()
+                      .replace(R.id.waitfr,showFoodtFragment).addToBackStack(null).commit();
+           }
+       });
 
+
+
+    }
     @Override
     public int getItemCount() {
-        if (mList != null){
-            return mList.size();
-        }
-        return 0;
+        return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -49,8 +82,6 @@ public class LMAdapter extends RecyclerView.Adapter<LMAdapter.ViewHolder>{
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
-
             txttenloai = itemView.findViewById(R.id.textview);
 
         }

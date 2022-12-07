@@ -60,6 +60,8 @@ public class ThemFragment extends Fragment {
 
         loaddatafooddang();
 
+
+
         return view;
 
 

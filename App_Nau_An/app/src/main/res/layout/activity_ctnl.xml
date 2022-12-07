@@ -5,70 +5,154 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CTNLActivity">
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imgctnl"-->
-<!--        android:src="@mipmap/ic_launcher"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="220dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/tenmonan"-->
-<!--        android:layout_below="@+id/imgctnl"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"/>-->
-<!--    <TextView-->
-<!--       -->
-<!--        android:layout_below="@+id/tenmonan"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"/>-->
-
-
-
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-        <RelativeLayout
-            android:id="@+id/layoutDangMon1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+                <ImageView
+                    android:id="@+id/imgCTNL"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/MOXT"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@+id/imgCTNL"
+                    android:text="Mực Ống Xào Măng Trúc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+
+                    android:id="@+id/GT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/MOXT"
+                   android:layout_marginLeft="10dp"
+                    android:hint="Lời nói chẳng mất tiền mua, vậy tại sao chúng ta không dành một lời kích lệ cho ngườinấu ăn để họ vui hơn và dốcsức nấu ăn ngon hơn phải không?" />
+
+                <ImageView
+                    android:id="@+id/linea"
+                    android:layout_below="@+id/GT"
+                    android:src="@drawable/linea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/DH"
+                    android:layout_below="@+id/linea"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="40 phút"
+                    android:layout_toRightOf="@+id/DH"
+                    android:layout_below="@+id/linea"
+                    android:id="@+id/textTG"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"/>
+                <ImageView
+
+                    android:layout_below="@+id/DH"
+                    android:id="@+id/linea1"
+                    android:src="@drawable/linea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/TenNL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linea1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Nguyên Liệu"
+                    android:textSize="15dp" />
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@+id/TenNL"
+                    android:id="@+id/TennL1"
+                    android:text="1 con mực"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/imgconmuc"
+                 android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/TenNL"
+                    android:layout_toRightOf="@+id/TennL1"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:textSize="13dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_below="@+id/TennL1"
+                    android:id="@+id/TennL2"
+                    android:text="100gr măng tươi"
+                    android:layout_width="106dp"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/imgmang"
+                    android:layout_centerHorizontal="true"
+                    android:layout_toRightOf="@+id/TennL2"
+                    android:layout_below="@+id/imgconmuc"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <ImageView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/imgclam"
+                    android:layout_below="@+id/TennL2"
+                    android:src="@drawable/linea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/clNl"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Cách Làm"
+                    android:layout_below="@+id/imgclam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/ctcl"
+                    android:layout_marginLeft="10dp"
+                    android:hint="Sơ chế mực và măng, Ướp mực, Xào mực với măng tươi. Cắt mực thành nhiều khoanh 1-2 lóng tay. Chần sơ măng tươi để loại bỏ bụi bẩn, 1 muỗng cà phê hành tím, 1 muỗng cà phê tỏi băm,1 muỗng cà phê bột nêm, 1 muỗng cà phê tiêu ướp 15 phút.Cho vào chảo 2 muỗng dầu ăn,1 muỗng cà phê hành tím, 1 muỗng cà phê tỏi băm phi thơm"
+                    android:layout_below="@+id/clNl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/imgcl1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@+id/ctcl"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="140dp"
+                    android:layout_height="190dp"/>
+                <ImageView
+                    android:id="@+id/imgcl2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="5dp"
+                   android:layout_below="@+id/ctcl"
+                  android:layout_toRightOf="@+id/imgcl1"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"/>
+                <ImageView
+                    android:id="@+id/imgcl3"
+                    android:layout_margin="10dp"
+                    android:layout_below="@+id/imgcl1"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"/>
         </RelativeLayout>
 
-        <LinearLayout
-            android:id="@+id/layoutDangMon2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/layoutDangMon1"
-            android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/imgAnhMon"
-            android:layout_width="match_parent"
-            android:layout_height="235dp"
-            android:src="@mipmap/ic_launcher" />
-        <TextView
-            android:id="@+id/tenmon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tên món:"
-            android:layout_margin="10dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_margin="10dp"
-            android:id="@+id/Congthuclam"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:gravity="start"
-            android:hint="Công Thức Làm"/>
-         <TextView
-             android:id="@+id/cachlam"
-             android:hint="Cách làm"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"/>
-        </LinearLayout>
-
-        </RelativeLayout>
 
 </ScrollView>

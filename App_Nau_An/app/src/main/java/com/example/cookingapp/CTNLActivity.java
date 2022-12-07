@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class CTNLActivity extends AppCompatActivity {
     GetAllDAO congThucNguyenLieuDAO;
     ArrayList<FooddetailModel>  list ;
-    TextView textTenMon,textctl,textcl;
-    ImageView imgAnhMon;
+    TextView MOXT,GT,textTG,TenNL,TennL1,TennL2,clNl,ctcl;
+    ImageView imgCTNL,linea,DH,linea1,imgconmuc,imgmang,imgclam,imgcl1,imgcl2,imgcl3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,20 +30,22 @@ public class CTNLActivity extends AppCompatActivity {
         int id = intent.getIntExtra("key1",0);
         list = congThucNguyenLieuDAO.getClickItemIDmon(id);
 
-        imgAnhMon = findViewById(R.id.imgAnhMon);
+        imgCTNL = findViewById(R.id.imgCTNL);
 
-        textTenMon = findViewById(R.id.tenmon);
-        textctl = findViewById(R.id.Congthuclam);
-        textcl = findViewById(R.id.cachlam);
-
-        Picasso.get().load(list.get(0).getAnhmon()).
-                into(imgAnhMon);
-
-        textTenMon.setText(list.get(0).getTenmon());
-        textctl.setText(list.get(0).getCongthuclam());
-        textcl.setText(list.get(0).getCachlam());
-
-        Log.d("testtt",list.get(0).getAnhmon());
+//        textTenMon = findViewById(R.id.tenmon);
+//        MOXT = findViewById(R.id.MOXT);
+//        GT = findViewById(R.id.GT);
+//        textctl = findViewById(R.id.Congthuclam);
+//        textcl = findViewById(R.id.cachlam);
+//
+//        Picasso.get().load(list.get(0).getAnhmon()).
+//                into(imgAnhMon);
+//
+//        textTenMon.setText(list.get(0).getTenmon());
+//        textctl.setText(list.get(0).getCongthuclam());
+//        textcl.setText(list.get(0).getCachlam());
+//
+//        Log.d("testtt",list.get(0).getAnhmon());
 
 
 
