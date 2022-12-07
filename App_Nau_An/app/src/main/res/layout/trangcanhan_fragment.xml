@@ -12,67 +12,70 @@
         android:src="@drawable/bep" />
 
     <Button
-        android:layout_marginTop="10dp"
         android:id="@+id/button1"
-        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:gravity="start"
         android:text="Điều khoản bảo mật"
-        android:gravity="start"
-        android:backgroundTint="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
     <Button
-        android:layout_marginTop="10dp"
         android:id="@+id/button2"
-        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:gravity="start"
         android:text="Điều khoản dịch vụ"
-        android:gravity="start"
-        android:backgroundTint="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textColor="@color/black"
+        android:textSize="12sp" />
 
     <Button
-        android:layout_marginTop="10dp"
         android:id="@+id/button3"
-        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:textSize="12sp"
+        android:gravity="start"
         android:text="Hướng dẫn dành cho thành viên mới"
-        android:gravity="start"
-        android:backgroundTint="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textColor="@color/black" />
 
     <Button
-        android:layout_marginTop="10dp"
         android:id="@+id/button4"
-        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:gravity="start"
         android:text="Câu hỏi thường gặp"
-        android:gravity="start"
-        android:backgroundTint="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textColor="@color/black"
+        android:textSize="12sp" />
 
     <Button
-        android:layout_marginTop="10dp"
         android:id="@+id/button5"
-        android:textColor="@color/black"
-        android:text="Liên hệ"
-        android:gravity="start"
-        android:backgroundTint="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:gravity="start"
+        android:text="Liên hệ"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
 
     <Button
-        android:layout_marginTop="10dp"
         android:id="@+id/button6"
-        android:textColor="@color/black"
-        android:text="Về app"
-        android:gravity="start"
-        android:backgroundTint="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-
-
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:gravity="start"
+        android:text="Về app"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
 
 
 </LinearLayout>

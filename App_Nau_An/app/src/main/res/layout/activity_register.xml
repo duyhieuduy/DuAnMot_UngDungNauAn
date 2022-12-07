@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="75dp"
             android:text="Register"
-            android:textColor="@color/white"
+            android:textColor="#F3EFEF"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -49,19 +49,20 @@
         android:layout_marginTop="0dp"
         android:layout_marginRight="65dp"
         android:text="Tên đăng nhập"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edttendangnhap"
+        android:paddingLeft="10dp"
+        android:id="@+id/edtTenDangNhap"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="0dp"
         android:layout_marginRight="65dp"
         android:background="@drawable/edittextbox"
-        android:backgroundTint="#2FFFFFFF" />
+        android:backgroundTint="#6DB28BDF" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,19 +70,21 @@
         android:layout_marginTop="0dp"
         android:layout_marginRight="65dp"
         android:text="Mật khẩu"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtmatkhau"
+
+        android:paddingLeft="10dp"
+        android:id="@+id/edtMatKhau"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="0dp"
         android:layout_marginRight="65dp"
         android:background="@drawable/edittextbox"
-        android:backgroundTint="#2FFFFFFF" />
+        android:backgroundTint="#6DB28BDF" />
 
     <TextView
         android:layout_width="match_parent"
@@ -90,19 +93,21 @@
         android:layout_marginTop="0dp"
         android:layout_marginRight="65dp"
         android:text="SĐT"
-        android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtsdt"
+
+        android:paddingLeft="10dp"
+        android:id="@+id/edtSDT"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="0dp"
         android:layout_marginRight="65dp"
         android:background="@drawable/edittextbox"
-        android:backgroundTint="#2CFFFFFF" />
+        android:backgroundTint="#6DB28BDF" />
 
     <TextView
         android:layout_width="match_parent"
@@ -111,19 +116,21 @@
         android:layout_marginTop="0dp"
         android:layout_marginRight="65dp"
         android:text="Email"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtemail"
+
+        android:paddingLeft="10dp"
+        android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="65dp"
         android:background="@drawable/edittextbox"
-        android:backgroundTint="#2CFFFFFF" />
+        android:backgroundTint="#6DB28BDF" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -136,14 +143,16 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtdiachi"
+        android:backgroundTint="#6DB28BDF"
+        android:paddingLeft="10dp"
+        android:id="@+id/edtDiaChi"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="65dp"
         android:background="@drawable/edittextbox"
-        android:backgroundTint="#2CFFFFFF" />
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -156,21 +165,23 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edttuoi"
+
+        android:paddingLeft="10dp"
+        android:id="@+id/edtTuoi"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="65dp"
         android:background="@drawable/edittextbox"
-        android:backgroundTint="#2CFFFFFF" />
+        android:backgroundTint="#6DB28BDF" />
 
     <TextView
-        android:id="@+id/btnAlready"
+        android:id="@+id/txtAlready"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:text="Got an account already ?"
         android:textColor="#073AE6"
         android:textSize="20dp" />
@@ -183,14 +194,14 @@
         android:layout_marginTop="10dp"
         android:text="Confirm your password"
         android:textColor="#E60746"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnsingup"
+        android:id="@+id/btnDangKy"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/buttonlogin"
         android:text="Sign Up"
         android:textColor="@color/white" />

@@ -5,9 +5,9 @@
     <item>
         <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
             <gradient
-                android:startColor="#5F58BC"
-                android:centerColor="#817BD6"
-                android:endColor="#B28BDF"
+                android:startColor="#564AE4"
+                android:centerColor="#C1BEDD"
+                android:endColor="#564AE4"
                 android:angle="180"/>
 <!--            <padding android:left="7dp"-->
 <!--                android:top="7dp"-->

@@ -30,7 +30,4 @@ public interface ApiInterface {
     @POST("api/adnds")
     Call<UserSave> senPostUserSave(@Body UserSave userSave);
 
-    // post register
-    @POST("api/adduser")
-    Call<Register> senPostUserRegister(@Body Register register);
 }
