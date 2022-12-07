@@ -28,7 +28,6 @@ public class LMAdapter extends RecyclerView.Adapter<LMAdapter.ViewHolder>{
     private Context context;
     private ArrayList<LOAIMONmodel> list;
     private ILM ilm;
-    Fragment showFoodtFragment;
     public void setIlm(ILM ilm) {
         this.ilm = ilm;
     }
@@ -57,15 +56,15 @@ public class LMAdapter extends RecyclerView.Adapter<LMAdapter.ViewHolder>{
        holder.itemView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-//               ilm.OnclickLM(list.get(position));
-               AppCompatActivity activity = (AppCompatActivity) view.getContext();
+               ilm.OnclickLM(list.get(position));
+//               AppCompatActivity activity = (AppCompatActivity) view.getContext();
 //               Bundle bun = new Bundle();
-//              bun.putInt("maloai",-1);
-               //showFoodtFragment.setArguments(bun);
-               showFoodtFragment = new WaitFragment();
-              FragmentManager fragmentManager = activity.getSupportFragmentManager();
-              fragmentManager.beginTransaction()
-                      .replace(R.id.waitfr,showFoodtFragment).addToBackStack(null).commit();
+//               bun.putInt("maloai",-1);
+//               showFoodtFragment.setArguments(bun);
+//               showFoodtFragment = new ShowFoodtFragment();
+//              FragmentManager fragmentManager = activity.getSupportFragmentManager();
+//              fragmentManager.beginTransaction()
+//                      .replace(R.id.rec,showFoodtFragment).addToBackStack(null).commit();
            }
        });
 
@@ -78,7 +77,7 @@ public class LMAdapter extends RecyclerView.Adapter<LMAdapter.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView txttenloai;
+        TextView txttenloai,textviewid;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

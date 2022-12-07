@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cookingapp.Adapter.LMAdapter;
 import com.example.cookingapp.CallApi.ApiService;
 import com.example.cookingapp.CallApi.anhmonanfs;
 import com.example.cookingapp.CallApi.binhluanfs;
@@ -35,6 +36,7 @@ import com.example.cookingapp.R;
 import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.dao.InsertDao;
 import com.example.cookingapp.Clicknl_func.NewNguyenLieu;
+import com.example.cookingapp.model.LOAIMONmodel;
 import com.example.cookingapp.model.NguyenLieu;
 import com.example.cookingapp.Clicknl_func.dao;
 import com.example.cookingapp.model.UserSave;
@@ -61,6 +63,9 @@ public class Home_Fragment extends Fragment {
     NguyenLieuAdapter adapter;
     InsertDao insertDao;
     GetAllDAO getAllDAO;
+    RecyclerView lvloaimon;
+    ArrayList<LOAIMONmodel> listloaimon;
+    LMAdapter lmAdapter;
 
 
     @Nullable
@@ -78,6 +83,7 @@ public class Home_Fragment extends Fragment {
 
 
         loadlayoutLoaiMon();
+
         loadDataNewnl();
         loadDataNl();
 
@@ -140,17 +146,9 @@ public class Home_Fragment extends Fragment {
     }
 
     void loadlayoutLoaiMon() {
-//        listloaimon = new ArrayList<>();
-//        getAllDAO = new GetAllDAO(getContext());
-//        listloaimon = getAllDAO.getAlllm();
-//        LinearLayoutManager linearLayoutManagera = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-//        lvloaimon.setLayoutManager(linearLayoutManagera);
-//        LMAdapter foodAdapter = new LMAdapter(listloaimon,getContext());
-//        lvloaimon.setAdapter(foodAdapter);
-
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.containerloaimon, new LoaiMonFragment(), null);
+        fragmentTransaction.replace(R.id.containerloaimon, new Waitlm(), null);
         fragmentTransaction.commit();
 
     }
@@ -240,6 +238,16 @@ public class Home_Fragment extends Fragment {
 
             }
         });
+    }
+
+    void loaddataLoaiMon() {
+        listloaimon = new ArrayList<>();
+        getAllDAO = new GetAllDAO(getContext());
+        listloaimon = getAllDAO.getAlllm();
+        LinearLayoutManager linearLayoutManagera = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        lvloaimon.setLayoutManager(linearLayoutManagera);
+        lmAdapter = new LMAdapter(getContext(),listloaimon);
+        lvloaimon.setAdapter(lmAdapter);
     }
 
 

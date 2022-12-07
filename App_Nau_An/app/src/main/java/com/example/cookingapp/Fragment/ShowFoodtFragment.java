@@ -5,6 +5,7 @@ import static android.content.Context.MODE_PRIVATE;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,6 @@ public class ShowFoodtFragment extends Fragment {
     GetAllDAO congThucNguyenLieuDAO;
     ArrayList<FoodInFor> listfood;
     FoodinfoAdapter foodForGetCmt;
-    int maloai;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -42,9 +42,7 @@ public class ShowFoodtFragment extends Fragment {
 
         reload();
 //        Bundle bun = getArguments();
-//        maloai = bun.getInt("maloai",0);
-        Toast.makeText(getContext(), ""+maloai, Toast.LENGTH_SHORT).show();
-//        loadmontheomaloai();
+//        loadmontheomaloai(bun.getInt("maloai",0));
 
         foodForGetCmt.setiFood(new IFood() {
             @Override
@@ -63,7 +61,7 @@ public class ShowFoodtFragment extends Fragment {
 
     }
 
-    public void loadmontheomaloai(){
+    public void loadmontheomaloai(int maloai){
         listfood = new ArrayList<>();
         listfood = congThucNguyenLieuDAO.getAllfoodtheomaloai(maloai);
         foodForGetCmt = new FoodinfoAdapter(getContext(), listfood);

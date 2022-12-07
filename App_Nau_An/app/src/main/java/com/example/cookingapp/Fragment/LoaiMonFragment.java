@@ -27,7 +27,6 @@ import com.example.cookingapp.model.LOAIMONmodel;
 import java.util.ArrayList;
 
 public class LoaiMonFragment extends Fragment {
-    ShowFoodtFragment showFoodtFragment;
     RecyclerView lvloaimon;
     ArrayList<LOAIMONmodel> listloaimon;
     GetAllDAO getAllDAO;
@@ -48,20 +47,13 @@ public class LoaiMonFragment extends Fragment {
 
         loaddataLoaiMon();
 
-//      lmAdapter.setIlm(new ILM() {
-//          @Override
-//          public void OnclickLM(LOAIMONmodel loaimoNmodel) {
-//              Toast.makeText(getContext(), "ABC", Toast.LENGTH_SHORT).show();
-////              Bundle bun = new Bundle();
-////              bun.putInt("maloai",-1);
-////              showFoodtFragment = new ShowFoodtFragment();
-////              showFoodtFragment.setArguments(bun);
-////              FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-////              fragmentManager.beginTransaction()
-////                      .replace(R.id.RecyclviewWating,showFoodtFragment).commit();
-////              Toast.makeText
-//          }
-//      });
+      lmAdapter.setIlm(new ILM() {
+          @Override
+          public void OnclickLM(LOAIMONmodel loaimoNmodel) {
+
+              Toast.makeText(getActivity(), ""+loaimoNmodel.getMaloai(), Toast.LENGTH_SHORT).show();
+          }
+      });
         return view;
     }
     void loaddataLoaiMon() {
@@ -70,8 +62,8 @@ public class LoaiMonFragment extends Fragment {
         listloaimon = getAllDAO.getAlllm();
         LinearLayoutManager linearLayoutManagera = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         lvloaimon.setLayoutManager(linearLayoutManagera);
-        LMAdapter foodAdapter = new LMAdapter(getContext(),listloaimon);
-        lvloaimon.setAdapter(foodAdapter);
+        lmAdapter = new LMAdapter(getContext(),listloaimon);
+        lvloaimon.setAdapter(lmAdapter);
     }
 
     @Override
@@ -79,5 +71,10 @@ public class LoaiMonFragment extends Fragment {
         super.onAttach(context);
 
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 }
