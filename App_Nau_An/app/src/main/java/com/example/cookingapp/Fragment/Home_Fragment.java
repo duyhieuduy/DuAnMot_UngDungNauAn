@@ -89,16 +89,24 @@ public class Home_Fragment extends Fragment {
         recycLoaiMon = view.findViewById(R.id.recycLoaiMon);
         RecyclviewWating = view.findViewById(R.id.RecyclviewWating);
 
+        insertDao = new InsertDao(getContext());
+        getAllDAO = new GetAllDAO(getContext());
         listfood = new ArrayList<>();
         listnl = new ArrayList<>();
         listnewnl = new ArrayList<>();
         listloaimon = new ArrayList<>();
 
-
+//        callApiGetUser();
+//                FragmentManager fragmentManager =getActivity().getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.containerhome, new WaitFragment(), null);
+//        fragmentTransaction.commit();
         loadallmon();
         loaddataLoaiMon();
         loadDataNewnl();
         loadDataNl();
+
+
 
 
 
@@ -118,7 +126,18 @@ public class Home_Fragment extends Fragment {
             @Override
             public void OnclickLM(LOAIMONmodel loaimoNmodel) {
 
-                Toast.makeText(getActivity(), ""+loaimoNmodel.getMaloai(), Toast.LENGTH_SHORT).show();
+                listfood.clear();
+                getAllDAO = new GetAllDAO(getActivity());
+                listfood =  getAllDAO.getAllfoodtheomaloai(loaimoNmodel.getMaloai());
+                foodForGetCmt = new FoodinfoAdapter(getContext(), listfood);
+                GridLayoutManager gridView = new GridLayoutManager(getContext(),1,RecyclerView.HORIZONTAL,false);
+                RecyclviewWating.setLayoutManager(gridView);
+                RecyclviewWating.setAdapter(foodForGetCmt);
+
+                Toast.makeText(getContext(), ""+listfood.get(0).getTenmon(), Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(getContext(), ""+loaimoNmodel.getMaloai(), Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -136,10 +155,18 @@ public class Home_Fragment extends Fragment {
         btnReload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertDao = new InsertDao(getContext());
+                InsertDao insertDao = new InsertDao(getContext());
+
                 insertDao.deleteAll();
+                listfood.clear();
+                listloaimon.clear();
+                listnewnl.clear();
+                listnl.clear();
+
                 callApiGetUser();
 
+                startActivity(new Intent(getContext(),WaitActivity.class));
+                loadallmon();
             }
         });
 
@@ -205,7 +232,7 @@ public class Home_Fragment extends Fragment {
     }
 
     private void handleResponse(ArrayList<Food> food) {
-        Log.d("AAA",food.get(0).getTenmon());
+        InsertDao insertDao = new InsertDao(getContext());
         for (Food fooda : food) {
             insertDao.insertMON(
                     fooda.getMamon(),

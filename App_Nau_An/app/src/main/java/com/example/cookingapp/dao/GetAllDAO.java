@@ -227,7 +227,7 @@ public class GetAllDAO {
         ArrayList<FoodInFor> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select distinct m.mamon,m.tenmon,m.dokho,m.tgnau,m.anhmonlvo" +
-                " from MON as m, loaimon as l where m.maloai = l.maloai and m.mamon = ?", new String[]{String.valueOf(maloai)});
+                " from MON as m, loaimon as l where m.maloai = l.maloai and m.maloai = ?", new String[]{String.valueOf(maloai)});
         if (cursor.getCount() != 0){
             cursor.moveToFirst();
             do {
