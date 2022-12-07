@@ -2,22 +2,15 @@ package com.example.cookingapp.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.example.cookingapp.Fragment.ShowFoodtFragment;
-import com.example.cookingapp.Fragment.WaitFragment;
 import com.example.cookingapp.Interface.ILM;
 import com.example.cookingapp.R;
 import com.example.cookingapp.model.LOAIMONmodel;
