@@ -115,6 +115,18 @@ public class Home_Fragment extends Fragment {
                 newnldaoz = new dao(getContext());
                 newnldaoz.insert(nguyenLieu.getTennguyenlieu());
                 loadDataNewnl();
+
+                listfood.clear();
+                getAllDAO = new GetAllDAO(getActivity());
+                listfood =  getAllDAO.getAllfoodtheotennguyenlieu(nguyenLieu.getTennguyenlieu());
+                foodForGetCmt = new FoodinfoAdapter(getContext(), listfood);
+                GridLayoutManager gridView = new GridLayoutManager(getContext(),1,RecyclerView.HORIZONTAL,false);
+                RecyclviewWating.setLayoutManager(gridView);
+                RecyclviewWating.setAdapter(foodForGetCmt);
+
+
+
+
             }
         });
 
@@ -130,9 +142,7 @@ public class Home_Fragment extends Fragment {
                 RecyclviewWating.setLayoutManager(gridView);
                 RecyclviewWating.setAdapter(foodForGetCmt);
 
-                Toast.makeText(getContext(), ""+listfood.get(0).getTenmon(), Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(getContext(), ""+loaimoNmodel.getMaloai(), Toast.LENGTH_SHORT).show();
 
             }
         });
