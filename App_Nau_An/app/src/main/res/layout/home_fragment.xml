@@ -14,8 +14,8 @@
             android:layout_height="wrap_content"
             android:text="Kho cảm hứng"
             android:textSize="30dp"
-            android:textColor="#0A8074"
-            android:textStyle="bold"
+            android:textColor="@color/content"
+            android:textStyle="normal"
             android:layout_marginTop="5dp"
             android:layout_centerHorizontal="true"
             android:id="@+id/textKCH"
@@ -65,12 +65,24 @@
             android:layout_below="@+id/l1"
 
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tất Cả"
+            android:paddingRight="25dp"
+            android:textSize="20dp"
+            android:textColor="#00796B"
+            android:textStyle="bold"
+            android:id="@+id/textview"
+            android:layout_marginTop="5.5dp"
+            android:layout_below="@+id/l"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycLoaiMon"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_below="@+id/l"
             android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/textview"
             />
 
         <androidx.recyclerview.widget.RecyclerView

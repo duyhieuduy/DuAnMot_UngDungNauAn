@@ -102,7 +102,14 @@ public class Home_Fragment extends Fragment {
         loadDataNewnl();
         loadDataNl();
 
-
+        TextView textView = view.findViewById(R.id.textview);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listfood.clear();
+                loadallmon();
+            }
+        });
 
 
 
@@ -125,8 +132,6 @@ public class Home_Fragment extends Fragment {
                 RecyclviewWating.setAdapter(foodForGetCmt);
 
 
-
-
             }
         });
 
@@ -141,6 +146,7 @@ public class Home_Fragment extends Fragment {
                 GridLayoutManager gridView = new GridLayoutManager(getContext(),1,RecyclerView.HORIZONTAL,false);
                 RecyclviewWating.setLayoutManager(gridView);
                 RecyclviewWating.setAdapter(foodForGetCmt);
+
 
 
 
