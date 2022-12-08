@@ -103,10 +103,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "(1, 'Sinh tố & giải khát'), " +
                 "(16, 'Thập cẩm')");
         sqLiteDatabase.execSQL("INSERT INTO CONGTHUCNGUYENLIEU VALUES " +
-                "(1,1,'Mực ống','1 con'), " +
-                "(2,1,'Măng Trúc','100gram')," +
-                "(3,2,'Ếch','1 con'), " +
-                "(4,2,'Hoa Hẹ','300gram')");
+                "(134,1,'Mực ống','1 con'), " +
+                "(135,1,'Măng Trúc','100gram')," +
+                "(136,2,'Ếch','1 con'), " +
+                "(137,2,'Hoa Hẹ','300gram')," +
+                "(140,4, 'Đậu hũ', '1 miếng')," +
+                "(143,5, 'Dưa chua', '600g')," +
+                "(144, 6, 'Thạch', '700g'), " +
+                "(146, 7, 'Kem', '900g')");
 
         sqLiteDatabase.execSQL("INSERT INTO BINHLUAN VALUES(1,1,'bao','naudoqua')");
         sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNG VALUES('bao','123',1,'','',1)");
