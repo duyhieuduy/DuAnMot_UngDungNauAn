@@ -102,7 +102,14 @@ public class Home_Fragment extends Fragment {
         loadDataNewnl();
         loadDataNl();
 
-
+        TextView textView = view.findViewById(R.id.textview);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listfood.clear();
+                loadallmon();
+            }
+        });
 
 
 
@@ -123,6 +130,16 @@ public class Home_Fragment extends Fragment {
 
                 Toast.makeText(getContext(), ""+nguyenLieu.getTennguyenlieu(), Toast.LENGTH_SHORT).show();
                 loadDataNewnl();
+
+                listfood.clear();
+                getAllDAO = new GetAllDAO(getActivity());
+                listfood =  getAllDAO.getAllfoodtheotennguyenlieu(nguyenLieu.getTennguyenlieu());
+                foodForGetCmt = new FoodinfoAdapter(getContext(), listfood);
+                GridLayoutManager gridView = new GridLayoutManager(getContext(),1,RecyclerView.HORIZONTAL,false);
+                RecyclviewWating.setLayoutManager(gridView);
+                RecyclviewWating.setAdapter(foodForGetCmt);
+
+
             }
         });
 
@@ -140,6 +157,8 @@ public class Home_Fragment extends Fragment {
 
                 Toast.makeText(getContext(), ""+listfood.get(0).getTenmon(), Toast.LENGTH_SHORT).show();
                 Toast.makeText(getContext(), ""+loaimoNmodel.getMaloai(), Toast.LENGTH_SHORT).show();
+
+
 
             }
         });

@@ -53,20 +53,21 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.Vi
         daoz = new dao(context);
         holder.text.setText("" + list.get(position).getTennguyenlieu());
 
-
+//        if (!cardViewList.contains(holder.cardView)) {
+//            cardViewList.add(holder.cardView);
+//        }        for(CardView cardView : cardViewList){
+//            cardView.setCardBackgroundColor(context.getResources().getColor(R.color.white));
+//        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               // holder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.colorSelected));
 
                 iNguyenLieu.onClick(list.get(position));
             }
         });
 
-        if (!cardViewList.contains(holder.cardView)) {
-            cardViewList.add(holder.cardView);
-        }        for(CardView cardView : cardViewList){
-            cardView.setCardBackgroundColor(context.getResources().getColor(R.color.teal_200));
-        }
+
 
 //        holder.cardView.setOnClickListener(new View.OnClickListener() {
 //            @Override

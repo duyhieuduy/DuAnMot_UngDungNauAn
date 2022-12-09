@@ -82,18 +82,23 @@
         android:layout_marginRight="65dp"
         android:backgroundTint="#2CFFFFFF"/>
 
-    <Button
-        android:id="@+id/btnVerifyPhoneNumber"
-        android:text="Lấy Mã OTP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Remember Me?"
         android:id="@+id/remember"
         android:textColor="@color/black" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="30dp"
+        android:id="@+id/btnVerifyPhoneNumber"
+        android:text="Lấy Mã OTP"
+        android:textStyle="italic"
+        android:textSize="10dp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="@drawable/buttonlogin"/>
+
 
 
     <androidx.appcompat.widget.AppCompatButton

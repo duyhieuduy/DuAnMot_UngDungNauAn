@@ -35,7 +35,7 @@ public class WaitActivity extends AppCompatActivity {
                     }
                 });
                 // Do something ... (Update database,..)
-                SystemClock.sleep(1000); // Sleep 5 seconds.
+                SystemClock.sleep(500);
 
                 progressBar.setIndeterminate(false);
                 progressBar.setMax(1);
