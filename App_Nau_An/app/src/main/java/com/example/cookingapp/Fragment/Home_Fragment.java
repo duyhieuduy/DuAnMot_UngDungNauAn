@@ -112,8 +112,16 @@ public class Home_Fragment extends Fragment {
         adapter.setiNguyenLieu(new INguyenLieu() {
             @Override
             public void onClick(NguyenLieu nguyenLieu) {
+                listfood.clear();
                 newnldaoz = new dao(getContext());
+                listfood = getAllDAO.getAllfoodtheotennguyenlieu(nguyenLieu.getTennguyenlieu());
                 newnldaoz.insert(nguyenLieu.getTennguyenlieu());
+                GridLayoutManager gridView = new GridLayoutManager(getContext(),1,RecyclerView.HORIZONTAL,false);
+                RecyclviewWating.setLayoutManager(gridView);
+                RecyclviewWating.setAdapter(foodForGetCmt);
+                Toast.makeText(getContext(), ""+listfood.get(0).getTenmon(), Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(getContext(), ""+nguyenLieu.getTennguyenlieu(), Toast.LENGTH_SHORT).show();
                 loadDataNewnl();
             }
         });
@@ -151,7 +159,6 @@ public class Home_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 InsertDao insertDao = new InsertDao(getContext());
-
                 insertDao.deleteAll();
                 listfood.clear();
                 listloaimon.clear();
@@ -189,6 +196,7 @@ public class Home_Fragment extends Fragment {
         recyclerviewnewHCK.setLayoutManager(linearLayoutManagera);
         NewNguyenlieuAdapter adaptera = new NewNguyenlieuAdapter(getContext(), listnewnl);
         recyclerviewnewHCK.setAdapter(adaptera);
+
     }
 
     void loaddataLoaiMon() {
