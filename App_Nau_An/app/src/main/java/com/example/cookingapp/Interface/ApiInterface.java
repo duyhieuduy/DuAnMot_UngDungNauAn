@@ -28,6 +28,6 @@ public interface ApiInterface {
 
     // post user save
     @POST("api/adnds")
-    Call<UserSave> senPostUserSave(@Body UserSave userSave);
+    Call<Number> senPostUserSave(@Body UserSave userSave);
 
 }

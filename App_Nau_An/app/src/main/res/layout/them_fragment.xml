@@ -20,18 +20,12 @@
         android:layout_margin="5dp"
         android:layout_centerHorizontal="true"/>
 
-    <ImageView
-        android:layout_below="@+id/tv"
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="220sp"
-        android:src="@drawable/ic_launcher_background" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerMonDaDang"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView2"/>
+        android:layout_below="@+id/tv"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"

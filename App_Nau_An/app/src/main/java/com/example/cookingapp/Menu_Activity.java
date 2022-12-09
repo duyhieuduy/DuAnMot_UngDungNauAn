@@ -14,6 +14,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -27,6 +28,7 @@ import com.example.cookingapp.CallApi.binhluanfs;
 import com.example.cookingapp.CallApi.congthucnguyenlieufs;
 import com.example.cookingapp.CallApi.nguoidungdbfs;
 import com.example.cookingapp.CallApi.nguoidungsavefs;
+import com.example.cookingapp.DB.DBHelper;
 import com.example.cookingapp.dao.InsertDao;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -47,14 +49,15 @@ public class Menu_Activity extends AppCompatActivity {
     NavigationView navigationView;
     ViewPager mViewPager;
     BottomNavigationView bottom;
-    InsertDao insertDao;
+    public DBHelper dbHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-
+        //deleteuser();
 
         bottom = findViewById(R.id.bottom);
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -192,64 +195,11 @@ public class Menu_Activity extends AppCompatActivity {
         });
     }
 
-    private void callApiGetUser() {
-        ApiService requestInterface = new Retrofit.Builder()
-                .baseUrl(BASE_Service)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
-                .build().create(ApiService.class);
 
-        new CompositeDisposable().add(requestInterface.getListFood()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(this::handleResponse, this::handleError)
-        );
+    public void deleteuser () {
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+        sqLiteDatabase.delete("NGUOIDUNG", null, null);
+        sqLiteDatabase.execSQL("delete  from " + "NGUOIDUNG");
+        sqLiteDatabase.close();
     }
-
-    private void handleResponse(ArrayList<Food> food) {
-        Log.d("AAA",food.get(0).getTenmon());
-        for (Food fooda : food) {
-            insertDao.insertMON(
-                    fooda.getMamon(),
-                    fooda.getMaloai(),
-                    fooda.getTenmon(),
-                    fooda.getCongthuclam(),
-                    fooda.getTgnau(),
-                    fooda.getDokho(),
-                    fooda.getAnhmonlvo(),
-                    fooda.getCachlam());
-            insertDao.insertLOAIMON(fooda.getMaloai(),fooda.getTenloai());
-
-            for (anhmonanfs ama: fooda.getAnhmonanfs()) {
-                insertDao.insertANHMONAN(ama.getIdAma(), ama.getMamon(), ama.getAnhmon());
-            }
-
-            for (com.example.cookingapp.CallApi.binhluanfs binhluanfs: fooda.getBinhluanfs()) {
-                insertDao.insertBINHLUAN(binhluanfs.getIdBl(), binhluanfs.getMamon(), binhluanfs.getTendangnhap(),binhluanfs.getNoidungbl());
-            }
-
-            for (congthucnguyenlieufs congthucnguyenlieufsa: fooda.getCongthucnguyenlieufs()) {
-                insertDao.insertCONGTHUCNGUYENLIEU(congthucnguyenlieufsa.getIdctnl(), congthucnguyenlieufsa.getMamon(), congthucnguyenlieufsa.getTennguyenlieu(),congthucnguyenlieufsa.getKhoiluong());
-            }
-
-
-            for (com.example.cookingapp.CallApi.nguoidungdbfs nguoidungdbfs: fooda.getNguoidungdbfs()) {
-                insertDao.insertNGUOIDUNGDB(nguoidungdbfs.getIdndb(), nguoidungdbfs.getMamon(), nguoidungdbfs.getTennguoidung());
-            }
-
-            for (com.example.cookingapp.CallApi.nguoidungsavefs nguoidungsavefs: fooda.getNguoidungsavefs()) {
-                insertDao.insertNGUOIDUNGSAVE(nguoidungsavefs.getIdnds(), nguoidungsavefs.getMamon(), nguoidungsavefs.getTennguoidung());
-            }
-
-
-        }
-
-
-    }
-
-    private void handleError(Throwable error) {
-        Log.d("CALL LOI",")()())()()(" + error);
-        Toast.makeText(Menu_Activity.this, "Call Fail  " + error, Toast.LENGTH_LONG).show();
-    }
-
 }

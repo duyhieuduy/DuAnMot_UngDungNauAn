@@ -1,17 +1,12 @@
 package com.example.cookingapp.CallApi;
 
 import com.example.cookingapp.model.Register;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import io.reactivex.Observable;
-import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -21,8 +16,21 @@ public interface ApiService {
 
     @GET("api/GetFood")
     Observable<ArrayList<Food>> getListFood();
+    @GET("api/Getalluser")
+    Observable<ArrayList<getalluser>> getListgetalluser();
+
+    @GET("api/updateuser")
+    Observable<Number> updateuser();
+
+
+    @POST("api/deletemondadang")
+    Observable<Number> deletemondadang();
+
+
+    @DELETE("api/deletenguoidungsave")
+    Observable<Number> deletenguoidungsave(@Query("id") int id);
 
 
     @POST("api/adduser")
-    Observable<Register> sendPost(@Body Register register);
+    Observable<Number> sendPost(@Body Register register);
 }

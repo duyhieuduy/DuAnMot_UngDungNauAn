@@ -113,7 +113,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "(146, 7, 'Kem', '900g')");
 
         sqLiteDatabase.execSQL("INSERT INTO BINHLUAN VALUES(1,1,'bao','naudoqua')");
-        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNG VALUES('bao','123',1,'','',1)");
+//        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNG VALUES('bao','123',1,'','',1)");
         sqLiteDatabase.execSQL("INSERT INTO ANHMONAN VALUES(1,1,'https://res.cloudinary.com/doluugxhe/image/upload/v1669565429/Cooking%20app/mucong_b8pjx0.jpg')");
         sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNGDB VALUES(1,1,'bao') ");
         sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNGSAVE VALUES(1,1,'bao')");

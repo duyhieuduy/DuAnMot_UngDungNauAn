@@ -96,7 +96,7 @@ public class Register_Activity extends AppCompatActivity {
         );
     }
 
-    private void handleResponse(Register register){
+    private void handleResponse(Number number){
         Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
     }
 

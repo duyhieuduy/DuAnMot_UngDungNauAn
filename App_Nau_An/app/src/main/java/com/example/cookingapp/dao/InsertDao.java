@@ -173,5 +173,6 @@ public class InsertDao {
 
             sqLiteDatabase.close();
         }
-    }
+
+}
 
