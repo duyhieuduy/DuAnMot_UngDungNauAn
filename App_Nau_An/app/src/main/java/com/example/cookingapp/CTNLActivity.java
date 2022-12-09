@@ -4,13 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.cookingapp.dao.GetAllDAO;
+import com.example.cookingapp.model.CLAnhMonAn;
 import com.example.cookingapp.model.FooddetailModel;
-import com.example.cookingapp.model.NguyenLieu;
 import com.squareup.picasso.Picasso;
 
 
@@ -30,7 +29,9 @@ public class CTNLActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int id = intent.getIntExtra("key1",0);
         list = congThucNguyenLieuDAO.getClickItemIDmon(id);
-        
+        ArrayList<CLAnhMonAn> listama = new ArrayList<>();
+        listama = congThucNguyenLieuDAO.getClickItemanh(id);
+
         imgCTNL = findViewById(R.id.imgCTNL);
         imgconmuc = findViewById(R.id.imgconmuc);
         imgmang = findViewById(R.id.imgmang);
@@ -54,11 +55,11 @@ public class CTNLActivity extends AppCompatActivity {
 
         Picasso.get().load(list.get(0).getAnhmon()).
                into(imgCTNL);
-        Picasso.get().load(list.get(0).getAnhmon()).
+        Picasso.get().load(listama.get(0).getAnhmonan()).
                 into(imgcl1);
-        Picasso.get().load(list.get(0).getAnhmon()).
+        Picasso.get().load(listama.get(1).getAnhmonan()).
                 into(imgcl2);
-        Picasso.get().load(list.get(0).getAnhmon()).
+        Picasso.get().load(listama.get(2).getAnhmonan()).
                 into(imgcl3);
 //
           MOXT.setText(list.get(0).getTenmon());
