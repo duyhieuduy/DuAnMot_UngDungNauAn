@@ -88,13 +88,13 @@ public class ThemMonMoiActivity extends AppCompatActivity {
 
         SharedPreferences pref = getSharedPreferences("USERNAME", MODE_PRIVATE);
         tenuser = pref.getString("username", "");
-        SharedPreferences pref1 = getSharedPreferences("link1", MODE_PRIVATE);
+        SharedPreferences pref1 = getSharedPreferences("LINK1", MODE_PRIVATE);
         anh1 = pref1.getString("link1", "");
-        SharedPreferences pref2 = getSharedPreferences("link2", MODE_PRIVATE);
+        SharedPreferences pref2 = getSharedPreferences("LINK2", MODE_PRIVATE);
         anh2 = pref2.getString("link2", "");
-        SharedPreferences pref3 = getSharedPreferences("link3", MODE_PRIVATE);
+        SharedPreferences pref3 = getSharedPreferences("LINK3", MODE_PRIVATE);
         anh3 = pref3.getString("link3", "");
-        SharedPreferences pref4 = getSharedPreferences("link4", MODE_PRIVATE);
+        SharedPreferences pref4 = getSharedPreferences("LINK4", MODE_PRIVATE);
         anh4 = pref4.getString("link4", "");
 
         EditText edtTenMon = findViewById(R.id.tenmon);
@@ -248,7 +248,7 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path1 = (String) resultData.get("url");
-                        SharedPreferences pref = getSharedPreferences("link1", MODE_PRIVATE);
+                        SharedPreferences pref = getSharedPreferences("LINK1", MODE_PRIVATE);
                         SharedPreferences.Editor editor=pref.edit();
                         editor.putString("link1",path1);
                         editor.commit();
@@ -281,7 +281,7 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path2 = (String) resultData.get("url");
-                        SharedPreferences pref = getSharedPreferences("link2", MODE_PRIVATE);
+                        SharedPreferences pref = getSharedPreferences("LINK2", MODE_PRIVATE);
                         SharedPreferences.Editor editor=pref.edit();
                         editor.putString("link2",path2);
                         editor.commit();
@@ -315,7 +315,7 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path3 = (String) resultData.get("url");
-                        SharedPreferences pref = getSharedPreferences("link3", MODE_PRIVATE);
+                        SharedPreferences pref = getSharedPreferences("LINK3", MODE_PRIVATE);
                         SharedPreferences.Editor editor=pref.edit();
                         editor.putString("link3",path3);
                         editor.commit();
@@ -348,7 +348,7 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path4 = (String) resultData.get("url");
-                        SharedPreferences pref = getSharedPreferences("link4", MODE_PRIVATE);
+                        SharedPreferences pref = getSharedPreferences("LINK4", MODE_PRIVATE);
                         SharedPreferences.Editor editor=pref.edit();
                         editor.putString("link4",path4);
                         editor.commit();
