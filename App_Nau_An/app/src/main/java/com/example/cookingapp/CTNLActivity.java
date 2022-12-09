@@ -30,7 +30,7 @@ public class CTNLActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int id = intent.getIntExtra("key1",0);
         list = congThucNguyenLieuDAO.getClickItemIDmon(id);
-
+        
         imgCTNL = findViewById(R.id.imgCTNL);
         imgconmuc = findViewById(R.id.imgconmuc);
         imgmang = findViewById(R.id.imgmang);
