@@ -54,11 +54,12 @@ public class ThemMonMoiActivity extends AppCompatActivity {
     private static final String IMAGE_DIRECTORY = "/demonuts";
     private int GALLERY = 1, CAMERA = 2;
 
-    TextView tv_api, tv_link_img1, tv_link_img2, tv_link_img3, tv_link_img4;
+    TextView tv_api;
 
     Uri contentURI1, contentURI2, contentURI3, contentURI4;
     String path1, path2, path3, path4;
-    String tendangnhap = "1";
+    String anh1, anh2, anh3, anh4;
+    String tendangnhap;
     String tenloai;
     String tenmon;
     String congthuclam;
@@ -77,12 +78,24 @@ public class ThemMonMoiActivity extends AppCompatActivity {
     String anhcachlam1;
     String anhcachlam2;
     String anhcachlam3;
+    String tenuser;
 
     int clickImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_mon);
+
+        SharedPreferences pref = getSharedPreferences("USERNAME", MODE_PRIVATE);
+        tenuser = pref.getString("username", "");
+        SharedPreferences pref1 = getSharedPreferences("LINK1", MODE_PRIVATE);
+        anh1 = pref1.getString("link1", "");
+        SharedPreferences pref2 = getSharedPreferences("LINK2", MODE_PRIVATE);
+        anh2 = pref2.getString("link2", "");
+        SharedPreferences pref3 = getSharedPreferences("LINK3", MODE_PRIVATE);
+        anh3 = pref3.getString("link3", "");
+        SharedPreferences pref4 = getSharedPreferences("LINK4", MODE_PRIVATE);
+        anh4 = pref4.getString("link4", "");
 
         EditText edtTenMon = findViewById(R.id.tenmon);
         EditText edtLoaiMon = findViewById(R.id.loaimon);
@@ -120,16 +133,14 @@ public class ThemMonMoiActivity extends AppCompatActivity {
 
         requestMultiplePermissions();
 
-       // SharedPreferences sharedPreferences = getSharedPreferences("tennguoidung", Context.MODE_PRIVATE);
 
-        // String tendangnhap = sharedPreferences.getString("tenuser" ,null);
-         tendangnhap = "1";
+         tendangnhap = tenuser;
          tenloai = edtLoaiMon.getText().toString();
          tenmon = edtTenMon.getText().toString();
          congthuclam = edtMota.getText().toString();
          tgnau = edtThoiGianNau.getText().toString();
          dokho = edtDoKho.getText().toString();
-         anhmonlvo = path1;
+         anhmonlvo = anh1;
          tennguyenlieu1 = edtNguyenLieu1.getText().toString();
          khoiluong1 = edtKhoiLuong1.getText().toString();
          tennguyenlieu2 = edtNguyenLieu2.getText().toString();
@@ -139,9 +150,11 @@ public class ThemMonMoiActivity extends AppCompatActivity {
          tennguyenlieu4 = edtNguyenLieu4.getText().toString();
          khoiluong4 = edtKhoiLuong4.getText().toString();
          cachlam = edtCachLam.getText().toString();
-         anhcachlam1 = path2;
-         anhcachlam2 = path3;
-         anhcachlam3 = path4;
+         anhcachlam1 = anh2;
+         anhcachlam2 = anh3;
+         anhcachlam3 = anh4;
+
+
 
 
         edtNguyenLieu2.setVisibility(View.GONE);
@@ -235,8 +248,10 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path1 = (String) resultData.get("url");
-                        tv_link_img1.setText(path1);
-
+                        SharedPreferences pref = getSharedPreferences("LINK1", MODE_PRIVATE);
+                        SharedPreferences.Editor editor=pref.edit();
+                        editor.putString("link1",path1);
+                        editor.commit();
                         Log.d(TAG, "onStart: " + " unsuccess  " + path1);
                     }
 
@@ -266,7 +281,10 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path2 = (String) resultData.get("url");
-                        tv_link_img2.setText(path2);
+                        SharedPreferences pref = getSharedPreferences("LINK2", MODE_PRIVATE);
+                        SharedPreferences.Editor editor=pref.edit();
+                        editor.putString("link2",path2);
+                        editor.commit();
 
                         Log.d(TAG, "onStart: " + " unsuccess  " + path2);
                     }
@@ -297,7 +315,10 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path3 = (String) resultData.get("url");
-                        tv_link_img3.setText(path3);
+                        SharedPreferences pref = getSharedPreferences("LINK3", MODE_PRIVATE);
+                        SharedPreferences.Editor editor=pref.edit();
+                        editor.putString("link3",path3);
+                        editor.commit();
                         Log.d(TAG, "onStart: " + " unsuccess   " + path3);
                     }
 
@@ -327,7 +348,10 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String requestId, Map resultData) {
                         path4 = (String) resultData.get("url");
-                        tv_link_img4.setText(path4);
+                        SharedPreferences pref = getSharedPreferences("LINK4", MODE_PRIVATE);
+                        SharedPreferences.Editor editor=pref.edit();
+                        editor.putString("link4",path4);
+                        editor.commit();
                         Log.d(TAG, "onStart: " + " unsuccess   " + path4);
                     }
 
