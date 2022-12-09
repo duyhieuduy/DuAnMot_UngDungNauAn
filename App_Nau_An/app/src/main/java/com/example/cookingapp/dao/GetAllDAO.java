@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.cookingapp.CallApi.getalluser;
 import com.example.cookingapp.CallApi.nguoidungdbfs;
 import com.example.cookingapp.CallApi.nguoidungsavefs;
 import com.example.cookingapp.model.BinhLuan;
@@ -255,6 +256,40 @@ public class GetAllDAO {
                         cursor.getString(3),
                         cursor.getString(4),
                         gettennltheoidmon(cursor.getInt(0))));
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
+    public ArrayList<getalluser> getallusersdao(){
+        ArrayList<getalluser> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from nguoidung",null);
+        if (cursor.getCount() != 0){
+            cursor.moveToFirst();
+            do {
+                list.add(new getalluser(cursor.getString(0),
+                        cursor.getString(1),
+                        cursor.getInt(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getInt(5)));
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
+    public ArrayList<getalluser> getallusersdaoifnotexits(){
+        ArrayList<getalluser> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from nguoidung",null);
+        if (cursor.getCount() != 0){
+            cursor.moveToFirst();
+            do {
+                list.add(new getalluser(cursor.getString(0),
+                        cursor.getString(1),
+                        cursor.getInt(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getInt(5)));
             }while (cursor.moveToNext());
         }
         return list;

@@ -2,6 +2,8 @@ package com.example.cookingapp.Fragment;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import static com.example.cookingapp.CallApi.ApiService.BASE_Service;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -21,15 +23,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cookingapp.Adapter.FoodinfoAdapter;
 import com.example.cookingapp.Adapter.LuuMonAdapter;
 import com.example.cookingapp.CTNLActivity;
+import com.example.cookingapp.CallApi.ApiService;
+import com.example.cookingapp.CallApi.message;
 import com.example.cookingapp.CallApi.nguoidungdbfs;
 import com.example.cookingapp.CallApi.nguoidungsavefs;
 import com.example.cookingapp.Interface.IFood;
 import com.example.cookingapp.R;
 import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.model.FoodInFor;
+import com.example.cookingapp.model.Register;
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TuongTacFragment extends Fragment {
     RecyclerView recyclerSave;
@@ -78,5 +90,31 @@ public class TuongTacFragment extends Fragment {
          LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerSave.setLayoutManager(linearLayoutManager);
         recyclerSave.setAdapter(foodinfoAdapter);
+    }
+
+
+
+    private void deletenguoidungsave() {
+        int id = 0;
+
+        ApiService requestInterface = new Retrofit.Builder()
+                .baseUrl(BASE_Service)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build().create(ApiService.class);
+        new CompositeDisposable().add(requestInterface.deletenguoidungsave(id)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(this::handleResponse, this::handleError)
+        );
+    }
+
+
+    private void handleResponse(Number number){
+        Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+    }
+
+    private void handleError(Throwable error){
+        Toast.makeText(getContext(), "Fail", Toast.LENGTH_SHORT).show();
     }
 }

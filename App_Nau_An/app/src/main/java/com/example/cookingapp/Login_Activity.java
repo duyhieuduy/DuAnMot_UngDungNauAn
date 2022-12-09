@@ -2,12 +2,15 @@ package com.example.cookingapp;
 
 import static android.content.ContentValues.TAG;
 
+import static com.example.cookingapp.CallApi.ApiService.BASE_Service;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +19,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.cookingapp.CallApi.ApiService;
+import com.example.cookingapp.CallApi.Food;
+import com.example.cookingapp.CallApi.anhmonanfs;
+import com.example.cookingapp.CallApi.congthucnguyenlieufs;
+import com.example.cookingapp.CallApi.getalluser;
+import com.example.cookingapp.DB.DBHelper;
+import com.example.cookingapp.dao.GetAllDAO;
+import com.example.cookingapp.dao.InsertDao;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -27,16 +38,33 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Login_Activity extends AppCompatActivity {
     PhoneAuthProvider.ForceResendingToken mResendToken;
     private String mVerificationId;
     private FirebaseAuth mAuth;
+    GetAllDAO getAllDAO;
+    List<getalluser> listuser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getAllDAO = new GetAllDAO(this);
+        listuser = new ArrayList<>();
+        listuser = getAllDAO.getallusersdao();
+        Toast.makeText(this, ""+listuser.get(0).getTendangnhap(), Toast.LENGTH_SHORT).show();
+
+
 
 
         setContentView(R.layout.activity_login);
@@ -128,4 +156,7 @@ public class Login_Activity extends AppCompatActivity {
             }
         });
     }
+
+
+
 }

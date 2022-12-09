@@ -289,21 +289,21 @@ public class Home_Fragment extends Fragment {
         Toast.makeText(getActivity(), "Call Fail  " + error, Toast.LENGTH_LONG).show();
     }
 
-    private void senPostsUserSave(){
-        UserSave userSave = new UserSave("1", 1);
-        ApiInterface.apiInterface.senPostUserSave(userSave).enqueue(new Callback<UserSave>() {
-            @Override
-            public void onResponse(Call<UserSave> call, Response<UserSave> response) {
-                Toast.makeText(getContext(), "call api success", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<UserSave> call, Throwable t) {
-                Toast.makeText(getContext(), "call api success", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-    }
+//    private void senPostsUserSave(){
+//        UserSave userSave = new UserSave("1", 1);
+//        ApiInterface.apiInterface.senPostUserSave(userSave).enqueue(new Callback<UserSave>() {
+//            @Override
+//            public void onResponse(Call<UserSave> call, Response<UserSave> response) {
+//                Toast.makeText(getContext(), "call api success", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<UserSave> call, Throwable t) {
+//                Toast.makeText(getContext(), "call api success", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+    //}
 
 
 
