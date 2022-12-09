@@ -86,7 +86,7 @@
                  android:layout_centerHorizontal="true"
                     android:layout_below="@+id/TenNL"
                     android:layout_toRightOf="@+id/TennL1"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/iconconmuc"
                     android:layout_width="30dp"
                     android:layout_height="30dp"/>
                 <TextView
@@ -103,7 +103,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_toRightOf="@+id/TennL2"
                     android:layout_below="@+id/imgconmuc"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/iconconmuc"
                     android:layout_width="30dp"
                     android:layout_height="30dp"/>
                 <ImageView

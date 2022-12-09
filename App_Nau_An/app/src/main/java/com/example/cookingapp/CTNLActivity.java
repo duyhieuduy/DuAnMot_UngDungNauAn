@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.model.FooddetailModel;
+import com.example.cookingapp.model.NguyenLieu;
 import com.squareup.picasso.Picasso;
 
 
@@ -31,19 +32,38 @@ public class CTNLActivity extends AppCompatActivity {
         list = congThucNguyenLieuDAO.getClickItemIDmon(id);
 
         imgCTNL = findViewById(R.id.imgCTNL);
+        imgconmuc = findViewById(R.id.imgconmuc);
+        imgmang = findViewById(R.id.imgmang);
+        imgclam = findViewById(R.id.imgclam);
+        imgcl1 = findViewById(R.id.imgcl1);
+        imgcl2 = findViewById(R.id.imgcl2);
+        imgcl3 = findViewById(R.id.imgcl3);
 
-//        textTenMon = findViewById(R.id.tenmon);
-//        MOXT = findViewById(R.id.MOXT);
-//        GT = findViewById(R.id.GT);
-//        textctl = findViewById(R.id.Congthuclam);
-//        textcl = findViewById(R.id.cachlam);
+
+        MOXT = findViewById(R.id.MOXT);
+
+        GT = findViewById(R.id.GT);
+
+        textTG = findViewById(R.id.textTG);
+        TenNL = findViewById(R.id.TenNL);
+        TennL1 = findViewById(R.id.TennL1);
+        TennL2 = findViewById(R.id.TennL2);
+        clNl = findViewById(R.id.clNl);
+        ctcl = findViewById(R.id.ctcl);
+
+
+        Picasso.get().load(list.get(0).getAnhmon()).
+               into(imgCTNL);
+        Picasso.get().load(list.get(0).getAnhmon()).
+                into(imgcl1);
+        Picasso.get().load(list.get(0).getAnhmon()).
+                into(imgcl2);
+        Picasso.get().load(list.get(0).getAnhmon()).
+                into(imgcl3);
 //
-//        Picasso.get().load(list.get(0).getAnhmon()).
-//                into(imgAnhMon);
-//
-//        textTenMon.setText(list.get(0).getTenmon());
-//        textctl.setText(list.get(0).getCongthuclam());
-//        textcl.setText(list.get(0).getCachlam());
+          MOXT.setText(list.get(0).getTenmon());
+         ctcl.setText(list.get(0).getCongthuclam());
+         clNl.setText(list.get(0).getCachlam());
 //
 //        Log.d("testtt",list.get(0).getAnhmon());
 

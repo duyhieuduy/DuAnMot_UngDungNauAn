@@ -135,8 +135,8 @@ public class Home_Fragment extends Fragment {
                 getAllDAO = new GetAllDAO(getActivity());
                 listfood =  getAllDAO.getAllfoodtheotennguyenlieu(nguyenLieu.getTennguyenlieu());
                 foodForGetCmt = new FoodinfoAdapter(getContext(), listfood);
-                GridLayoutManager gridView = new GridLayoutManager(getContext(),1,RecyclerView.HORIZONTAL,false);
-                RecyclviewWating.setLayoutManager(gridView);
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),1,RecyclerView.HORIZONTAL,false);
+                RecyclviewWating.setLayoutManager(gridLayoutManager);
                 RecyclviewWating.setAdapter(foodForGetCmt);
 
 
