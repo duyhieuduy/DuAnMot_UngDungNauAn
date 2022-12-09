@@ -86,7 +86,7 @@
                  android:layout_centerHorizontal="true"
                     android:layout_below="@+id/TenNL"
                     android:layout_toRightOf="@+id/TennL1"
-                    android:src="@drawable/iconconmuc"
+
                     android:layout_width="30dp"
                     android:layout_height="30dp"/>
                 <TextView
@@ -103,7 +103,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_toRightOf="@+id/TennL2"
                     android:layout_below="@+id/imgconmuc"
-                    android:src="@drawable/iconconmuc"
+
                     android:layout_width="30dp"
                     android:layout_height="30dp"/>
                 <ImageView
@@ -129,21 +129,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <ImageView
+
                     android:id="@+id/imgcl1"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginLeft="10dp"
                     android:layout_below="@+id/ctcl"
                     android:src="@mipmap/ic_launcher"
-                    android:layout_width="140dp"
+                    android:layout_width="150dp"
                     android:layout_height="190dp"/>
                 <ImageView
                     android:id="@+id/imgcl2"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="5dp"
+                    android:layout_marginStart="50dp"
                    android:layout_below="@+id/ctcl"
                   android:layout_toRightOf="@+id/imgcl1"
                     android:src="@mipmap/ic_launcher"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="190dp"/>
                 <ImageView
                     android:id="@+id/imgcl3"
@@ -151,7 +151,7 @@
                     android:layout_below="@+id/imgcl1"
                     android:src="@mipmap/ic_launcher"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"/>
+                    android:layout_height="160dp"/>
         </RelativeLayout>
 
 
