@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class CTNLActivity extends AppCompatActivity {
     GetAllDAO congThucNguyenLieuDAO;
     ArrayList<FooddetailModel>  list ;
-    TextView MOXT,GT,textTG,TenNL,TennL1,TennL2,clNl,ctcl;
-    ImageView imgCTNL,linea,DH,linea1,imgconmuc,imgmang,imgclam,imgcl1,imgcl2,imgcl3;
+    TextView MOXT,GT,textTG,TennL1,TennL2,clNl,ctcl;
+    ImageView imgCTNL,imgcl1,imgcl2,imgcl3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,9 +33,6 @@ public class CTNLActivity extends AppCompatActivity {
         listama = congThucNguyenLieuDAO.getClickItemanh(id);
 
         imgCTNL = findViewById(R.id.imgCTNL);
-        imgconmuc = findViewById(R.id.imgconmuc);
-        imgmang = findViewById(R.id.imgmang);
-        imgclam = findViewById(R.id.imgclam);
         imgcl1 = findViewById(R.id.imgcl1);
         imgcl2 = findViewById(R.id.imgcl2);
         imgcl3 = findViewById(R.id.imgcl3);
@@ -46,7 +43,6 @@ public class CTNLActivity extends AppCompatActivity {
         GT = findViewById(R.id.GT);
 
         textTG = findViewById(R.id.textTG);
-        TenNL = findViewById(R.id.TenNL);
         TennL1 = findViewById(R.id.TennL1);
         TennL2 = findViewById(R.id.TennL2);
         clNl = findViewById(R.id.clNl);
@@ -61,12 +57,9 @@ public class CTNLActivity extends AppCompatActivity {
                 into(imgcl2);
         Picasso.get().load(listama.get(2).getAnhmonan()).
                 into(imgcl3);
-//
           MOXT.setText(list.get(0).getTenmon());
          ctcl.setText(list.get(0).getCongthuclam());
          clNl.setText(list.get(0).getCachlam());
-//
-//        Log.d("testtt",list.get(0).getAnhmon());
 
 
 
