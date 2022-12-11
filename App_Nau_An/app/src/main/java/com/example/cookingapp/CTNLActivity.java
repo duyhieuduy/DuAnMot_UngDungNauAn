@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +30,7 @@ public class CTNLActivity extends AppCompatActivity {
     ArrayList<BinhLuan>  listbl;
     ArrayList<NguyenLieu>  listnl;
     RecyclerView rvbinhluan;
-    TextView MOXT,GT,textTG,TennL1,TennL2,ctcl;
+    TextView MOXT,GT,textTG,TennL1,TennL2,TennL3,TennL4,ctcl;
     ImageView imgCTNL,imgcl1,imgcl2,imgcl3;
     BinhluanAdapter binhluanAdapter;
     @Override
@@ -57,6 +58,8 @@ public class CTNLActivity extends AppCompatActivity {
         textTG = findViewById(R.id.textTG);
         TennL1 = findViewById(R.id.TennL1);
         TennL2 = findViewById(R.id.TennL2);
+        TennL3 = findViewById(R.id.TennL3);
+        TennL4 = findViewById(R.id.TennL4);
         ctcl = findViewById(R.id.ctcl);
 
 
@@ -65,8 +68,25 @@ public class CTNLActivity extends AppCompatActivity {
         textTG.setText(list.get(0).getTgnau());
 
         listnl = list.get(0).getListb();
-        TennL1.setText(" "+listnl.get(0).getTennguyenlieu());
-        TennL2.setText(", "+listnl.get(1).getTennguyenlieu());
+            TennL1.setText(listnl.get(0).getTennguyenlieu());
+        if (listnl.size()>1){
+            TennL2.setText(" ,"+listnl.get(1).getTennguyenlieu());
+        }
+        else {
+            TennL2.setVisibility(View.GONE);
+        }
+        if (listnl.size()>2) {
+            TennL3.setText(" ,"+listnl.get(2).getTennguyenlieu());
+        }
+        else {
+            TennL3.setVisibility(View.GONE);
+        }
+        if (listnl.size()>3){
+            TennL4.setText(" ,"+listnl.get(3).getTennguyenlieu());
+        }
+        else {
+            TennL4.setVisibility(View.GONE);
+        }
         ctcl.setText(list.get(0).getCachlam());
 
         listama = list.get(0).getList();
@@ -82,9 +102,9 @@ public class CTNLActivity extends AppCompatActivity {
 
 
         listbl = list.get(0).getLista();
-        Toast.makeText(this, "ndbl"+listbl.get(1).getNoidungbinhluan() +"ten"+ listbl.get(1).getTendangnhap()+"/n" +
-                        ""+"ndbl"+listbl.get(0).getNoidungbinhluan() +"ten"+ listbl.get(0).getTendangnhap()
-                , Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "ndbl"+listbl.get(1).getNoidungbinhluan() +"ten"+ listbl.get(1).getTendangnhap()+"/n" +
+//                        ""+"ndbl"+listbl.get(0).getNoidungbinhluan() +"ten"+ listbl.get(0).getTendangnhap()
+//                , Toast.LENGTH_LONG).show();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(CTNLActivity.this);
         rvbinhluan.setLayoutManager(linearLayoutManager);
         binhluanAdapter = new BinhluanAdapter(CTNLActivity.this,listbl);

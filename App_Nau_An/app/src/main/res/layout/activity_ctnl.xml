@@ -85,7 +85,7 @@
                                     android:textColor="#56528E"
 
                                     android:textStyle="bold"
-                                    android:textSize="20dp"
+                                    android:textSize="18dp"
                                     android:layout_marginTop="5dp"
                                     android:layout_toRightOf="@+id/imgnl"
                                     android:layout_below="@+id/DH"
@@ -97,7 +97,7 @@
                                 <TextView
                                     android:textColor="#56528E"
                                     android:textStyle="bold"
-                                    android:textSize="20dp"
+                                    android:textSize="18dp"
                                     android:layout_marginTop="5dp"
                                     android:layout_below="@+id/DH"
                                     android:layout_toRightOf="@id/TennL1"
@@ -108,9 +108,35 @@
 
 
                                 <TextView
+                                    android:textColor="#56528E"
+                                    android:textStyle="bold"
+                                    android:textSize="18dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_below="@+id/DH"
+                                    android:layout_toRightOf="@id/TennL2"
+                                    android:id="@+id/TennL3"
+                                    android:text="100gr măng tươi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:textColor="#56528E"
+                                    android:textStyle="bold"
+                                    android:textSize="18dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_below="@+id/DH"
+                                    android:layout_toRightOf="@id/TennL3"
+                                    android:id="@+id/TennL4"
+                                    android:text="100gr măng tươi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+
+                                <TextView
                                     android:textColor="#55278A"
                                     android:textStyle="bold"
                                     android:id="@+id/tvcachlamo"
+                                    android:layout_marginTop="10dp"
                                     android:textSize="30dp"
                                     android:layout_marginLeft="40dp"
                                     android:layout_marginRight="40dp"
@@ -119,42 +145,72 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"/>
 
-                                <ImageView
-
-                                    android:id="@+id/imgcl1"
-                                    android:layout_marginStart="30dp"
-                                    android:layout_below="@+id/tvcachlamo"
-                                    android:src="@mipmap/ic_launcher"
-                                    android:layout_width="120dp"
-                                    android:layout_height="80dp"/>
-                                <ImageView
-                                    android:id="@+id/imgcl2"
-                                    android:layout_marginStart="30dp"
-                                    android:layout_below="@+id/imgcl1"
-                                    android:src="@mipmap/ic_launcher"
-                                    android:layout_width="120dp"
-                                    android:layout_height="80dp"/>
-
-                                <ImageView
-                                    android:id="@+id/imgcl3"
-                                    android:layout_width="120dp"
-                                    android:layout_height="80dp"
-                                    android:layout_below="@+id/imgcl2"
-                                    android:layout_marginStart="30dp"
-                                    android:layout_marginEnd="30dp"
-                                    android:src="@mipmap/ic_launcher" />
-                                <TextView
-                                    android:textColor="#DF292525"
-                                    android:textSize="17dp"
-                                    android:id="@+id/ctcl"
-
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginRight="30dp"
-                                    android:text="Cach lam text"
-                                    android:layout_toRightOf="@+id/imgcl1"
+                                <LinearLayout
                                     android:layout_below="@+id/tvcachlamo"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"/>
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="7"
+                                    android:id="@+id/lnlayout">
+                                        <LinearLayout
+                                            android:layout_weight="3"
+                                            android:weightSum="3"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+                                                <ImageView
+                                                    android:layout_weight="1"
+                                                    android:id="@+id/imgcl1"
+                                                    android:layout_marginStart="30dp"
+                                                    android:src="@mipmap/ic_launcher"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="0dp"/>
+                                                <ImageView
+                                                    android:layout_weight="1"
+
+                                                    android:id="@+id/imgcl2"
+                                                    android:layout_marginStart="30dp"
+                                                    android:src="@mipmap/ic_launcher"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="0dp"/>
+
+                                                <ImageView
+                                                    android:layout_weight="1"
+                                                    android:id="@+id/imgcl3"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="0dp"
+                                                    android:layout_marginStart="30dp"
+                                                    android:src="@mipmap/ic_launcher" />
+
+
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_weight="4"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content">
+
+
+                                                <TextView
+                                                    android:textColor="#DF292525"
+                                                    android:textSize="17dp"
+                                                    android:id="@+id/ctcl"
+
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_marginRight="30dp"
+                                                    android:text="Cach lam text"
+                                                    android:layout_below="@+id/tvcachlamo"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"/>
+
+
+                                        </LinearLayout>
+
+                                </LinearLayout>
+
+
+
+
+
                                 <EditText
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
@@ -165,7 +221,7 @@
                                     android:layout_marginRight="20dp"
                                     android:paddingLeft="10dp"
                                     android:hint="Nhập Bình luận..."
-                                    android:layout_below="@+id/ctcl"
+                                    android:layout_below="@+id/lnlayout"
                                     />
                                 <androidx.appcompat.widget.AppCompatButton
                                     android:layout_marginTop="-32dp"
