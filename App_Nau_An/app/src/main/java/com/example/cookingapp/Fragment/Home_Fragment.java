@@ -112,10 +112,6 @@ public class Home_Fragment extends Fragment {
         });
 
 
-
-
-
-
         adapter.setiNguyenLieu(new INguyenLieu() {
             @Override
             public void onClick(NguyenLieu nguyenLieu) {

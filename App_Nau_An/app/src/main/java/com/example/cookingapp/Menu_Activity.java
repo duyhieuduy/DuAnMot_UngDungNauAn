@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.AlertDialog;
@@ -29,6 +31,7 @@ import com.example.cookingapp.CallApi.congthucnguyenlieufs;
 import com.example.cookingapp.CallApi.nguoidungdbfs;
 import com.example.cookingapp.CallApi.nguoidungsavefs;
 import com.example.cookingapp.DB.DBHelper;
+import com.example.cookingapp.Fragment.FragmentTTuser;
 import com.example.cookingapp.dao.InsertDao;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -75,12 +78,16 @@ public class Menu_Activity extends AppCompatActivity {
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+                Fragment fragment;
                 switch (item.getItemId()) {
                     case R.id.trangchu:
                         mViewPager.setCurrentItem(0);
                         bottom.setSelectedItemId(R.id.trangchu);
                         break;
+                    case R.id.TDTT:
+                        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.drawer_layout, new FragmentTTuser()).commit();
+                       break;
                     case R.id.logout:
                         startActivity(new Intent(Menu_Activity.this,Login_Activity.class));
                         break;
