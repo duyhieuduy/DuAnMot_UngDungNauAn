@@ -123,7 +123,7 @@ public class GetAllDAO {
     public ArrayList<BinhLuan>getClickItembinhuan(int idmamon){
         ArrayList<BinhLuan> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase  = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select bl.idBl ,bl.mamon,bl.tendangnhap,bl.noidungbl " +
+        Cursor cursor = sqLiteDatabase.rawQuery("select distinct bl.idBl ,bl.mamon,bl.tendangnhap,bl.noidungbl " +
                         "from  BINHLUAN as bl, MON as m,NGUOIDUNG as nd " +
                         "where m.mamon = bl.mamon and nd.tendangnhap = bl.tendangnhap " +
                         "and m.mamon = ? "

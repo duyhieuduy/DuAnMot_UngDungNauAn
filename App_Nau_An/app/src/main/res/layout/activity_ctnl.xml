@@ -38,25 +38,25 @@
                                     android:layout_height="wrap_content"/>
 
                                 <TextView
+                                    android:textColor="#DF292525"
+                                    android:textSize="17dp"
                                     android:layout_centerHorizontal="true"
                                     android:id="@+id/GT"
-                                    android:textSize="16dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginTop="10dp"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/MOXT"
                                     android:layout_marginLeft="30dp"
                                     android:layout_marginRight="30dp"
-                                    android:hint="Lời nói chẳng mất tiền mua,
-                                    vậy tại sao chúng ta không dành một lời
-                                    kích lệ cho ngườinấu ăn để họ vui hơn và
-                                    dốcsức nấu ăn ngon hơn phải không?" />
+                                    android:text="Congthulamtext" />
 
 
                                 <ImageView
                                     android:layout_marginLeft="40dp"
                                     android:id="@+id/DH"
                                     android:layout_below="@+id/GT"
-                                    android:src="@drawable/clock"
+                                    android:src="@drawable/timerct"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
                                 <TextView
@@ -78,11 +78,10 @@
                                     android:layout_marginStart="40dp"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"
-                                    android:src="@drawable/clock"
+                                    android:src="@drawable/nlitemanh"
                                     android:textSize="15dp" />
                                 <TextView
                                     android:layout_marginTop="20dp"
-                                    android:layout_marginLeft="5dp"
                                     android:layout_toRightOf="@+id/imgnl"
                                     android:layout_below="@+id/DH"
                                     android:id="@+id/TennL1"
@@ -92,7 +91,6 @@
 
                                 <TextView
                                     android:layout_marginTop="20dp"
-                                    android:layout_marginLeft="5dp"
                                     android:layout_below="@+id/DH"
                                     android:layout_toRightOf="@id/TennL1"
                                     android:id="@+id/TennL2"
@@ -104,7 +102,7 @@
                                 <TextView
                                     android:textColor="#55278A"
                                     android:textStyle="bold"
-                                    android:id="@+id/clNl"
+                                    android:id="@+id/tvcachlamo"
                                     android:textSize="30dp"
                                     android:layout_marginLeft="40dp"
                                     android:layout_marginRight="40dp"
@@ -112,44 +110,75 @@
                                     android:layout_below="@+id/imgnl"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"/>
-                                <TextView
-                                    android:id="@+id/ctcl"
-                                    android:layout_marginLeft="30dp"
-                                    android:layout_marginRight="30dp"
-                                    android:hint="Sơ chế mực và măng, Ướp mực, Xào mực với măng tươi. Cắt mực thành nhiều khoanh 1-2 lóng tay. Chần sơ măng tươi để loại bỏ bụi bẩn, 1 muỗng cà phê hành tím, 1 muỗng cà phê tỏi băm,1 muỗng cà phê bột nêm, 1 muỗng cà phê tiêu ướp 15 phút.Cho vào chảo 2 muỗng dầu ăn,1 muỗng cà phê hành tím, 1 muỗng cà phê tỏi băm phi thơm"
-                                    android:layout_below="@+id/clNl"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"/>
+
                                 <ImageView
 
                                     android:id="@+id/imgcl1"
                                     android:layout_marginStart="30dp"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_below="@+id/ctcl"
+                                    android:layout_below="@+id/tvcachlamo"
                                     android:src="@mipmap/ic_launcher"
-                                    android:layout_width="150dp"
-                                    android:layout_height="190dp"/>
+                                    android:layout_width="120dp"
+                                    android:layout_height="80dp"/>
                                 <ImageView
                                     android:id="@+id/imgcl2"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_below="@+id/ctcl"
-                                    android:layout_toRightOf="@+id/imgcl1"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_below="@+id/imgcl1"
                                     android:src="@mipmap/ic_launcher"
-                                    android:layout_width="150dp"
-                                    android:layout_height="190dp"/>
+                                    android:layout_width="120dp"
+                                    android:layout_height="80dp"/>
 
                                 <ImageView
                                     android:id="@+id/imgcl3"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="160dp"
-                                    android:layout_below="@+id/imgcl1"
+                                    android:layout_width="120dp"
+                                    android:layout_height="80dp"
+                                    android:layout_below="@+id/imgcl2"
                                     android:layout_marginStart="30dp"
-                                    android:layout_marginTop="10dp"
                                     android:layout_marginEnd="30dp"
-                                    android:layout_marginBottom="70dp"
                                     android:src="@mipmap/ic_launcher" />
+                                <TextView
+                                    android:textColor="#DF292525"
+                                    android:textSize="17dp"
+                                    android:id="@+id/ctcl"
 
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="30dp"
+                                    android:text="Cach lam text"
+                                    android:layout_toRightOf="@+id/imgcl1"
+                                    android:layout_below="@+id/tvcachlamo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:id="@+id/edtbinhluan"
+                                    android:background="@drawable/edittextbox"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:paddingLeft="10dp"
+                                    android:hint="Nhập Bình luận..."
+                                    android:layout_below="@+id/ctcl"
+                                    />
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:layout_marginTop="-32dp"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_below="@+id/edtbinhluan"
+                                    android:id="@+id/btnsend"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="30dp"
+                                    android:background="@drawable/ic_baseline_send_24"/>
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvbinhluan"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_marginBottom="90dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/edtbinhluan"
 
+                                    />
                         </RelativeLayout>
 
 
