@@ -53,21 +53,24 @@
 
 
                                 <ImageView
-                                    android:layout_marginLeft="40dp"
+                                    android:layout_marginLeft="30dp"
                                     android:id="@+id/DH"
                                     android:layout_below="@+id/GT"
                                     android:src="@drawable/timerct"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
                                 <TextView
+                                    android:textColor="#56528E"
+                                    android:textStyle="bold"
+                                    android:textSize="20dp"
                                     android:layout_marginLeft="5dp"
                                     android:layout_marginTop="10dp"
                                     android:text="40 phút"
                                     android:layout_toRightOf="@+id/DH"
                                     android:layout_below="@+id/GT"
                                     android:id="@+id/textTG"
-                                    android:layout_width="100dp"
-                                    android:layout_height="20dp"/>
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
 
 
                                 <ImageView
@@ -75,13 +78,15 @@
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
                                     android:layout_below="@+id/DH"
-                                    android:layout_marginStart="40dp"
-                                    android:layout_marginTop="10dp"
-                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginStart="30dp"
                                     android:src="@drawable/nlitemanh"
                                     android:textSize="15dp" />
                                 <TextView
-                                    android:layout_marginTop="20dp"
+                                    android:textColor="#56528E"
+
+                                    android:textStyle="bold"
+                                    android:textSize="20dp"
+                                    android:layout_marginTop="5dp"
                                     android:layout_toRightOf="@+id/imgnl"
                                     android:layout_below="@+id/DH"
                                     android:id="@+id/TennL1"
@@ -90,12 +95,15 @@
                                     android:layout_height="wrap_content"/>
 
                                 <TextView
-                                    android:layout_marginTop="20dp"
+                                    android:textColor="#56528E"
+                                    android:textStyle="bold"
+                                    android:textSize="20dp"
+                                    android:layout_marginTop="5dp"
                                     android:layout_below="@+id/DH"
                                     android:layout_toRightOf="@id/TennL1"
                                     android:id="@+id/TennL2"
                                     android:text="100gr măng tươi"
-                                    android:layout_width="106dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
 
 
