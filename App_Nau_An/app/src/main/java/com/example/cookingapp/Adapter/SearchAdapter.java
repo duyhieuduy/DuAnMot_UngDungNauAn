@@ -1,16 +1,20 @@
 package com.example.cookingapp.Adapter;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.CTNLActivity;
@@ -89,6 +93,33 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 iFood.onClickFood(mListFoodOld.get(position));
             }
         });
+        holder.btnluu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog_luuMon();
+            }
+        });
+
+
+    }
+    private void openDialog_luuMon() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        final AlertDialog dialog = builder.create();
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        builder.setMessage("Bạn có muốn lưu không ? ");
+        builder.setCancelable(false);
+        builder.setNegativeButton("không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).setPositiveButton("có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+
+            }
+        }).show();
 
 
     }
@@ -139,6 +170,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
 
 public class ViewHolder extends RecyclerView.ViewHolder{
+        AppCompatButton btnluu;
     ImageView imgfood;
     TextView TenDs, tennl1, tennl2,tennl3,tennl4, dok, thoigiannau;
             public ViewHolder(@NonNull View itemView) {
@@ -152,6 +184,8 @@ public class ViewHolder extends RecyclerView.ViewHolder{
                 tennl4 = itemView.findViewById(R.id.tennl4);
                 dok = itemView.findViewById(R.id.dok);
                 thoigiannau = itemView.findViewById(R.id.thoigiannau);
+
+                btnluu = itemView.findViewById(R.id.btnluu);
 
             }
         }

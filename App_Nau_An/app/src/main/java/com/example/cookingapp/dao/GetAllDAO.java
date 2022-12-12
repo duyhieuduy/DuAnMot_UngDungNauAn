@@ -294,6 +294,19 @@ public class GetAllDAO {
         }
         return list;
     }
+    public ArrayList<nguoidungsavefs> getidTheoTenNguoiDungSaveVaMaMonSave(int mamon, String tennguoidung){
+        ArrayList<nguoidungsavefs> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT idnds FROM NGUOIDUNGSAVE WHERE mamon = ? and tennguoidung = ?", new String[]{String.valueOf(mamon), tennguoidung});
+        if (cursor.getCount()!= 0){
+            cursor.moveToFirst();
+            do {
+                list.add(new nguoidungsavefs(cursor.getInt(0), cursor.getInt(1), cursor.getString(2)));
+            }while (cursor.moveToNext());
+        }
+
+        return list;
+    }
 
 
 

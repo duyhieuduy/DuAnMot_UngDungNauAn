@@ -4,6 +4,9 @@ import static android.content.Context.MODE_PRIVATE;
 
 import static com.example.cookingapp.CallApi.ApiService.BASE_Service;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,10 +14,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -50,12 +55,12 @@ public class TuongTacFragment extends Fragment {
     List<nguoidungsavefs> nguoidungsavefsList;
     ArrayList<FoodInFor> foodInForList;
     String tenuser;
+    Context context;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.tuongtac_fragment, container, false);
-
 
 
         recyclerSave = view.findViewById(R.id.recyclerSave);
@@ -94,27 +99,6 @@ public class TuongTacFragment extends Fragment {
 
 
 
-    private void deletenguoidungsave() {
-        int id = 0;
-
-        ApiService requestInterface = new Retrofit.Builder()
-                .baseUrl(BASE_Service)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
-                .build().create(ApiService.class);
-        new CompositeDisposable().add(requestInterface.deletenguoidungsave(id)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(this::handleResponse, this::handleError)
-        );
-    }
 
 
-    private void handleResponse(Number number){
-        Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
-    }
-
-    private void handleError(Throwable error){
-        Toast.makeText(getContext(), "Fail", Toast.LENGTH_SHORT).show();
-    }
 }

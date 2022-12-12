@@ -16,6 +16,11 @@ public class nguoidungsavefs {
         this.tennguoidung = tennguoidung;
     }
 
+    public nguoidungsavefs(int mamon, String tennguoidung) {
+        this.mamon = mamon;
+        this.tennguoidung = tennguoidung;
+    }
+
     public int getIdnds() {
         return idnds;
     }
