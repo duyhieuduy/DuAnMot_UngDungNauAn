@@ -22,7 +22,8 @@ import java.util.ArrayList;
 public class FoodinfoAdapter extends RecyclerView.Adapter<FoodinfoAdapter.ViewHolder> {
     private Context context;
     private ArrayList<FoodInFor> list;
-    private IFood iFood;
+    private IFood  iFood;
+
     public void setiFood(IFood iFood) {
         this.iFood = iFood;
     }

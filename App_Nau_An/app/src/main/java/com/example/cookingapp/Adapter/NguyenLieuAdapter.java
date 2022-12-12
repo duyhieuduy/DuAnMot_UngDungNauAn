@@ -10,12 +10,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.Interface.INguyenLieu;
 
 
 import com.example.cookingapp.R;
+import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.model.NguyenLieu;
 import com.example.cookingapp.Clicknl_func.dao;
 import com.squareup.picasso.Picasso;
@@ -64,9 +66,9 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.Vi
                // holder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.colorSelected));
 
                 iNguyenLieu.onClick(list.get(position));
+
             }
         });
-
 
 
 //        holder.cardView.setOnClickListener(new View.OnClickListener() {

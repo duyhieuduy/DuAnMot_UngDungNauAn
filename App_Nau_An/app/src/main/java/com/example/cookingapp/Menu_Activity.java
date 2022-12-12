@@ -1,7 +1,5 @@
 package com.example.cookingapp;
 
-import static com.example.cookingapp.CallApi.ApiService.BASE_Service;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.AlertDialog;
@@ -16,32 +15,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.cookingapp.Adapter.ViewPagerAdapter;
-import com.example.cookingapp.CallApi.ApiService;
-import com.example.cookingapp.CallApi.Food;
-import com.example.cookingapp.CallApi.anhmonanfs;
-import com.example.cookingapp.CallApi.binhluanfs;
-import com.example.cookingapp.CallApi.congthucnguyenlieufs;
-import com.example.cookingapp.CallApi.nguoidungdbfs;
-import com.example.cookingapp.CallApi.nguoidungsavefs;
 import com.example.cookingapp.DB.DBHelper;
-import com.example.cookingapp.dao.InsertDao;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-
-import java.util.ArrayList;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.schedulers.Schedulers;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Menu_Activity extends AppCompatActivity {
     DrawerLayout drawerLayout;
@@ -75,12 +55,15 @@ public class Menu_Activity extends AppCompatActivity {
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+//                Fragment fragment;
                 switch (item.getItemId()) {
                     case R.id.trangchu:
                         mViewPager.setCurrentItem(0);
                         bottom.setSelectedItemId(R.id.trangchu);
                         break;
+                    case R.id.TDTT:
+                        startActivity(new Intent(Menu_Activity.this,TDTTuser.class));
+                       break;
                     case R.id.logout:
                         startActivity(new Intent(Menu_Activity.this,Login_Activity.class));
                         break;

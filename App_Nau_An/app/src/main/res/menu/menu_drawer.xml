@@ -18,9 +18,13 @@
             <item android:icon="@drawable/thoat"
                 android:id="@+id/logout"
                 android:title="Đăng Xuất"/>
+            <item android:icon="@drawable/ic_baseline_edit_24"
+                android:id="@+id/TDTT"
+                android:title="Thay đổi thông tin "/>
             <item android:icon="@drawable/turnoff"
                 android:id="@+id/back"
                 android:title="Thoát "/>
+
         </menu>
     </item>
 </menu>

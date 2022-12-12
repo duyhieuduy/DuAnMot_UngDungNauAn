@@ -62,7 +62,7 @@ public class Login_Activity extends AppCompatActivity {
         getAllDAO = new GetAllDAO(this);
         listuser = new ArrayList<>();
         listuser = getAllDAO.getallusersdao();
-        Toast.makeText(this, ""+listuser.get(0).getTendangnhap(), Toast.LENGTH_SHORT).show();
+    //    Toast.makeText(this, ""+listuser.get(0).getTendangnhap(), Toast.LENGTH_SHORT).show();
 
 
 
