@@ -1,10 +1,12 @@
 package com.example.cookingapp.CallApi;
 
 import com.example.cookingapp.model.Register;
+import com.example.cookingapp.model.UserSave;
 
 import java.util.ArrayList;
 
 import io.reactivex.Observable;
+import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -28,9 +30,12 @@ public interface ApiService {
 
 
     @DELETE("api/deletenguoidungsave")
-    Observable<Number> deletenguoidungsave(@Query("id") int id);
+    Observable<UserSave> deletenguoidungsave(@Query("id") int id);
 
 
     @POST("api/adduser")
     Observable<Number> sendPost(@Body Register register);
+    // post user save
+    @POST("api/adnds")
+    Observable<Number> senPostUserSave(@Body UserSave userSave);
 }

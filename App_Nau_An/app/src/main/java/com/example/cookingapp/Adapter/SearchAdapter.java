@@ -1,10 +1,16 @@
 package com.example.cookingapp.Adapter;
 
+import static com.example.cookingapp.CallApi.ApiService.BASE_Service;
+import static com.example.cookingapp.R.drawable.ic_hearts_no;
+
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,19 +18,37 @@ import android.view.Window;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.CTNLActivity;
+import com.example.cookingapp.CallApi.ApiService;
+import com.example.cookingapp.CallApi.nguoidungsavefs;
+import com.example.cookingapp.Interface.ApiInterface;
 import com.example.cookingapp.Interface.IFood;
 import com.example.cookingapp.R;
+import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.model.FoodInFor;
+import com.example.cookingapp.model.UserSave;
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> implements Filterable {
@@ -32,6 +56,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     private List<FoodInFor> mListFood;
     private List<FoodInFor> mListFoodOld;
     private IFood iFood;
+    private UserSave userSave;
+    private GetAllDAO getAllDAO;
 
     public void setiFood(IFood iFood) {
         this.iFood = iFood;
@@ -96,13 +122,18 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         holder.btnluu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openDialog_luuMon();
+                openDialog_luuMon(position);
+
             }
         });
 
 
+
     }
-    private void openDialog_luuMon() {
+    private void openDialog_luuMon(int position) {
+
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         final AlertDialog dialog = builder.create();
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -116,13 +147,82 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         }).setPositiveButton("có", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                int mamon = mListFood.get(position).getMamon();
+                SharedPreferences preferences = context.getSharedPreferences("USERNAME", Context.MODE_PRIVATE);
+                String tenuser = preferences.getString("username", "");
+
+                userSave = new UserSave(mamon, tenuser);
+
+                ApiInterface.apiInterface.senPostUserSave(userSave).enqueue(new Callback<UserSave>() {
+                    @Override
+                    public void onResponse(Call<UserSave> call, Response<UserSave> response) {
+                        Toast.makeText(context, "lưu thành công", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<UserSave> call, Throwable t) {
+                        Toast.makeText(context, "Lưu thành công", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+                ProgressDialog progressDialog = ProgressDialog.show(context, "Loading...", "Please wait...", true);
+                progressDialog.setCancelable(true);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(1000);
+                        }catch (InterruptedException e){
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+
 
 
             }
+
+
         }).show();
 
 
     }
+//    private void sendPostUserSave(){
+//        ApiInterface.apiInterface.senPostUserSave(nguoidungsavefs).enqueue(new Callback<UserSave>() {
+//            @Override
+//            public void onResponse(Call<UserSave> call, Response<UserSave> response) {
+//                Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<UserSave> call, Throwable t) {
+//                Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//
+//    }
+//    private void addnguoidungsave() {
+//
+//        int id = 0;
+//        nguoidungsavefs = new nguoidungsavefs();
+//
+//
+//        ApiService requestInterface = new Retrofit.Builder()
+//                .baseUrl(BASE_Service)
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build().create(ApiService.class);
+//        new CompositeDisposable().add(requestInterface.senPostUserSave(ng)
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribeOn(Schedulers.io())
+//                .subscribe(this::handleResponse, this::handleError)
+//        );
+//    }
+
+
+
 
     @Override
     public int getItemCount() {

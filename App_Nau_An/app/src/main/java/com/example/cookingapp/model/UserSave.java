@@ -1,13 +1,15 @@
 package com.example.cookingapp.model;
 
 public class UserSave {
-    private String tendangnhap;
     private int mamon;
+    private String tendangnhap;
 
-    public UserSave(String tendangnhap, int mamon) {
-        this.tendangnhap = tendangnhap;
+    public UserSave(int mamon, String tendangnhap) {
         this.mamon = mamon;
+        this.tendangnhap = tendangnhap;
     }
+
+
 
     public String getTendangnhap() {
         return tendangnhap;

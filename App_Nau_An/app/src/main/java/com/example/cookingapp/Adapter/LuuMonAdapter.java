@@ -25,10 +25,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cookingapp.CallApi.ApiService;
 import com.example.cookingapp.CallApi.nguoidungsavefs;
+import com.example.cookingapp.Interface.ApiInterface;
 import com.example.cookingapp.Interface.IFood;
 import com.example.cookingapp.R;
 import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.model.FoodInFor;
+import com.example.cookingapp.model.UserSave;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.squareup.picasso.Picasso;
 
@@ -38,6 +40,9 @@ import java.util.List;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -51,6 +56,8 @@ public class LuuMonAdapter extends RecyclerView.Adapter<LuuMonAdapter.ViewHolder
     private ArrayList<nguoidungsavefs> nguoidungsavefsArrayList;
     private nguoidungsavefs nguoidungsavefs;
     String tenuser;
+    UserSave userSave;
+    int mamon;
 
 
     public void setiFood(IFood iFood) {
@@ -133,15 +140,15 @@ public class LuuMonAdapter extends RecyclerView.Adapter<LuuMonAdapter.ViewHolder
         }).setPositiveButton("có", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                SharedPreferences pref = context.getSharedPreferences("USERNAME", MODE_PRIVATE);
-                tenuser = pref.getString("username", "");
-
-
 
                 int mamon = mListFood.get(position).getMamon();
-                nguoidungsavefsArrayList = getAllDAO.getidTheoTenNguoiDungSaveVaMaMonSave(mamon, "1");
+                SharedPreferences pref1 = context.getSharedPreferences("MAMON", MODE_PRIVATE);
+                SharedPreferences.Editor editor=pref1.edit();
+                editor.putString("mamon", String.valueOf(mamon));
+                editor.commit();
 
-                deletenguoidungsave(Integer.parseInt(String.valueOf(nguoidungsavefsArrayList.get(0))));
+
+
 
 
 
@@ -151,10 +158,14 @@ public class LuuMonAdapter extends RecyclerView.Adapter<LuuMonAdapter.ViewHolder
 
     }
 
-    private void deletenguoidungsave(int id) {
+    private void deletenguoidungsave() {
 
+        SharedPreferences pref = context.getSharedPreferences("USERNAME", MODE_PRIVATE);
+        String tenuser = pref.getString("username", "");
+        SharedPreferences pref1 = context.getSharedPreferences("MAMON", MODE_PRIVATE);
+        int mamon = Integer.parseInt(pref1.getString("mamon", ""));
 
-
+        int id = 0;
         ApiService requestInterface = new Retrofit.Builder()
                 .baseUrl(BASE_Service)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -168,7 +179,7 @@ public class LuuMonAdapter extends RecyclerView.Adapter<LuuMonAdapter.ViewHolder
     }
 
 
-    private void handleResponse(Number number){
+    private void handleResponse(UserSave userSave){
         Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
     }
 
