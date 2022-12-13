@@ -5,6 +5,7 @@ import static com.example.cookingapp.CallApi.ApiService.BASE_Service;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -53,11 +54,8 @@ public class LuuMonAdapter extends RecyclerView.Adapter<LuuMonAdapter.ViewHolder
     private List<FoodInFor> mListFoodOld;
     private IFood iFood;
     private GetAllDAO getAllDAO;
-    private ArrayList<nguoidungsavefs> nguoidungsavefsArrayList;
+    private List<nguoidungsavefs> nguoidungsavefsArrayList;
     private nguoidungsavefs nguoidungsavefs;
-    String tenuser;
-    UserSave userSave;
-    int mamon;
 
 
     public void setiFood(IFood iFood) {
@@ -141,51 +139,91 @@ public class LuuMonAdapter extends RecyclerView.Adapter<LuuMonAdapter.ViewHolder
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
+
+                SharedPreferences pref = context.getSharedPreferences("USERNAME", MODE_PRIVATE);
+                String tenuser = pref.getString("username", "");
+
                 int mamon = mListFood.get(position).getMamon();
                 SharedPreferences pref1 = context.getSharedPreferences("MAMON", MODE_PRIVATE);
-                SharedPreferences.Editor editor=pref1.edit();
+                SharedPreferences.Editor editor = pref1.edit();
                 editor.putString("mamon", String.valueOf(mamon));
                 editor.commit();
 
+                getAllDAO = new GetAllDAO(builder.getContext());
+                nguoidungsavefsArrayList = new ArrayList<>();
+                nguoidungsavefsArrayList = getAllDAO.getIdtheomamonvstennguoidung( tenuser);
+                int id = nguoidungsavefsArrayList.get(position).getIdnds();
 
 
+
+
+                ApiService requestInterface = new Retrofit.Builder()
+                        .baseUrl(BASE_Service)
+                        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build().create(ApiService.class);
+                new CompositeDisposable().add(requestInterface.deletenguoidungsave(id)
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeOn(Schedulers.io())
+                        .subscribe(this::handleResponse, this::handleError)
+                );
+                ProgressDialog progressDialog = ProgressDialog.show(context, "Loading...", "Please wait...", true);
+                progressDialog.setCancelable(true);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(1000);
+                        }catch (InterruptedException e){
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
 
 
 
             }
+
+            private void handleResponse(UserSave userSave) {
+                Toast.makeText(context, "xóa thành công", Toast.LENGTH_SHORT).show();
+            }
+            private void handleError(Throwable error){
+                Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
+            }
+
         }).show();
 
 
     }
 
-    private void deletenguoidungsave() {
-
-        SharedPreferences pref = context.getSharedPreferences("USERNAME", MODE_PRIVATE);
-        String tenuser = pref.getString("username", "");
-        SharedPreferences pref1 = context.getSharedPreferences("MAMON", MODE_PRIVATE);
-        int mamon = Integer.parseInt(pref1.getString("mamon", ""));
-
-        int id = 0;
-        ApiService requestInterface = new Retrofit.Builder()
-                .baseUrl(BASE_Service)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
-                .build().create(ApiService.class);
-        new CompositeDisposable().add(requestInterface.deletenguoidungsave(id)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(this::handleResponse, this::handleError)
-        );
-    }
-
-
-    private void handleResponse(UserSave userSave){
-        Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
-    }
-
-    private void handleError(Throwable error){
-        Toast.makeText(context, "Fail", Toast.LENGTH_SHORT).show();
-    }
+//    private void deletenguoidungsave() {
+//
+//        SharedPreferences pref = context.getSharedPreferences("USERNAME", MODE_PRIVATE);
+//        String tenuser = pref.getString("username", "");
+//        SharedPreferences pref1 = context.getSharedPreferences("MAMON", MODE_PRIVATE);
+//        int mamon = Integer.parseInt(pref1.getString("mamon", ""));
+//
+//        int id = 0;
+//        ApiService requestInterface = new Retrofit.Builder()
+//                .baseUrl(BASE_Service)
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build().create(ApiService.class);
+//        new CompositeDisposable().add(requestInterface.deletenguoidungsave(id)
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribeOn(Schedulers.io())
+//                .subscribe(this::handleResponse, this::handleError)
+//        );
+//    }
+//
+//
+//    private void handleResponse(UserSave userSave){
+//        Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
+//    }
+//
+//    private void handleError(Throwable error){
+//        Toast.makeText(context, "Fail", Toast.LENGTH_SHORT).show();
+//    }
 
 
 

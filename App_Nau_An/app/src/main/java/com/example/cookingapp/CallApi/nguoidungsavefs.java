@@ -6,8 +6,14 @@ public class nguoidungsavefs {
     int mamon;
     String tennguoidung;
 
+
     public nguoidungsavefs(int mamon) {
         this.mamon = mamon;
+    }
+
+    public nguoidungsavefs(int mamon, String tennguoidung) {
+        this.mamon = mamon;
+        this.tennguoidung = tennguoidung;
     }
 
     public nguoidungsavefs(int idnds, int mamon, String tennguoidung) {
@@ -16,10 +22,6 @@ public class nguoidungsavefs {
         this.tennguoidung = tennguoidung;
     }
 
-    public nguoidungsavefs(int mamon, String tennguoidung) {
-        this.mamon = mamon;
-        this.tennguoidung = tennguoidung;
-    }
 
     public int getIdnds() {
         return idnds;

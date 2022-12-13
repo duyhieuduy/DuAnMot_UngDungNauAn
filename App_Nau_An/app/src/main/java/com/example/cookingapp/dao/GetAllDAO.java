@@ -294,10 +294,10 @@ public class GetAllDAO {
         }
         return list;
     }
-    public ArrayList<nguoidungsavefs> getidTheoTenNguoiDungSaveVaMaMonSave(int mamon, String tennguoidung){
+    public ArrayList<nguoidungsavefs> getIdtheomamonvstennguoidung(String tennguoidung){
         ArrayList<nguoidungsavefs> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT idnds FROM NGUOIDUNGSAVE WHERE mamon = ? and tennguoidung = ?", new String[]{String.valueOf(mamon), tennguoidung});
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM NGUOIDUNGSAVE WHERE tennguoidung = ?", new String[]{tennguoidung});
         if (cursor.getCount()!= 0){
             cursor.moveToFirst();
             do {
