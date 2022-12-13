@@ -156,12 +156,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 ApiInterface.apiInterface.senPostUserSave(userSave).enqueue(new Callback<UserSave>() {
                     @Override
                     public void onResponse(Call<UserSave> call, Response<UserSave> response) {
-                        Toast.makeText(context, "lưu thành công", Toast.LENGTH_SHORT).show();
+
                     }
 
                     @Override
                     public void onFailure(Call<UserSave> call, Throwable t) {
-                        Toast.makeText(context, "Lưu thành công", Toast.LENGTH_SHORT).show();
+
 
                     }
                 });
@@ -188,38 +188,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
 
     }
-//    private void sendPostUserSave(){
-//        ApiInterface.apiInterface.senPostUserSave(nguoidungsavefs).enqueue(new Callback<UserSave>() {
-//            @Override
-//            public void onResponse(Call<UserSave> call, Response<UserSave> response) {
-//                Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onFailure(Call<UserSave> call, Throwable t) {
-//                Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//
-//    }
-//    private void addnguoidungsave() {
-//
-//        int id = 0;
-//        nguoidungsavefs = new nguoidungsavefs();
-//
-//
-//        ApiService requestInterface = new Retrofit.Builder()
-//                .baseUrl(BASE_Service)
-//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build().create(ApiService.class);
-//        new CompositeDisposable().add(requestInterface.senPostUserSave(ng)
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribeOn(Schedulers.io())
-//                .subscribe(this::handleResponse, this::handleError)
-//        );
-//    }
+
 
 
 

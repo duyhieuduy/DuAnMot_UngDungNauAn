@@ -185,10 +185,10 @@ public class LuuMonAdapter extends RecyclerView.Adapter<LuuMonAdapter.ViewHolder
             }
 
             private void handleResponse(UserSave userSave) {
-                Toast.makeText(context, "xóa thành công", Toast.LENGTH_SHORT).show();
+
             }
             private void handleError(Throwable error){
-                Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
+
             }
 
         }).show();
@@ -196,34 +196,7 @@ public class LuuMonAdapter extends RecyclerView.Adapter<LuuMonAdapter.ViewHolder
 
     }
 
-//    private void deletenguoidungsave() {
-//
-//        SharedPreferences pref = context.getSharedPreferences("USERNAME", MODE_PRIVATE);
-//        String tenuser = pref.getString("username", "");
-//        SharedPreferences pref1 = context.getSharedPreferences("MAMON", MODE_PRIVATE);
-//        int mamon = Integer.parseInt(pref1.getString("mamon", ""));
-//
-//        int id = 0;
-//        ApiService requestInterface = new Retrofit.Builder()
-//                .baseUrl(BASE_Service)
-//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build().create(ApiService.class);
-//        new CompositeDisposable().add(requestInterface.deletenguoidungsave(id)
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribeOn(Schedulers.io())
-//                .subscribe(this::handleResponse, this::handleError)
-//        );
-//    }
-//
-//
-//    private void handleResponse(UserSave userSave){
-//        Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
-//    }
-//
-//    private void handleError(Throwable error){
-//        Toast.makeText(context, "Fail", Toast.LENGTH_SHORT).show();
-//    }
+
 
 
 
