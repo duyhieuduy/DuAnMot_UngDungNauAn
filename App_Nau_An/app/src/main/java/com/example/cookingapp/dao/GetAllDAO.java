@@ -307,6 +307,23 @@ public class GetAllDAO {
 
         return list;
     }
+    public ArrayList<getalluser> getupdateuser(String tendangnhap){
+        ArrayList<getalluser> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from nguoidung WHERE tendangnhap = ?",new String[]{tendangnhap});
+        if (cursor.getCount() != 0){
+            cursor.moveToFirst();
+            do {
+                list.add(new getalluser(cursor.getString(0),
+                        cursor.getString(1),
+                        cursor.getInt(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getInt(5)));
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
 
 
 

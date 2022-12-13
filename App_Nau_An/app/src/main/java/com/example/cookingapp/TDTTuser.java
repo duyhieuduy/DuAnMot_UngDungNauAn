@@ -4,6 +4,7 @@ import static com.example.cookingapp.CallApi.ApiService.BASE_Service;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cookingapp.CallApi.ApiService;
+import com.example.cookingapp.CallApi.getalluser;
+import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.model.Register;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -27,14 +33,14 @@ public class TDTTuser extends AppCompatActivity {
     Button btnUpdate;
     String tendangnhap, matkhau, diachi, email;
     int tuoi, sdt;
+    GetAllDAO getAllDAO;
+    List<getalluser> listUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tdttuser);
 //        sendPosts();
 //        ApiUser();
-
-
 
         txtAlready = findViewById(R.id.txtAlready);
         edtTenDangNhap = findViewById(R.id.edtTenDangNhap);
@@ -44,6 +50,22 @@ public class TDTTuser extends AppCompatActivity {
         edtDiaChi = findViewById(R.id.edtDiaChi);
         edtTuoi = findViewById(R.id.edtTuoi);
         btnUpdate = findViewById(R.id.btnUpdate);
+
+        SharedPreferences pref = getSharedPreferences("USERNAME", MODE_PRIVATE);
+        String tenuser = pref.getString("username", "");
+        listUser = new ArrayList<>();
+        getAllDAO = new GetAllDAO(this);
+        listUser = getAllDAO.getupdateuser(tenuser);
+
+
+
+
+        edtTenDangNhap.setText(tenuser);
+        edtMatKhau.setText(listUser.get(0).getMatkhau());
+        edtSDT.setText(String.valueOf(listUser.get(0).getSdt()));
+        edtEmail.setText(listUser.get(0).getEmail());
+        edtDiaChi.setText(listUser.get(0).getDiachi());
+        edtTuoi.setText(String.valueOf(listUser.get(0).getTuoi()));
     }
 
 
