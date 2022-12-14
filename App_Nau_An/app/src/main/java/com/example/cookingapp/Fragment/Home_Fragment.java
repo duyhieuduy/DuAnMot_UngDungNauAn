@@ -122,9 +122,9 @@ public class Home_Fragment extends Fragment {
                 GridLayoutManager gridView = new GridLayoutManager(getContext(),1,RecyclerView.HORIZONTAL,false);
                 RecyclviewWating.setLayoutManager(gridView);
                 RecyclviewWating.setAdapter(foodForGetCmt);
-                Toast.makeText(getContext(), ""+listfood.get(0).getTenmon(), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getContext(), ""+listfood.get(0).getTenmon(), Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(getContext(), ""+nguyenLieu.getTennguyenlieu(), Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(getContext(), ""+nguyenLieu.getTennguyenlieu(), Toast.LENGTH_SHORT).show();
                 loadDataNewnl();
 
                 listfood.clear();
@@ -151,8 +151,8 @@ public class Home_Fragment extends Fragment {
                 RecyclviewWating.setLayoutManager(gridView);
                 RecyclviewWating.setAdapter(foodForGetCmt);
 
-                Toast.makeText(getContext(), ""+listfood.get(0).getTenmon(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(getContext(), ""+loaimoNmodel.getMaloai(), Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(getContext(), ""+listfood.get(0).getTenmon(), Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(getContext(), ""+loaimoNmodel.getMaloai(), Toast.LENGTH_SHORT).show();
 
 
 
