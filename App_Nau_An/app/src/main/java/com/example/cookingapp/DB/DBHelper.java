@@ -55,12 +55,25 @@ public class DBHelper extends SQLiteOpenHelper {
                 "diachi text," +
                 "tuoi integer)";
         sqLiteDatabase.execSQL(dbNguoiDung);
+        sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNG VALUES " +
+                "('1', 'hieup',123123, 'hieup', 'hieup',100)," +
+                "('2', 'test2',2, 'test2', 'test2',2)," +
+                "('3', '3',3, '3', '3',3)," +
+                "('4', '4',4, '4', '4',4)," +
+                "('a', '1',1, '1', '1',1)," +
+                "('abc', '123',113, 'phong113@gmail.com', 'q1',22)," +
+                "('fas', '123',113, 'phong113@gmail.com', 'q1',22)," +
+                "('hdidndb', '1',1, '1', '1','1')," +
+                "('Hieupham', '1',348476512, 'hieu01648476512@gmail.com', 'TPHCM',23)," +
+                "('jdbejdin', '1',1, '1', '1',1)," +
+                "('Phong123', '1',865353251, 'phonghack02041999@gmail.com', 'tp.hcm',22)");
 
         String dbNguoiDungDB = "CREATE TABLE NGUOIDUNGDB (" +
                 "idndb INTEGER , " +
                 "mamon INTEGER," +
                 "tennguoidung TEXT)";
         sqLiteDatabase.execSQL(dbNguoiDungDB);
+
 
         String dbNguoiDungSave = "CREATE TABLE NGUOIDUNGSAVE (" +
                 "idnds INTEGER  ," +

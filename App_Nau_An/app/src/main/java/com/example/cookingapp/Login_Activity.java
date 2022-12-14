@@ -27,6 +27,7 @@ import com.example.cookingapp.CallApi.getalluser;
 import com.example.cookingapp.DB.DBHelper;
 import com.example.cookingapp.dao.GetAllDAO;
 import com.example.cookingapp.dao.InsertDao;
+import com.example.cookingapp.dao.NguoiDungDAO;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -56,6 +57,7 @@ public class Login_Activity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     GetAllDAO getAllDAO;
     List<getalluser> listuser;
+    NguoiDungDAO nguoiDungDAO;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,13 +101,21 @@ public class Login_Activity extends AppCompatActivity {
         btnlg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                startActivity(new Intent(Login_Activity.this,Menu_Activity.class));
+                nguoiDungDAO = new NguoiDungDAO(Login_Activity.this);
                 String user = edtuser.getText().toString();
-                SharedPreferences pref = getSharedPreferences("USERNAME", MODE_PRIVATE);
-                SharedPreferences.Editor editor=pref.edit();
-                editor.putString("username",user);
-                editor.commit();
+                String pass = edtpass.getText().toString();
+
+                if (nguoiDungDAO.checkDangNhap(user, pass)){
+                    SharedPreferences pref = getSharedPreferences("USERNAME", MODE_PRIVATE);
+                    SharedPreferences.Editor editor=pref.edit();
+                    editor.putString("username",user);
+                    editor.commit();
+                    startActivity(new Intent(Login_Activity.this,Menu_Activity.class));
+                    Toast.makeText(Login_Activity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(Login_Activity.this, "Đăng nhập không thành công", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
