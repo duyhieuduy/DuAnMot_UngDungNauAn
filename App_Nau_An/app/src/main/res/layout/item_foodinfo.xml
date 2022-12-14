@@ -154,19 +154,7 @@
             android:text="tgnau"
             android:textColor="#1976D2"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnluu"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/hearts"
-            android:backgroundTint="#FDE1C5C5"
-            android:textSize="10dp"
-            android:textStyle="italic" />
+
 
         <TextView
             android:layout_width="match_parent"
