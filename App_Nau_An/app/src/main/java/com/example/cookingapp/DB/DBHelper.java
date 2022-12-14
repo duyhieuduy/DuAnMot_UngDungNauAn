@@ -56,7 +56,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "tuoi integer)";
         sqLiteDatabase.execSQL(dbNguoiDung);
         sqLiteDatabase.execSQL("INSERT INTO NGUOIDUNG VALUES " +
-                "('1', 'hieup',123123, 'hieup', 'hieup',100)," +
+                "('1', 'hieup',865353251, 'hieup', 'hieup',100)," +
                 "('2', 'test2',2, 'test2', 'test2',2)," +
                 "('3', '3',3, '3', '3',3)," +
                 "('4', '4',4, '4', '4',4)," +

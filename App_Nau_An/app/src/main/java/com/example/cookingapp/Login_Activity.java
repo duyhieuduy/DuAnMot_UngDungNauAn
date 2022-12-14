@@ -72,6 +72,7 @@ public class Login_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         EditText edtuser = findViewById(R.id.user);
         EditText edtpass =findViewById(R.id.pass);
+        EditText edtSDT = findViewById(R.id.edt_otp);
         Button btnlg = findViewById(R.id.btnlogin);
         Button btnVerifyPhoneNumber = findViewById(R.id.btnVerifyPhoneNumber);
         ImageView backbtn = findViewById(R.id.backbtn);
@@ -83,7 +84,7 @@ public class Login_Activity extends AppCompatActivity {
         btnVerifyPhoneNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String strPhone = edtuser.getText().toString().trim();
+                String strPhone = edtSDT.getText().toString().trim();
                 sendVerificationCode(strPhone);
             }
         });

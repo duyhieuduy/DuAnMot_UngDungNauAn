@@ -75,7 +75,6 @@
         android:layout_height="40dp"
         android:id="@+id/edt_otp"
         android:hint="   SĐT"
-        android:inputType="textPassword"
         android:background="@drawable/edittextbox"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="65dp"
