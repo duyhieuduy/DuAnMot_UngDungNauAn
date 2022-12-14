@@ -84,7 +84,7 @@ public class Login_Activity extends AppCompatActivity {
         btnVerifyPhoneNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String strPhone = edtSDT.getText().toString().trim();
+                String strPhone = edtuser.getText().toString().trim();
                 sendVerificationCode(strPhone);
             }
         });
