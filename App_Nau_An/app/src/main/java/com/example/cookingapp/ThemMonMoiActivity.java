@@ -111,6 +111,7 @@ public class ThemMonMoiActivity extends AppCompatActivity {
         EditText edtNguyenLieu4 = findViewById(R.id.edtnl4);
         EditText edtKhoiLuong4 = findViewById(R.id.edtkl4);
         EditText edtCachLam = findViewById(R.id.edtnl2);
+
         imageView1 = findViewById(R.id.anhdang);
         imageView2 = findViewById(R.id.ivacl1);
         imageView3 = findViewById(R.id.ivacl2);
@@ -396,17 +397,17 @@ public class ThemMonMoiActivity extends AppCompatActivity {
                 ApiInterface.apiInterface.sendPosts(post).enqueue(new Callback<Post>() {
                     @Override
                     public void onResponse(Call<Post> call, Response<Post> response) {
-                        Toast.makeText(ThemMonMoiActivity.this, "call api success", Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(ThemMonMoiActivity.this, "call api success", Toast.LENGTH_SHORT).show();
 
-                        Post postResult = response.body();
-                        if (postResult != null){
-                            tv_api.setText(postResult.toString());
-                        }
+//                        Post postResult = response.body();
+//                        if (postResult != null){
+//                            tv_api.setText(postResult.toString());
+//                        }
                     }
 
                     @Override
                     public void onFailure(Call<Post> call, Throwable t) {
-                        Toast.makeText(ThemMonMoiActivity.this, "call api error", Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(ThemMonMoiActivity.this, "call api error", Toast.LENGTH_SHORT).show();
                     }
                 });
 
